@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const categoryUrls = categories.map((c) => ({
-    url: `${SITE_URL}/categories/${c.toLowerCase().replace(/\\s+/g, "-")}`,
+    url: `${SITE_URL}/categories/${c.toLowerCase().replace(/\s+/g, "-")}`,
     lastModified: new Date(),
   }));
 
