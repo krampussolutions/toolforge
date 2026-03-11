@@ -1,5 +1,5 @@
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
-export const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-XXXXXXXXXXXXXXXX";
+export const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-5957528671321920";
 export const suites = [
   {
     "slug": "image-tools",
