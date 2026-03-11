@@ -12,7 +12,7 @@ export default function HomePage() {
         <span className="kicker">Fast free online tools</span>
         <h1>Simple tools for files, images, calculators, and everyday tasks</h1>
         <p>
-          ToolForge helps people finish common tasks quickly without downloading software or creating an account.
+          UtilHubX helps people finish common tasks quickly without downloading software or creating an account.
           Compress images, merge PDFs, run calculations, and convert files in a cleaner, customer-friendly workspace.
         </p>
 
