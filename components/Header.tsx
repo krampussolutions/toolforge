@@ -3,7 +3,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container nav">
-        <Link href="/" className="logo">Tool<span>Forge</span></Link>
+        <Link href="/" className="logo">Util<span>HubX</span></Link>
         <nav className="nav-links">
           <Link href="/categories/image">Image Tools</Link>
           <Link href="/categories/pdf">PDF Tools</Link>

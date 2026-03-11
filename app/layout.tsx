@@ -6,7 +6,7 @@ import { ADSENSE_CLIENT, SITE_URL } from "@/lib/site";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: "ToolForge - Simple Tools for Everyday Tasks", template: "%s | ToolForge" },
+  title: { default: "UtilHubX - Simple Tools for Everyday Tasks", template: "%s | UtilHubX" },
   description: "Free online tools for everyday tasks, including image tools, PDF tools, calculators, converters, and text tools."
 };
 
