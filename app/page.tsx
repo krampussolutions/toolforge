@@ -63,7 +63,7 @@ export default function HomePage() {
 
       <section className="section">
         <div className="card">
-          <h3>Why people use ToolForge</h3>
+          <h3>Why people use UtilHubX</h3>
           <p>
             People usually come here for one reason: they need a quick answer or quick file task without extra friction.
             The site is organized around the kinds of tasks people actually do every day, not around technical jargon.
