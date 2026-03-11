@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+import { MetadataRoute } from "next";
 import { SITE_URL, suites, toolPages, categories } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -37,6 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pages,
     ...suitePages,
     ...toolUrls,
-    ...categoryUrls,
+    ...categoryUrls
   ];
 }
