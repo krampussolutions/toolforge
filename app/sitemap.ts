@@ -1,9 +1,9 @@
-import { MetadataRoute } from "next";
-import { SITE_URL, suites, toolPages, categories } from "@/lib/site";
+import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const base = "https://utilhubx.com"
 
-  const pages = [
+  const routes = [
     "",
     "/popular-tools",
     "/categories",
@@ -12,31 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/contact",
     "/privacy-policy",
-    "/terms"
-  ].map((path) => ({
-    url: `${SITE_URL}${path}`,
-    lastModified: new Date(),
-  }));
+    "/terms",
+  ]
 
-  const suitePages = suites.map((item) => ({
-    url: `${SITE_URL}/calculators/${item.slug}`,
+  return routes.map((route) => ({
+    url: `${base}${route}`,
     lastModified: new Date(),
-  }));
-
-  const toolUrls = toolPages.map((item) => ({
-    url: `${SITE_URL}/tools/${item.slug}`,
-    lastModified: new Date(),
-  }));
-
-  const categoryUrls = categories.map((c) => ({
-    url: `${SITE_URL}/categories/${c.toLowerCase().replace(/\s+/g, "-")}`,
-    lastModified: new Date(),
-  }));
-
-  return [
-    ...pages,
-    ...suitePages,
-    ...toolUrls,
-    ...categoryUrls
-  ];
+  }))
 }
