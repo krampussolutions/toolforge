@@ -1,4 +1,69 @@
 "use client";
+
 import { PDFDocument } from "pdf-lib";
 import { useState } from "react";
-export default function SplitPdf(){const [status,setStatus]=useState("Upload a PDF and choose pages like 1,2,5.");const [pages,setPages]=useState("1");async function handleFile(file:File){const pdf=await PDFDocument.load(await file.arrayBuffer());const out=await PDFDocument.create();const indices=pages.split(",").map((p)=>parseInt(p.trim(),10)-1).filter((n)=>!Number.isNaN(n)&&n>=0&&n<pdf.getPageCount());const copied=await out.copyPages(pdf,indices);copied.forEach((p)=>out.addPage(p));const bytes=await out.save();const blob=new Blob([bytes],{type:"application/pdf"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="split-pages.pdf";a.click();URL.revokeObjectURL(url);setStatus("Split PDF downloaded.");}return <div className="form-panel"><div className="field"><label>Pages</label><input value={pages} onChange={(e)=>setPages(e.target.value)} /></div><div className="field"><label>Upload PDF</label><input type="file" accept="application/pdf" onChange={(e)=>{const f=e.target.files?.[0];if(f) handleFile(f);}} /></div><div className="result-box"><div className="result-value" style={{fontSize:"22px"}}>{status}</div></div></div>;}
+
+export default function SplitPdf() {
+  const [status, setStatus] = useState(
+    "Upload a PDF and choose pages like 1,2,5."
+  );
+  const [pages, setPages] = useState("1");
+
+  async function handleFile(file: File) {
+    const pdf = await PDFDocument.load(await file.arrayBuffer());
+    const out = await PDFDocument.create();
+
+    const indices = pages
+      .split(",")
+      .map((p) => parseInt(p.trim(), 10) - 1)
+      .filter((n) => !Number.isNaN(n) && n >= 0 && n < pdf.getPageCount());
+
+    const copied = await out.copyPages(pdf, indices);
+    copied.forEach((page) => out.addPage(page));
+
+    const bytes = await out.save();
+
+    const arrayBuffer = bytes.buffer.slice(
+      bytes.byteOffset,
+      bytes.byteOffset + bytes.byteLength
+    ) as ArrayBuffer;
+
+    const blob = new Blob([arrayBuffer], { type: "application/pdf" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "split-pages.pdf";
+    a.click();
+
+    URL.revokeObjectURL(url);
+    setStatus("Split PDF downloaded.");
+  }
+
+  return (
+    <div className="form-panel">
+      <div className="field">
+        <label>Pages</label>
+        <input value={pages} onChange={(e) => setPages(e.target.value)} />
+      </div>
+
+      <div className="field">
+        <label>Upload PDF</label>
+        <input
+          type="file"
+          accept="application/pdf"
+          onChange={(e) => {
+            const f = e.target.files?.[0];
+            if (f) handleFile(f);
+          }}
+        />
+      </div>
+
+      <div className="result-box">
+        <div className="result-value" style={{ fontSize: "22px" }}>
+          {status}
+        </div>
+      </div>
+    </div>
+  );
+}
