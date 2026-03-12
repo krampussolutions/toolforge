@@ -1,4 +1,4 @@
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://utilhubx.com";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.utilhubx.com";
 export const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-5957528671321920";
 export const suites = [
   {

@@ -1,8 +1,6 @@
 import type { MetadataRoute } from "next";
-import { suites, toolPages, categories } from "@/lib/site";
+import { suites, toolPages, categories, SITE_URL } from "@/lib/site";
 import { programmaticPages } from "@/lib/programmatic-pages";
-
-const BASE_URL = "https://utilhubx.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -23,27 +21,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy-policy",
     "/terms",
   ].map((path) => ({
-    url: `${BASE_URL}${path}`,
+    url: `${SITE_URL}${path}`,
     lastModified: now,
   }));
 
   const suitePages = suites.map((item) => ({
-    url: `${BASE_URL}/calculators/${item.slug}`,
+    url: `${SITE_URL}/calculators/${item.slug}`,
     lastModified: now,
   }));
 
   const toolUrls = toolPages.map((item) => ({
-    url: `${BASE_URL}/tools/${item.slug}`,
+    url: `${SITE_URL}/tools/${item.slug}`,
     lastModified: now,
   }));
 
   const categoryUrls = categories.map((category) => ({
-    url: `${BASE_URL}/categories/${category.toLowerCase().replace(/\s+/g, "-")}`,
+    url: `${SITE_URL}/categories/${category.toLowerCase().replace(/\s+/g, "-")}`,
     lastModified: now,
   }));
 
   const guideUrls = programmaticPages.map((item) => ({
-    url: `${BASE_URL}/guides/${item.slug}`,
+    url: `${SITE_URL}/guides/${item.slug}`,
     lastModified: now,
   }));
 
