@@ -1,5 +1,4 @@
 "use client";
-
 import ImageCompressor from "@/components/special/ImageCompressor";
 import ImageResizer from "@/components/special/ImageResizer";
 import ImageFormatConverter from "@/components/special/ImageFormatConverter";
@@ -17,6 +16,24 @@ import SlugGenerator from "@/components/special/SlugGenerator";
 import RemoveLineBreaks from "@/components/special/RemoveLineBreaks";
 import TextSorter from "@/components/special/TextSorter";
 import DuplicateLineRemover from "@/components/special/DuplicateLineRemover";
+import TextReverser from "@/components/special/TextReverser";
+import RemoveExtraSpaces from "@/components/special/RemoveExtraSpaces";
+import LineCounter from "@/components/special/LineCounter";
+import WordFrequencyCounter from "@/components/special/WordFrequencyCounter";
+import TextRepeater from "@/components/special/TextRepeater";
+import TextToBinary from "@/components/special/TextToBinary";
+import BinaryToText from "@/components/special/BinaryToText";
+import RgbToHex from "@/components/special/RgbToHex";
+import HexToRgb from "@/components/special/HexToRgb";
+import UnixTimestampConverter from "@/components/special/UnixTimestampConverter";
+import RandomLetterGenerator from "@/components/special/RandomLetterGenerator";
+import PasswordStrengthChecker from "@/components/special/PasswordStrengthChecker";
+import UuidBulkGenerator from "@/components/special/UuidBulkGenerator";
+import MetaDescriptionCounter from "@/components/special/MetaDescriptionCounter";
+import HtmlEscape from "@/components/special/HtmlEscape";
+import HtmlUnescape from "@/components/special/HtmlUnescape";
+import ListRandomizer from "@/components/special/ListRandomizer";
+import RomanNumeralConverter from "@/components/special/RomanNumeralConverter";
 
 export default function SpecialToolRenderer({ slug }: { slug: string }) {
   if (slug === "compress-image") return <ImageCompressor />;
@@ -37,5 +54,25 @@ export default function SpecialToolRenderer({ slug }: { slug: string }) {
   if (slug === "remove-line-breaks") return <RemoveLineBreaks />;
   if (slug === "text-sorter") return <TextSorter />;
   if (slug === "duplicate-line-remover") return <DuplicateLineRemover />;
+  if (slug === "png-compressor") return <ImageCompressor />;
+  if (slug === "webp-to-png") return <ImageFormatConverter mime="image/png" />;
+  if (slug === "text-reverser") return <TextReverser />;
+  if (slug === "remove-extra-spaces") return <RemoveExtraSpaces />;
+  if (slug === "line-counter") return <LineCounter />;
+  if (slug === "word-frequency-counter") return <WordFrequencyCounter />;
+  if (slug === "text-repeater") return <TextRepeater />;
+  if (slug === "text-to-binary") return <TextToBinary />;
+  if (slug === "binary-to-text") return <BinaryToText />;
+  if (slug === "rgb-to-hex") return <RgbToHex />;
+  if (slug === "hex-to-rgb") return <HexToRgb />;
+  if (slug === "unix-timestamp-converter") return <UnixTimestampConverter />;
+  if (slug === "random-letter-generator") return <RandomLetterGenerator />;
+  if (slug === "password-strength-checker") return <PasswordStrengthChecker />;
+  if (slug === "uuid-bulk-generator") return <UuidBulkGenerator />;
+  if (slug === "meta-description-counter") return <MetaDescriptionCounter />;
+  if (slug === "html-escape") return <HtmlEscape />;
+  if (slug === "html-unescape") return <HtmlUnescape />;
+  if (slug === "list-randomizer") return <ListRandomizer />;
+  if (slug === "roman-numeral-converter") return <RomanNumeralConverter />;
   return null;
 }

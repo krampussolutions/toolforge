@@ -1,0 +1,3 @@
+"use client";
+import { useState } from "react";
+export default function HexToRgb(){const [hex,setHex]=useState("#6ea8fe");let out="Invalid HEX";const clean=hex.replace('#','').trim();if(/^([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(clean)){const full=clean.length===3?clean.split('').map(ch=>ch+ch).join(''):clean;const vals=[0,2,4].map(i=>parseInt(full.slice(i,i+2),16));out=`rgb(${vals[0]}, ${vals[1]}, ${vals[2]})`;}return <div className="form-panel"><div className="field"><label>HEX</label><input value={hex} onChange={(e)=>setHex(e.target.value)} /></div><div className="result-box"><div className="result-label">RGB</div><div className="result-value" style={{fontSize:"22px"}}>{out}</div></div></div>;}

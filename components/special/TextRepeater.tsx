@@ -1,0 +1,3 @@
+"use client";
+import { useState } from "react";
+export default function TextRepeater(){const [input,setInput]=useState("UtilHubX");const [count,setCount]=useState("3");const n=Math.max(1,Math.min(100,parseInt(count||"1",10)||1));const output=Array.from({length:n},()=>input).join(" ");return <div className="form-panel"><div className="form-row"><div className="field"><label>Text</label><input value={input} onChange={(e)=>setInput(e.target.value)} /></div><div className="field"><label>Repeat Count</label><input value={count} onChange={(e)=>setCount(e.target.value)} /></div></div><div className="result-box"><div className="result-label">Repeated Text</div><div className="helper" style={{whiteSpace:"pre-wrap"}}>{output}</div></div></div>;}

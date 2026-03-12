@@ -1,0 +1,3 @@
+"use client";
+import { useState } from "react";
+export default function BinaryToText(){const [input,setInput]=useState("01001000 01101001");let output="";try{output=input.trim().split(/\s+/).filter(Boolean).map(b=>String.fromCharCode(parseInt(b,2))).join("");}catch{output="Invalid binary input."}return <div className="form-panel"><div className="field"><label>Binary</label><textarea value={input} onChange={(e)=>setInput(e.target.value)} /></div><div className="result-box"><div className="result-label">Text</div><div className="helper" style={{whiteSpace:"pre-wrap"}}>{output || "Decoded text will appear here."}</div></div></div>;}

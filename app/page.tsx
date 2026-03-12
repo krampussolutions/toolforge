@@ -146,6 +146,15 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      <section className="section">
+        <h2>Newest tools</h2>
+        <div className="grid grid-4">
+          {toolPages.slice(-12).reverse().map((item) => (
+            <CalculatorCard key={item.slug} href={`/tools/${item.slug}`} title={item.title} category={item.category} description={item.description} />
+          ))}
+        </div>
+      </section>
     </>
   );
 }

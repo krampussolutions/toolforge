@@ -1,0 +1,3 @@
+"use client";
+import { useState } from "react";
+export default function MetaDescriptionCounter(){const [input,setInput]=useState("Write a concise meta description for this page.");const len=input.length;const status=len<120?"Too short":len<=160?"Ideal":"Too long";return <div className="form-panel"><div className="field"><label>Meta Description</label><textarea value={input} onChange={(e)=>setInput(e.target.value)} /></div><div className="result-box"><div className="result-label">Length</div><div className="result-value" style={{fontSize:"22px"}}>{len} characters</div><div className="helper">Status: {status}</div></div></div>;}

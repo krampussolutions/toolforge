@@ -1,0 +1,4 @@
+"use client";
+import { useState } from "react";
+const c=(v:string)=>Math.max(0,Math.min(255,parseInt(v||"0",10)||0)).toString(16).padStart(2,"0");
+export default function RgbToHex(){const [r,setR]=useState("110"),[g,setG]=useState("168"),[b,setB]=useState("254");const hex=`#${c(r)}${c(g)}${c(b)}`;return <div className="form-panel"><div className="form-row"><div className="field"><label>R</label><input value={r} onChange={(e)=>setR(e.target.value)} /></div><div className="field"><label>G</label><input value={g} onChange={(e)=>setG(e.target.value)} /></div><div className="field"><label>B</label><input value={b} onChange={(e)=>setB(e.target.value)} /></div></div><div className="result-box"><div className="result-label">HEX</div><div className="result-value" style={{fontSize:"22px"}}>{hex}</div></div></div>;}

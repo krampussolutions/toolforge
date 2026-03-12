@@ -27,15 +27,25 @@ const specialSlugs = [
   "text-sorter",
   "duplicate-line-remover",
   "png-compressor",
-  "pdf-to-jpg",
-  "pdf-to-png",
-  "qr-code-generator",
-  "barcode-generator",
-  "character-counter",
-  "text-compare",
-  "json-validator",
-  "sha256-generator",
   "webp-to-png",
+  "text-reverser",
+  "remove-extra-spaces",
+  "line-counter",
+  "word-frequency-counter",
+  "text-repeater",
+  "text-to-binary",
+  "binary-to-text",
+  "rgb-to-hex",
+  "hex-to-rgb",
+  "unix-timestamp-converter",
+  "random-letter-generator",
+  "password-strength-checker",
+  "uuid-bulk-generator",
+  "meta-description-counter",
+  "html-escape",
+  "html-unescape",
+  "list-randomizer",
+  "roman-numeral-converter"
 ];
 
 function getPage(slug: string) {
@@ -213,6 +223,16 @@ export default function Page({ params }: { params: { slug: string } }) {
             </div>
           </section>
         ) : null}
+
+        <section className="section">
+          <div className="card">
+            <h2>Parent section</h2>
+            <div className="popular-links">
+              <Link href={`/${item.parent}`}>Open related section</Link>
+              <Link href={`/categories/${item.category.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-")}`}>Browse {item.category} tools</Link>
+            </div>
+          </div>
+        </section>
 
         <div style={{ marginTop: 22 }}>
           <AdBanner slot="4455667788" />

@@ -1,5 +1,3 @@
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.utilhubx.com";
-export const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-5957528671321920";
 export const suites = [
   {
     "slug": "image-tools",
@@ -62,7 +60,7 @@ export const suites = [
     "title": "Everyday Tools",
     "shortTitle": "Everyday Tools",
     "category": "Utility",
-    "description": "Password generators, random pickers, calculators, and quick tools people use every day."
+    "description": "Password generators, text helpers, validators, generators, and quick browser tools people use every day."
   }
 ] as const;
 export const toolPages = [
@@ -323,85 +321,245 @@ export const toolPages = [
     "kind": "suite"
   },
   {
-  slug: "json-formatter",
-  title: "JSON Formatter",
-  category: "Utility",
-  description: "Format and beautify JSON online.",
-  parent: "everyday-tools",
-  kind: "special",
-},
-{
-  slug: "base64-encoder",
-  title: "Base64 Encoder",
-  category: "Utility",
-  description: "Encode text to Base64 instantly.",
-  parent: "everyday-tools",
-  kind: "special",
-},
-{
-  slug: "base64-decoder",
-  title: "Base64 Decoder",
-  category: "Utility",
-  description: "Decode Base64 text instantly.",
-  parent: "everyday-tools",
-  kind: "special",
-},
-{
-  slug: "url-encoder",
-  title: "URL Encoder",
-  category: "Utility",
-  description: "Encode text for safe use in URLs.",
-  parent: "everyday-tools",
-  kind: "special",
-},
-{
-  slug: "url-decoder",
-  title: "URL Decoder",
-  category: "Utility",
-  description: "Decode URL-encoded text instantly.",
-  parent: "everyday-tools",
-  kind: "special",
-},
-{
-  slug: "uuid-generator",
-  title: "UUID Generator",
-  category: "Utility",
-  description: "Generate UUIDs in your browser.",
-  parent: "everyday-tools",
-  kind: "special",
-},
-{
-  slug: "slug-generator",
-  title: "Slug Generator",
-  category: "Writing",
-  description: "Turn text into a clean URL slug.",
-  parent: "text-tools",
-  kind: "special",
-},
-{
-  slug: "remove-line-breaks",
-  title: "Remove Line Breaks",
-  category: "Writing",
-  description: "Remove line breaks from text quickly.",
-  parent: "text-tools",
-  kind: "special",
-},
-{
-  slug: "text-sorter",
-  title: "Text Sorter",
-  category: "Writing",
-  description: "Sort lines of text alphabetically.",
-  parent: "text-tools",
-  kind: "special",
-},
-{
-  slug: "duplicate-line-remover",
-  title: "Duplicate Line Remover",
-  category: "Writing",
-  description: "Remove duplicate lines from text.",
-  parent: "text-tools",
-  kind: "special",
-},
+    "slug": "json-formatter",
+    "title": "JSON Formatter",
+    "category": "Utility",
+    "description": "Format and beautify JSON online.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "base64-encoder",
+    "title": "Base64 Encoder",
+    "category": "Utility",
+    "description": "Encode text to Base64 instantly.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "base64-decoder",
+    "title": "Base64 Decoder",
+    "category": "Utility",
+    "description": "Decode Base64 text instantly.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "url-encoder",
+    "title": "URL Encoder",
+    "category": "Utility",
+    "description": "Encode text for safe use in URLs.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "url-decoder",
+    "title": "URL Decoder",
+    "category": "Utility",
+    "description": "Decode URL-encoded text instantly.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "uuid-generator",
+    "title": "UUID Generator",
+    "category": "Utility",
+    "description": "Generate UUIDs in your browser.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "slug-generator",
+    "title": "Slug Generator",
+    "category": "Writing",
+    "description": "Turn text into a clean URL slug.",
+    "parent": "text-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "remove-line-breaks",
+    "title": "Remove Line Breaks",
+    "category": "Writing",
+    "description": "Remove line breaks from text quickly.",
+    "parent": "text-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "text-sorter",
+    "title": "Text Sorter",
+    "category": "Writing",
+    "description": "Sort lines of text alphabetically.",
+    "parent": "text-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "duplicate-line-remover",
+    "title": "Duplicate Line Remover",
+    "category": "Writing",
+    "description": "Remove duplicate lines from text.",
+    "parent": "text-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "png-compressor",
+    "title": "PNG Compressor",
+    "category": "Image",
+    "description": "Compress PNG images in your browser.",
+    "parent": "image-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "webp-to-png",
+    "title": "WEBP to PNG",
+    "category": "Image",
+    "description": "Convert WEBP images to PNG in your browser.",
+    "parent": "image-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "text-reverser",
+    "title": "Text Reverser",
+    "category": "Writing",
+    "description": "Reverse text instantly in your browser.",
+    "parent": "text-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "remove-extra-spaces",
+    "title": "Remove Extra Spaces",
+    "category": "Writing",
+    "description": "Clean repeated spaces and blank gaps from text.",
+    "parent": "text-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "line-counter",
+    "title": "Line Counter",
+    "category": "Writing",
+    "description": "Count lines in text instantly.",
+    "parent": "text-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "word-frequency-counter",
+    "title": "Word Frequency Counter",
+    "category": "Writing",
+    "description": "Count the most common words in text.",
+    "parent": "text-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "text-repeater",
+    "title": "Text Repeater",
+    "category": "Writing",
+    "description": "Repeat text multiple times quickly.",
+    "parent": "text-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "text-to-binary",
+    "title": "Text to Binary",
+    "category": "Utility",
+    "description": "Convert plain text into binary.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "binary-to-text",
+    "title": "Binary to Text",
+    "category": "Utility",
+    "description": "Convert binary back into readable text.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "rgb-to-hex",
+    "title": "RGB to HEX",
+    "category": "Utility",
+    "description": "Convert RGB color values to HEX.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "hex-to-rgb",
+    "title": "HEX to RGB",
+    "category": "Utility",
+    "description": "Convert HEX colors to RGB values.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "unix-timestamp-converter",
+    "title": "Unix Timestamp Converter",
+    "category": "Date and Time",
+    "description": "Convert Unix timestamps and readable dates.",
+    "parent": "date-time-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "random-letter-generator",
+    "title": "Random Letter Generator",
+    "category": "Utility",
+    "description": "Generate random letters instantly.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "password-strength-checker",
+    "title": "Password Strength Checker",
+    "category": "Utility",
+    "description": "Check password strength in the browser.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "uuid-bulk-generator",
+    "title": "UUID Bulk Generator",
+    "category": "Utility",
+    "description": "Generate multiple UUIDs at once.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "meta-description-counter",
+    "title": "Meta Description Counter",
+    "category": "Writing",
+    "description": "Count characters for SEO meta descriptions.",
+    "parent": "text-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "html-escape",
+    "title": "HTML Escape",
+    "category": "Utility",
+    "description": "Escape special HTML characters safely.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "html-unescape",
+    "title": "HTML Unescape",
+    "category": "Utility",
+    "description": "Convert escaped HTML text back to normal.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "list-randomizer",
+    "title": "List Randomizer",
+    "category": "Utility",
+    "description": "Shuffle list items into a random order.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "roman-numeral-converter",
+    "title": "Roman Numeral Converter",
+    "category": "Utility",
+    "description": "Convert numbers to and from Roman numerals.",
+    "parent": "everyday-tools",
+    "kind": "special"
+  }
 ] as const;
 export const categories = [
   "Business",
@@ -414,14 +572,28 @@ export const categories = [
   "Utility",
   "Writing"
 ] as const;
+
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.utilhubx.com";
+export const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-5957528671321920";
+
+export function toSlug(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
 export const categoryDescriptions: Record<string, string> = {
-  "Image": "Image tools help people compress, resize, crop, and convert images for websites, email, and uploads.",
-  "PDF": "PDF tools make it easy to merge, split, and create PDF files directly in the browser.",
-  "Finance": "Finance tools help people estimate payments, savings growth, and ROI.",
-  "Health": "Health tools give fast estimates for BMI, calories, protein, and water intake.",
-  "Date and Time": "Date and time tools help with age checks, date difference, countdowns, and work hours.",
-  "Writing": "Writing tools help with word counts, case conversion, reading time, and placeholder content.",
-  "Conversion": "Conversion tools cover common everyday conversions like feet to meters and kg to lbs.",
+  "Image": "Image tools help people compress, resize, crop, convert, and optimize images for websites, email, and uploads.",
+  "PDF": "PDF tools make it easy to merge, split, and convert files directly in the browser.",
+  "Finance": "Finance tools help people estimate payments, savings growth, ROI, and debt-related scenarios.",
+  "Health": "Health tools give fast estimates for BMI, calories, protein, water intake, and similar everyday health questions.",
+  "Date and Time": "Date and time tools help with age checks, date difference, countdowns, work hours, and timestamp conversions.",
+  "Writing": "Writing tools help with word counts, case conversion, text cleanup, and common content editing tasks.",
+  "Conversion": "Conversion tools cover common everyday conversions like feet to meters and kilograms to pounds.",
   "Business": "Business tools help with pricing, margins, commissions, and break-even estimates.",
-  "Utility": "Utility tools cover quick tasks like percentages, tips, and password generation."
+  "Utility": "Utility tools cover quick tasks like generators, validators, encoders, decoders, and color converters."
 };

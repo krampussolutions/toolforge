@@ -1,9 +1,10 @@
 import CalculatorCard from "@/components/CalculatorCard";
-import { toolPages } from "@/lib/site";
+import { toolPages, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "Image Tools",
-  description: "Compress, resize, crop, and convert images online.",
+  title: "Image Tools | UtilHubX",
+  description: "Image tools for compression, conversion, resizing, and cleanup.",
+  alternates: { canonical: `${SITE_URL}/image-tools` },
 };
 
 export default function Page() {
@@ -11,7 +12,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="page-title">Image Tools</h1>
-      <p className="page-intro">Compress, resize, crop, and convert images without installing extra software.</p>
+      <p className="page-intro">Image tools for compression, conversion, resizing, and cleanup.</p>
       <div className="grid grid-4">
         {pages.map((item) => (
           <CalculatorCard key={item.slug} href={`/tools/${item.slug}`} title={item.title} category={item.category} description={item.description} />
