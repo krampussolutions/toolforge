@@ -299,7 +299,299 @@ export const toolContent: Record<string, ToolContent> = {
       {
         q: "Can I generate multiple passwords?",
         a: "Yes, by regenerating the result.",
+       },
+    ],
+  },
+    
+  "json-formatter": {
+    intro:
+      "JSON Formatter helps clean up raw JSON so it is easier to read, debug, and copy into apps, APIs, and config files.",
+    examples: [
+      "Format API response data",
+      "Beautify JSON before debugging",
+      "Clean up JSON for documentation or sharing",
+    ],
+    howItWorks: [
+      "Paste raw JSON into the input box",
+      "Run the formatter",
+      "Review the structured output",
+      "Copy the cleaned JSON",
+    ],
+    faq: [
+      {
+        q: "What is JSON formatting?",
+        a: "JSON formatting turns compact or messy JSON into a cleaner structure with indentation and line breaks.",
+      },
+      {
+        q: "Will this fix invalid JSON?",
+        a: "No. It can format valid JSON, but invalid JSON must be corrected first.",
+      },
+      {
+        q: "Who uses a JSON formatter?",
+        a: "Developers, testers, and anyone working with APIs or structured data.",
       },
     ],
   },
-};
+
+  "base64-encoder": {
+    intro:
+      "Base64 Encoder converts plain text into Base64 format for data transfer, embedding, and testing tasks.",
+    examples: [
+      "Encode text for API testing",
+      "Convert a value before storing or sharing it",
+      "Prepare content for systems that expect Base64 input",
+    ],
+    howItWorks: [
+      "Enter the text you want to encode",
+      "Run the encoder",
+      "Copy the Base64 result",
+    ],
+    faq: [
+      {
+        q: "Is Base64 encryption?",
+        a: "No. Base64 is an encoding format, not a secure encryption method.",
+      },
+      {
+        q: "Why use Base64 encoding?",
+        a: "It is commonly used when systems need text-safe transmission of data.",
+      },
+      {
+        q: "Can I decode the result later?",
+        a: "Yes. Base64 output can be converted back using a decoder.",
+      },
+    ],
+  },
+
+  "base64-decoder": {
+    intro:
+      "Base64 Decoder converts Base64 text back into readable plain text for testing, debugging, and data inspection.",
+    examples: [
+      "Decode an API value",
+      "Inspect encoded text from a system",
+      "Convert Base64 back into readable content",
+    ],
+    howItWorks: [
+      "Paste the Base64 input",
+      "Run the decoder",
+      "Review the decoded text",
+    ],
+    faq: [
+      {
+        q: "What happens if the input is invalid?",
+        a: "If the Base64 text is malformed, the decoder may return an error or unreadable result.",
+      },
+      {
+        q: "Can this decode any Base64 string?",
+        a: "It can decode standard valid Base64 text.",
+      },
+      {
+        q: "Is decoding Base64 the same as decrypting data?",
+        a: "No. Base64 decoding only reverses encoding, not encryption.",
+      },
+    ],
+  },
+
+  "url-encoder": {
+    intro:
+      "URL Encoder converts text into a URL-safe format so special characters can be passed correctly in links and query strings.",
+    examples: [
+      "Encode search parameters in a URL",
+      "Prepare text for a query string",
+      "Convert spaces and symbols for safe URL use",
+    ],
+    howItWorks: [
+      "Enter the text you want to encode",
+      "Run the URL encoder",
+      "Copy the encoded result",
+    ],
+    faq: [
+      {
+        q: "Why do I need URL encoding?",
+        a: "Some characters like spaces, ampersands, and symbols can break URLs if they are not encoded properly.",
+      },
+      {
+        q: "Does this help with query strings?",
+        a: "Yes. URL encoding is commonly used for query parameters.",
+      },
+      {
+        q: "Can I reverse it later?",
+        a: "Yes. Encoded text can be converted back with a URL decoder.",
+      },
+    ],
+  },
+
+  "url-decoder": {
+    intro:
+      "URL Decoder converts encoded URL text back into readable characters so links, query strings, and parameters are easier to inspect.",
+    examples: [
+      "Read encoded search parameters",
+      "Inspect a query string",
+      "Turn percent-encoded text back into normal text",
+    ],
+    howItWorks: [
+      "Paste the encoded text",
+      "Run the decoder",
+      "Review the readable output",
+    ],
+    faq: [
+      {
+        q: "What does URL decoding do?",
+        a: "It converts encoded symbols like %20 back into their original characters.",
+      },
+      {
+        q: "Can I use this for full URLs?",
+        a: "Yes, especially when you need to inspect encoded portions of a URL.",
+      },
+      {
+        q: "Will it help with debugging links?",
+        a: "Yes. It makes encoded parameters easier to read.",
+      },
+    ],
+  },
+
+  "uuid-generator": {
+    intro:
+      "UUID Generator creates unique identifiers in the browser for development, testing, data records, and general utility use.",
+    examples: [
+      "Create IDs for test data",
+      "Generate unique record identifiers",
+      "Use UUIDs in development workflows",
+    ],
+    howItWorks: [
+      "Open the generator",
+      "Create a new UUID",
+      "Copy the generated value",
+    ],
+    faq: [
+      {
+        q: "What is a UUID?",
+        a: "A UUID is a universally unique identifier often used for records, sessions, and objects.",
+      },
+      {
+        q: "Why use a UUID instead of a simple number?",
+        a: "UUIDs reduce the chance of collisions when unique values are needed across systems.",
+      },
+      {
+        q: "Can I generate more than one?",
+        a: "Yes. You can generate a new UUID any time.",
+      },
+    ],
+  },
+
+  "slug-generator": {
+    intro:
+      "Slug Generator turns normal text into a cleaner URL-friendly slug for pages, blog posts, product links, and SEO work.",
+    examples: [
+      "Create a slug for a blog article",
+      "Build a cleaner product page URL",
+      "Turn a page title into an SEO-friendly path",
+    ],
+    howItWorks: [
+      "Enter your text or title",
+      "Run the slug generator",
+      "Copy the clean slug",
+    ],
+    faq: [
+      {
+        q: "What is a slug?",
+        a: "A slug is the readable part of a URL, usually made from lowercase words separated by hyphens.",
+      },
+      {
+        q: "Why are slugs important?",
+        a: "They make URLs cleaner, easier to read, and often better for SEO.",
+      },
+      {
+        q: "Should slugs use spaces?",
+        a: "No. Slugs usually replace spaces with hyphens.",
+      },
+    ],
+  },
+
+  "remove-line-breaks": {
+    intro:
+      "Remove Line Breaks cleans multiline text into a single line or tighter block, which is useful for forms, code snippets, and imports.",
+    examples: [
+      "Clean copied text before pasting into a form",
+      "Turn multiline content into one line",
+      "Prepare text for systems that reject line breaks",
+    ],
+    howItWorks: [
+      "Paste your text",
+      "Run the cleaner",
+      "Copy the cleaned output",
+    ],
+    faq: [
+      {
+        q: "What does removing line breaks do?",
+        a: "It removes new lines and usually joins the text into a single continuous block.",
+      },
+      {
+        q: "Can this help with form inputs?",
+        a: "Yes. It is useful when a system expects one-line text only.",
+      },
+      {
+        q: "Will it remove extra spaces too?",
+        a: "That depends on the implementation, but many versions also normalize spacing.",
+      },
+    ],
+  },
+
+  "text-sorter": {
+    intro:
+      "Text Sorter arranges lines of text alphabetically so lists, names, keywords, and notes are easier to organize.",
+    examples: [
+      "Sort a list of keywords",
+      "Organize names alphabetically",
+      "Clean up unordered notes or tags",
+    ],
+    howItWorks: [
+      "Paste your lines of text",
+      "Run the sorter",
+      "Review the sorted output",
+    ],
+    faq: [
+      {
+        q: "What does a text sorter do?",
+        a: "It reorders lines of text alphabetically or by another sorting rule.",
+      },
+      {
+        q: "Can I sort one item per line?",
+        a: "Yes. That is the most common use case.",
+      },
+      {
+        q: "Is this useful for keyword lists?",
+        a: "Yes. It helps organize SEO terms, tags, and other lists quickly.",
+      },
+    ],
+  },
+
+  "duplicate-line-remover": {
+    intro:
+      "Duplicate Line Remover finds repeated lines and keeps only unique entries, which is useful for lists, tags, names, and cleanup tasks.",
+    examples: [
+      "Remove repeated keywords",
+      "Clean up a list of emails or names",
+      "Deduplicate copied lines from notes or exports",
+    ],
+    howItWorks: [
+      "Paste the text lines",
+      "Run the duplicate remover",
+      "Copy the cleaned list",
+    ],
+    faq: [
+      {
+        q: "What counts as a duplicate line?",
+        a: "A duplicate line is a repeated line with the same text as another line in the list.",
+      },
+      {
+        q: "Will the original order stay the same?",
+        a: "That depends on the implementation, but many tools keep the first appearance and remove repeats after it.",
+      },
+      {
+        q: "Is this good for keyword cleanup?",
+        a: "Yes. It is useful for cleaning repeated keywords, tags, or entries.",
+      },
+    ],
+  },
+}
+  
