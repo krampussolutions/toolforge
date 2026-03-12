@@ -34,7 +34,7 @@ const categoryIcons: Record<string, JSX.Element> = {
   Writing: <Type size={22} />,
   Utility: <Wrench size={22} />,
   Health: <Calculator size={22} />,
-  "Date & Time": <Calculator size={22} />,
+  "Date and Time": <Calculator size={22} />,
   Business: <Calculator size={22} />,
 };
 

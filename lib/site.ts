@@ -32,8 +32,8 @@ export const suites = [
   {
     "slug": "date-time-tools",
     "title": "Date & Time Tools",
-    "shortTitle": "Date & Time",
-    "category": "Date & Time",
+    "shortTitle": "Date and Time",
+    "category": "Date and Time",
     "description": "Age, countdowns, date difference, work hours, and time duration tools."
   },
   {
@@ -213,7 +213,7 @@ export const toolPages = [
   {
     "slug": "age-calculator",
     "title": "Age Calculator",
-    "category": "Date & Time",
+    "category": "Date and Time",
     "description": "Calculate your exact age online.",
     "parent": "date-time-tools",
     "kind": "suite"
@@ -221,7 +221,7 @@ export const toolPages = [
   {
     "slug": "days-between-dates",
     "title": "Days Between Dates Calculator",
-    "category": "Date & Time",
+    "category": "Date and Time",
     "description": "Find the number of days between two dates.",
     "parent": "date-time-tools",
     "kind": "suite"
@@ -229,7 +229,7 @@ export const toolPages = [
   {
     "slug": "countdown-calculator",
     "title": "Countdown Calculator",
-    "category": "Date & Time",
+    "category": "Date and Time",
     "description": "Count down to a future date.",
     "parent": "date-time-tools",
     "kind": "suite"
@@ -237,7 +237,7 @@ export const toolPages = [
   {
     "slug": "hours-worked-calculator",
     "title": "Hours Worked Calculator",
-    "category": "Date & Time",
+    "category": "Date and Time",
     "description": "Calculate total hours worked quickly.",
     "parent": "date-time-tools",
     "kind": "suite"
@@ -406,7 +406,7 @@ export const toolPages = [
 export const categories = [
   "Business",
   "Conversion",
-  "Date & Time",
+  "Date and Time",
   "Finance",
   "Health",
   "Image",
@@ -419,7 +419,7 @@ export const categoryDescriptions: Record<string, string> = {
   "PDF": "PDF tools make it easy to merge, split, and create PDF files directly in the browser.",
   "Finance": "Finance tools help people estimate payments, savings growth, and ROI.",
   "Health": "Health tools give fast estimates for BMI, calories, protein, and water intake.",
-  "Date & Time": "Date and time tools help with age checks, date difference, countdowns, and work hours.",
+  "Date and Time": "Date and time tools help with age checks, date difference, countdowns, and work hours.",
   "Writing": "Writing tools help with word counts, case conversion, reading time, and placeholder content.",
   "Conversion": "Conversion tools cover common everyday conversions like feet to meters and kg to lbs.",
   "Business": "Business tools help with pricing, margins, commissions, and break-even estimates.",

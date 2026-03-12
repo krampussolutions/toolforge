@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default function Page() {
-  const pages = toolPages.filter((p) => ["Finance", "Health", "Business", "Utility", "Date & Time"].includes(p.category));
+  const pages = toolPages.filter((p) => ["Finance", "Health", "Business", "Utility", "Date and Time"].includes(p.category));
   return (
     <section>
       <h1 className="page-title">Online Calculators</h1>
