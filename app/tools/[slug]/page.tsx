@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import AdBanner from "@/components/AdBanner";
 import ToolSidebar from "@/components/ToolSidebar";
 import SpecialToolRenderer from "@/components/special/SpecialToolRenderer";
 import { SITE_URL, toolPages } from "@/lib/site";
 import { toolContent } from "@/lib/tool-content";
+import { programmaticPages } from "@/lib/programmatic-pages";
 
 const specialSlugs = [
   "compress-image",
@@ -24,6 +26,16 @@ const specialSlugs = [
   "remove-line-breaks",
   "text-sorter",
   "duplicate-line-remover",
+  "png-compressor",
+  "pdf-to-jpg",
+  "pdf-to-png",
+  "qr-code-generator",
+  "barcode-generator",
+  "character-counter",
+  "text-compare",
+  "json-validator",
+  "sha256-generator",
+  "webp-to-png",
 ];
 
 function getPage(slug: string) {
@@ -42,16 +54,26 @@ export function generateMetadata({
   const item = getPage(params.slug);
   if (!item) return {};
 
+  const title = `${item.title} | UtilHubX`;
+  const url = `${SITE_URL}/tools/${item.slug}`;
+
   return {
-    title: item.title,
+    title,
     description: item.description,
     alternates: {
-      canonical: `${SITE_URL}/tools/${item.slug}`,
+      canonical: url,
     },
     openGraph: {
-      title: item.title,
+      title,
       description: item.description,
-      url: `${SITE_URL}/tools/${item.slug}`,
+      url,
+      siteName: "UtilHubX",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: item.description,
     },
   };
 }
@@ -63,30 +85,40 @@ export default function Page({ params }: { params: { slug: string } }) {
   const isSpecial = specialSlugs.includes(item.slug);
   const content = toolContent[item.slug];
 
+  const relatedGuides = programmaticPages
+    .filter((p) => p.relatedTool === item.slug)
+    .slice(0, 4);
+
   const appSchema = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@type": "SoftwareApplication",
     name: item.title,
     applicationCategory: "UtilitiesApplication",
-    operatingSystem: "All",
+    operatingSystem: "Web",
     url: `${SITE_URL}/tools/${item.slug}`,
     description: item.description,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
   };
 
-  const faqSchema = content
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: content.faq.map((entry) => ({
-          "@type": "Question",
-          name: entry.q,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: entry.a,
-          },
-        })),
-      }
-    : null;
+  const faqSchema =
+    content && content.faq.length
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: content.faq.map((entry) => ({
+            "@type": "Question",
+            name: entry.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: entry.a,
+            },
+          })),
+        }
+      : null;
 
   return (
     <div className="tool-layout">
@@ -165,6 +197,21 @@ export default function Page({ params }: { params: { slug: string } }) {
               </div>
             </section>
           </>
+        ) : null}
+
+        {relatedGuides.length ? (
+          <section className="section">
+            <div className="card">
+              <h2>Related guides</h2>
+              <div className="popular-links">
+                {relatedGuides.map((guide) => (
+                  <Link key={guide.slug} href={`/guides/${guide.slug}`}>
+                    {guide.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
         ) : null}
 
         <div style={{ marginTop: 22 }}>
