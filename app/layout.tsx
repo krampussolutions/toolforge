@@ -7,11 +7,11 @@ import { ADSENSE_CLIENT, SITE_URL } from "@/lib/site";
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Simple Tools for Everyday Tasks",
-    template: "%s",
+    default: "UtilHubX | Free Online Tools and Calculators",
+    template: "%s | UtilHubX",
   },
   description:
-    "Free online tools for everyday tasks, including image tools, PDF tools, calculators, converters, and text tools.",
+    "Free online tools for images, PDFs, calculators, text, converters, and everyday browser-based tasks.",
 };
 
 export default function RootLayout({

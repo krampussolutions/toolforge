@@ -144,10 +144,10 @@ export default function Page({
         <div className="card copy">
           <h2>What the {page.title} guide covers</h2>
           <p>
-            This guide page is designed to explain the workflow behind {page.title.toLowerCase()} in plain language before you open the main tool. It helps visitors understand what the task means, when it is useful, and which UtilHubX page is the best place to finish the job.
+            This guide explains the core workflow behind {page.title.toLowerCase()}, when people typically need it, and which UtilHubX tool is the fastest place to complete the task.
           </p>
           <p>
-            Many people land on guide-style pages while searching for a quick explanation, a comparison point, or a simpler entry path into a browser-based tool. This page exists to make that jump easier.
+            Use it as a quick orientation page before entering real values, uploading a file, or comparing nearby tools in the same category.
           </p>
         </div>
       </section>

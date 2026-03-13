@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import CalculatorCard from "@/components/CalculatorCard";
 import {
@@ -38,7 +39,6 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   return {
     title: `${category} Category`,
     description,
-    robots: { index: false, follow: true },
     alternates: { canonical: url },
     openGraph: {
       title: `${category} Category`,
@@ -63,8 +63,30 @@ export default function Page({ params }: { params: { slug: string } }) {
   const matchingSuites = suites.filter((suite) => suite.category === category);
   const copy = categoryUsageCopy(category);
 
+  const url = `${SITE_URL}/categories/${toSlug(category)}`;
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `${category} Tools`,
+    description: categoryDescriptions[category],
+    url,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: pages.slice(0, 12).map((page, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: page.title,
+        url: `${SITE_URL}/tools/${page.slug}`,
+      })),
+    },
+  };
+
   return (
     <section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
       <h1 className="page-title">{category} Tools</h1>
       <p className="page-intro">
         {categoryDescriptions[category] || `Browse ${category.toLowerCase()} tools.`}
@@ -116,9 +138,9 @@ export default function Page({ params }: { params: { slug: string } }) {
             </p>
             <div className="popular-links">
               {matchingSuites.map((suite) => (
-                <a key={suite.slug} href={`/calculators/${suite.slug}`}>
+                <Link key={suite.slug} href={`/calculators/${suite.slug}`}>
                   {suite.title}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

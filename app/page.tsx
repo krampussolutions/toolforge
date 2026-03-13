@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Simple Tools for Everyday Tasks",
+  title: "Free Online Tools, Calculators, PDF Tools, and Image Tools",
   description:
     "Free online tools for files, images, calculators, converters, and everyday tasks.",
   alternates: {
     canonical: `${SITE_URL}/`,
   },
   openGraph: {
-    title: "Simple Tools for Everyday Tasks",
+    title: "Free Online Tools, Calculators, PDF Tools, and Image Tools",
     description:
       "Free online tools for files, images, calculators, converters, and everyday tasks.",
     url: `${SITE_URL}/`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Simple Tools for Everyday Tasks",
+    title: "Free Online Tools, Calculators, PDF Tools, and Image Tools",
     description:
       "Free online tools for files, images, calculators, converters, and everyday tasks.",
   },
@@ -74,8 +74,8 @@ export default function HomePage() {
         <p>
           UtilHubX helps people finish common tasks quickly without downloading
           software or creating an account. Compress images, merge PDFs, run
-          calculations, and convert files in a cleaner, customer-friendly
-          workspace.
+          calculations, convert files, and handle everyday text or utility jobs
+          in one browser-based workspace.
         </p>
 
         <div className="hero-actions">

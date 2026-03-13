@@ -66,7 +66,7 @@ export function generateMetadata({
 
   const title = `${item.title} | ${item.category} Tool`;
   const url = `${SITE_URL}/tools/${item.slug}`;
-  const description = `${item.title} on UtilHubX helps you ${item.description.charAt(0).toLowerCase()}${item.description.slice(1)} Free, browser-based, fast to use, and designed for desktop or mobile.`;
+  const description = `${item.title} on UtilHubX helps you ${item.description.charAt(0).toLowerCase()}${item.description.slice(1)} Use it free in your browser on desktop or mobile.`;
 
   return {
     title,
@@ -131,12 +131,6 @@ export default function Page({ params }: { params: { slug: string } }) {
         }
       : null;
 
-  const categorySlug = item.category
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-");
 
   return (
     <div className="tool-layout">
@@ -166,7 +160,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           <div className="card">
             <h2>Use the {item.title} online</h2>
             <p>
-              This page is designed to help visitors complete the {item.title.toLowerCase()} workflow quickly without extra steps, downloads, or account setup.
+              Open the {item.title.toLowerCase()} in your browser, enter the values or content you need, and get a result without downloads, account setup, or switching devices.
             </p>
           </div>
         )}
@@ -235,11 +229,19 @@ export default function Page({ params }: { params: { slug: string } }) {
           <div className="card">
             <h2>Why people use the {item.title}</h2>
             <p>
-              People use this tool when they need a quick result without installing
-              extra software, creating an account, or switching devices. It works
-              well for everyday tasks, schoolwork, business use, and simple
-              browser-based workflows that need a fast answer.
+              People usually use the {item.title.toLowerCase()} when they want a fast, focused workflow for a specific {item.category.toLowerCase()} task. It is useful for everyday jobs, schoolwork, business tasks, and quick one-off checks where speed matters more than complex software.
             </p>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="card">
+            <h2>Tips for better results</h2>
+            <ul>
+              <li>Double-check the values, file, or text you enter before generating a result.</li>
+              <li>Use the related section link below if you need a nearby tool for the same workflow.</li>
+              <li>On mobile, review the final output before downloading or copying it.</li>
+            </ul>
           </div>
         </section>
 
