@@ -64,18 +64,19 @@ export function generateMetadata({
   const item = getPage(params.slug);
   if (!item) return {};
 
-  const title = `${item.title} | UtilHubX`;
+  const title = `${item.title} | Free Online ${item.category} Tool | UtilHubX`;
   const url = `${SITE_URL}/tools/${item.slug}`;
+  const description = `${item.title} on UtilHubX helps you ${item.description.charAt(0).toLowerCase()}${item.description.slice(1)} Free, browser-based, fast to use, and designed for desktop or mobile.`;
 
   return {
     title,
-    description: item.description,
+    description,
     alternates: {
       canonical: url,
     },
     openGraph: {
       title,
-      description: item.description,
+      description,
       url,
       siteName: "UtilHubX",
       type: "website",
@@ -83,7 +84,7 @@ export function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title,
-      description: item.description,
+      description,
     },
   };
 }
@@ -130,6 +131,13 @@ export default function Page({ params }: { params: { slug: string } }) {
         }
       : null;
 
+  const categorySlug = item.category
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+
   return (
     <div className="tool-layout">
       <div>
@@ -156,10 +164,9 @@ export default function Page({ params }: { params: { slug: string } }) {
           <SpecialToolRenderer slug={item.slug} />
         ) : (
           <div className="card">
-            <h2>Quick answer tool</h2>
+            <h2>Use the {item.title} online</h2>
             <p>
-              This page is designed to help visitors complete a common task
-              quickly without extra steps.
+              This page is designed to help visitors complete the {item.title.toLowerCase()} workflow quickly without extra steps, downloads, or account setup.
             </p>
           </div>
         )}
@@ -168,14 +175,14 @@ export default function Page({ params }: { params: { slug: string } }) {
           <>
             <section className="section">
               <div className="card">
-                <h2>About this tool</h2>
+                <h2>What the {item.title} does</h2>
                 <p>{content.intro}</p>
               </div>
             </section>
 
             <section className="section">
               <div className="card">
-                <h2>Common examples</h2>
+                <h2>Common ways to use the {item.title}</h2>
                 <ul>
                   {content.examples.map((example) => (
                     <li key={example}>{example}</li>
@@ -186,7 +193,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
             <section className="section">
               <div className="card">
-                <h2>How it works</h2>
+                <h2>How the {item.title} works</h2>
                 <ol>
                   {content.howItWorks.map((step) => (
                     <li key={step}>{step}</li>
@@ -197,7 +204,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
             <section className="section">
               <div className="card">
-                <h2>FAQ</h2>
+                <h2>{item.title} questions and answers</h2>
                 {content.faq.map((entry) => (
                   <div key={entry.q} style={{ marginBottom: 18 }}>
                     <h3>{entry.q}</h3>
@@ -212,7 +219,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         {relatedGuides.length ? (
           <section className="section">
             <div className="card">
-              <h2>Related guides</h2>
+              <h2>Guides related to {item.title}</h2>
               <div className="popular-links">
                 {relatedGuides.map((guide) => (
                   <Link key={guide.slug} href={`/guides/${guide.slug}`}>
@@ -226,10 +233,10 @@ export default function Page({ params }: { params: { slug: string } }) {
 
         <section className="section">
           <div className="card">
-            <h2>Parent section</h2>
+            <h2>More {item.category.toLowerCase()} pages on UtilHubX</h2>
             <div className="popular-links">
-              <Link href={`/${item.parent}`}>Open related section</Link>
-              <Link href={`/categories/${item.category.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-")}`}>Browse {item.category} tools</Link>
+              <Link href={`/calculators/${item.parent}`}>Open related section</Link>
+              <Link href={`/categories/${categorySlug}`}>Browse {item.category} tools</Link>
             </div>
           </div>
         </section>

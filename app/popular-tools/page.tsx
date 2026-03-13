@@ -3,25 +3,24 @@ import { toolPages, SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Popular Tools | UtilHubX",
-  description:
-    "Browse the most used tools on UtilHubX, including image tools, PDF tools, calculators, and everyday utilities.",
+  title: "Popular Tools | Most Used Online Utilities | UtilHubX",
+  description: "Explore the most-used tools on UtilHubX, including popular image tools, PDF utilities, calculators, and everyday browser-based helpers.",
   alternates: {
     canonical: `${SITE_URL}/popular-tools`,
   },
   openGraph: {
-    title: "Popular Tools | UtilHubX",
+    title: "Popular Tools | Most Used Online Utilities | UtilHubX",
     description:
-      "Browse the most used tools on UtilHubX, including image tools, PDF tools, calculators, and everyday utilities.",
+      "Explore the most-used tools on UtilHubX, including popular image tools, PDF utilities, calculators, and everyday browser-based helpers.",
     url: `${SITE_URL}/popular-tools`,
     siteName: "UtilHubX",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Popular Tools | UtilHubX",
+    title: "Popular Tools | Most Used Online Utilities | UtilHubX",
     description:
-      "Browse the most used tools on UtilHubX, including image tools, PDF tools, calculators, and everyday utilities.",
+      "Explore the most-used tools on UtilHubX, including popular image tools, PDF utilities, calculators, and everyday browser-based helpers.",
   },
 };
 

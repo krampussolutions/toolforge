@@ -2,20 +2,20 @@ import CalculatorCard from "@/components/CalculatorCard";
 import { toolPages, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "Image Tools | UtilHubX",
-  description: "Image tools for compression, conversion, resizing, and cleanup.",
+  title: "Image Tools | Free Online Image Editors and Converters | UtilHubX",
+  description: "Browse free image tools on UtilHubX for compression, conversion, cropping, resizing, and other quick browser-based image tasks.",
   alternates: { canonical: `${SITE_URL}/image-tools` },
   openGraph: {
-    title: "Image Tools | UtilHubX",
-    description: "Image tools for compression, conversion, resizing, and cleanup.",
+    title: "Image Tools | Free Online Image Editors and Converters | UtilHubX",
+    description: "Browse free image tools on UtilHubX for compression, conversion, cropping, resizing, and other quick browser-based image tasks.",
     url: `${SITE_URL}/image-tools`,
     siteName: "UtilHubX",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Image Tools | UtilHubX",
-    description: "Image tools for compression, conversion, resizing, and cleanup.",
+    title: "Image Tools | Free Online Image Editors and Converters | UtilHubX",
+    description: "Browse free image tools on UtilHubX for compression, conversion, cropping, resizing, and other quick browser-based image tasks.",
   },
 };
 
@@ -24,11 +24,11 @@ export default function Page() {
   return (
     <section>
       <h1 className="page-title">Image Tools</h1>
-      <p className="page-intro">Image tools for compression, conversion, resizing, and cleanup.</p>
+      <p className="page-intro">Browse free image tools on UtilHubX for compression, conversion, cropping, resizing, and other quick browser-based image tasks.</p>
 
       <section className="section">
         <div className="card copy">
-          <h2>What these image tools help with</h2>
+          <h2>What UtilHubX image tools help you do</h2>
           <p>
             This section brings together practical browser-based image workflows
             for people who need fast results without opening heavy desktop
@@ -46,7 +46,7 @@ export default function Page() {
       </section>
 
       <section className="section">
-        <h2>Image tools on UtilHubX</h2>
+        <h2>Popular image editing and conversion tasks</h2>
         <div className="grid grid-4">
           {pages.map((item) => (
             <CalculatorCard key={item.slug} href={`/tools/${item.slug}`} title={item.title} category={item.category} description={item.description} />
@@ -56,7 +56,7 @@ export default function Page() {
 
       <section className="section">
         <div className="card">
-          <h2>Common uses</h2>
+          <h2>Popular image editing and conversion tasks</h2>
           <ul>
             <li>Prepare images for websites, forms, and email attachments.</li>
             <li>Convert between common image formats in a few clicks.</li>

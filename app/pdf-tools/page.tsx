@@ -2,20 +2,20 @@ import CalculatorCard from "@/components/CalculatorCard";
 import { toolPages, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "PDF Tools | UtilHubX",
-  description: "PDF tools for merging, splitting, and browser-based conversion.",
+  title: "PDF Tools | Free Online PDF Utilities | UtilHubX",
+  description: "Browse free PDF tools on UtilHubX for merging, splitting, and building PDF files in a fast browser-based workflow.",
   alternates: { canonical: `${SITE_URL}/pdf-tools` },
   openGraph: {
-    title: "PDF Tools | UtilHubX",
-    description: "PDF tools for merging, splitting, and browser-based conversion.",
+    title: "PDF Tools | Free Online PDF Utilities | UtilHubX",
+    description: "Browse free PDF tools on UtilHubX for merging, splitting, and building PDF files in a fast browser-based workflow.",
     url: `${SITE_URL}/pdf-tools`,
     siteName: "UtilHubX",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PDF Tools | UtilHubX",
-    description: "PDF tools for merging, splitting, and browser-based conversion.",
+    title: "PDF Tools | Free Online PDF Utilities | UtilHubX",
+    description: "Browse free PDF tools on UtilHubX for merging, splitting, and building PDF files in a fast browser-based workflow.",
   },
 };
 
@@ -24,11 +24,11 @@ export default function Page() {
   return (
     <section>
       <h1 className="page-title">PDF Tools</h1>
-      <p className="page-intro">PDF tools for merging, splitting, and browser-based conversion.</p>
+      <p className="page-intro">Browse free PDF tools on UtilHubX for merging, splitting, and building PDF files in a fast browser-based workflow.</p>
 
       <section className="section">
         <div className="card copy">
-          <h2>What these PDF tools help with</h2>
+          <h2>What UtilHubX PDF tools help with</h2>
           <p>
             PDF tasks are often small but time-sensitive. People need to merge a
             few files, split pages out of a larger document, or turn images into
@@ -45,7 +45,7 @@ export default function Page() {
       </section>
 
       <section className="section">
-        <h2>PDF tools on UtilHubX</h2>
+        <h2>Popular PDF document tasks</h2>
         <div className="grid grid-4">
           {pages.map((item) => (
             <CalculatorCard key={item.slug} href={`/tools/${item.slug}`} title={item.title} category={item.category} description={item.description} />
@@ -55,7 +55,7 @@ export default function Page() {
 
       <section className="section">
         <div className="card">
-          <h2>Common uses</h2>
+          <h2>Popular PDF document tasks</h2>
           <ul>
             <li>Combine multiple documents into one shareable PDF.</li>
             <li>Extract selected pages from larger files.</li>

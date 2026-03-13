@@ -31,23 +31,26 @@ export function generateMetadata({
   const page = getPage(params.slug);
   if (!page) return {};
 
+  const description = `${page.title} on UtilHubX is a guide page that explains the workflow, points you to the matching tool, and helps you complete this ${page.category.toLowerCase()} task faster online.`;
+
   return {
-    title: `${page.title} | UtilHubX`,
-    description: page.description,
+    title: `${page.title} Guide | UtilHubX`,
+    description,
+    robots: { index: false, follow: true },
     alternates: {
       canonical: `${SITE_URL}/guides/${page.slug}`,
     },
     openGraph: {
-      title: `${page.title} | UtilHubX`,
-      description: page.description,
+      title: `${page.title} Guide | UtilHubX`,
+      description,
       url: `${SITE_URL}/guides/${page.slug}`,
       siteName: "UtilHubX",
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${page.title} | UtilHubX`,
-      description: page.description,
+      title: `${page.title} Guide | UtilHubX`,
+      description,
     },
   };
 }
@@ -114,7 +117,7 @@ export default function Page({
         name: `Who is this page for?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `This page is for people who want a quick explanation, nearby related pages, and a direct path to practical ${categoryLabel(page.category)} tools.`,
+          text: `This guide is for people who want a quick explanation of the workflow before using a ${page.category.toLowerCase()} tool online.`,
         },
       },
     ],
@@ -134,97 +137,50 @@ export default function Page({
       />
 
       <span className="kicker">{page.category}</span>
-      <h1 className="page-title" style={{ marginTop: 14 }}>
-        {page.title}
-      </h1>
+      <h1 className="page-title">{page.title}</h1>
       <p className="page-intro">{page.description}</p>
 
-      <div className="card copy">
-        <h2>What this page helps you do</h2>
-        <p>
-          {page.title} is designed for visitors who want to understand the task
-          before jumping straight into the working tool. Instead of landing on a
-          thin doorway page with almost no context, you get a clearer overview
-          of the job, a direct route to the matching utility, and nearby links
-          that help you keep moving if your task changes slightly.
-        </p>
-        <p>
-          This is especially useful for people searching broad phrases like
-          “online,” “calculator,” or “converter” and then deciding which exact
-          workflow fits their situation. UtilHubX uses these guide pages to make
-          the path from search intent to useful action much faster.
-        </p>
-
-        {relatedTool ? (
-          <p style={{ marginTop: 16 }}>
-            <Link className="button" href={`/tools/${relatedTool.slug}`}>
-              Open {relatedTool.title}
-            </Link>
-          </p>
-        ) : null}
-      </div>
-
       <section className="section">
-        <div className="card">
-          <h2>How to use this guide</h2>
-          <ol>
-            <li>Read the short overview to confirm you are on the right task.</li>
-            <li>Open the matching tool if you are ready to calculate, convert, or format.</li>
-            <li>Use the related pages below if your job is similar but not identical.</li>
-            <li>Return to the parent landing page if you want to compare several options in the same topic area.</li>
-          </ol>
+        <div className="card copy">
+          <h2>What the {page.title} guide covers</h2>
+          <p>
+            This guide page is designed to explain the workflow behind {page.title.toLowerCase()} in plain language before you open the main tool. It helps visitors understand what the task means, when it is useful, and which UtilHubX page is the best place to finish the job.
+          </p>
+          <p>
+            Many people land on guide-style pages while searching for a quick explanation, a comparison point, or a simpler entry path into a browser-based tool. This page exists to make that jump easier.
+          </p>
         </div>
       </section>
 
       <section className="section">
         <div className="card">
-          <h2>When this page is useful</h2>
+          <h2>When to use {page.title.toLowerCase()}</h2>
           <ul>
             {useCases.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <p>
-            Because this page sits inside a larger content cluster, it also
-            helps searchers discover related workflows without having to run a
-            new search. That improves navigation for people comparing tool types,
-            file formats, calculators, and similar browser-based tasks.
-          </p>
         </div>
       </section>
 
-      <section className="section">
-        <div className="card">
-          <h2>Related pages and next steps</h2>
-          <p>
-            Start with the direct tool if you already know what you need. Use
-            the parent landing page if you want to browse multiple {categoryLabel(page.category)}
-            options in one place. The nearby links below are also helpful when a
-            search query is close to your goal but not perfectly matched.
-          </p>
-          <div className="popular-links">
-            <Link href={page.parentLanding}>Parent landing page</Link>
-            {relatedTool ? (
-              <Link href={`/tools/${relatedTool.slug}`}>Working tool</Link>
-            ) : null}
-            {similarPages.map((item) => (
-              <Link key={item.slug} href={`/guides/${item.slug}`}>
-                {item.title}
-              </Link>
-            ))}
+      {relatedTool ? (
+        <section className="section">
+          <div className="card">
+            <h2>Open the main tool for {page.title.toLowerCase()}</h2>
+            <p>
+              The best place to complete this workflow is the {relatedTool.title} page. Use it when you are ready to enter your values, upload a file, or generate the final result.
+            </p>
+            <div className="popular-links">
+              <Link href={`/tools/${relatedTool.slug}`}>{relatedTool.title}</Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       {relatedTools.length ? (
         <section className="section">
           <div className="card">
-            <h2>Related tools</h2>
-            <p>
-              These tools cover similar jobs in the same topic area and are a
-              good next step when you want to compare methods or complete a
-              slightly different task.
-            </p>
+            <h2>Related {page.category.toLowerCase()} tools</h2>
             <div className="popular-links">
               {relatedTools.map((tool) => (
                 <Link key={tool.slug} href={`/tools/${tool.slug}`}>
@@ -236,30 +192,40 @@ export default function Page({
         </section>
       ) : null}
 
+      {similarPages.length ? (
+        <section className="section">
+          <div className="card">
+            <h2>More guides like {page.title.toLowerCase()}</h2>
+            <div className="popular-links">
+              {similarPages.map((item) => (
+                <Link key={item.slug} href={`/guides/${item.slug}`}>
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="section">
         <div className="card">
-          <h2>Frequently asked questions</h2>
+          <h2>{page.title} guide questions</h2>
           <div style={{ marginBottom: 18 }}>
-            <h3>Is this the actual tool?</h3>
+            <h3>Does this page complete the task for me?</h3>
             <p>
-              This page is a guide and navigation page. The main action happens
-              inside the related UtilHubX tool linked above.
+              No. This page explains the workflow and points you to the matching tool. Use the related tool link above when you are ready to complete the task.
             </p>
           </div>
           <div style={{ marginBottom: 18 }}>
-            <h3>Why not go directly to the tool every time?</h3>
+            <h3>Why not go straight to the tool?</h3>
             <p>
-              Many visitors search broad phrases first. This page adds enough
-              context to confirm intent, reduce confusion, and help people find
-              the best matching workflow faster.
+              Many visitors want a quick explanation first. Guide pages help clarify the job before you start using the tool itself.
             </p>
           </div>
           <div>
-            <h3>What should I do next?</h3>
+            <h3>Can I use the main tool on mobile?</h3>
             <p>
-              Open the main tool, compare a few related pages, or browse the
-              parent section to find another browser-based option that better
-              fits your task.
+              Yes. UtilHubX tools are designed for quick browser-based use on desktop and mobile devices.
             </p>
           </div>
         </div>

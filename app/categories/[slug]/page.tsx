@@ -33,15 +33,15 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const category = slugToCategory(params.slug);
   if (!category) return {};
   const url = `${SITE_URL}/categories/${toSlug(category)}`;
-  const description =
-    categoryDescriptions[category] || `Browse ${category.toLowerCase()} tools.`;
+  const description = `${category} tool category pages on UtilHubX help visitors compare related browser-based workflows, utilities, and calculators before opening a specific tool.`;
 
   return {
-    title: `${category} Tools | UtilHubX`,
+    title: `${category} Tool Directory | UtilHubX`,
     description,
+    robots: { index: false, follow: true },
     alternates: { canonical: url },
     openGraph: {
-      title: `${category} Tools | UtilHubX`,
+      title: `${category} Tool Directory | UtilHubX`,
       description,
       url,
       siteName: "UtilHubX",
@@ -49,7 +49,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${category} Tools | UtilHubX`,
+      title: `${category} Tool Directory | UtilHubX`,
       description,
     },
   };
@@ -72,14 +72,14 @@ export default function Page({ params }: { params: { slug: string } }) {
 
       <section className="section">
         <div className="card copy">
-          <h2>Why browse this category</h2>
+          <h2>Why browse the {category} category</h2>
           <p>{copy.intro}</p>
           <p>{copy.help}</p>
         </div>
       </section>
 
       <section className="section">
-        <h2>Tools in this category</h2>
+        <h2>{category} tools in this category</h2>
         <div className="grid grid-4">
           {pages.map((item) => (
             <CalculatorCard
@@ -102,9 +102,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             ))}
           </ul>
           <p>
-            Category pages work well for visitors who know the topic they want
-            but are still deciding which exact tool, calculator, converter, or
-            formatter best fits the job.
+            Category pages work well for visitors who know the topic they want but are still deciding which exact tool, calculator, converter, or formatter best fits the job.
           </p>
         </div>
       </section>
@@ -112,11 +110,9 @@ export default function Page({ params }: { params: { slug: string } }) {
       {matchingSuites.length ? (
         <section className="section">
           <div className="card">
-            <h2>Related landing pages</h2>
+            <h2>Landing pages related to {category.toLowerCase()} workflows</h2>
             <p>
-              These broader landing pages group the same topic into a more
-              guided browsing experience with additional context and related
-              workflows.
+              These broader landing pages group the same topic into a more guided browsing experience with additional context and related workflows.
             </p>
             <div className="popular-links">
               {matchingSuites.map((suite) => (
@@ -131,26 +127,23 @@ export default function Page({ params }: { params: { slug: string } }) {
 
       <section className="section">
         <div className="card">
-          <h2>Frequently asked questions</h2>
+          <h2>{category} category questions</h2>
           <div style={{ marginBottom: 18 }}>
             <h3>What is included in this category?</h3>
             <p>
-              This section includes browser-based {category.toLowerCase()} tools
-              and closely related workflows published on UtilHubX.
+              This section includes browser-based {category.toLowerCase()} tools and closely related workflows published on UtilHubX.
             </p>
           </div>
           <div style={{ marginBottom: 18 }}>
             <h3>Should I start with a category page or a single tool?</h3>
             <p>
-              Start here if you want to compare options. Open a single tool page
-              if you already know the exact job you need to complete.
+              Start here if you want to compare options. Open a single tool page if you already know the exact job you need to complete.
             </p>
           </div>
           <div>
-            <h3>Are these tools free to use?</h3>
+            <h3>Why are there related landing pages too?</h3>
             <p>
-              Yes. UtilHubX focuses on quick browser-based tools that people can
-              use without complicated setup.
+              Some visitors prefer broader landing pages that bundle similar tools together. Those pages can be a better fit when you want more guidance before picking a tool.
             </p>
           </div>
         </div>

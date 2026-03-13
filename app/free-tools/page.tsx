@@ -2,8 +2,8 @@ import CalculatorCard from "@/components/CalculatorCard";
 import { toolPages, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "Free Online Tools | UtilHubX",
-  description: "Free online tools for everyday tasks, writing, utilities, and browser-based helpers.",
+  title: "Free Online Tools | Everyday Browser Utilities | UtilHubX",
+  description: "Browse free online tools on UtilHubX for writing, utility, image, PDF, and calculator tasks.",
   alternates: { canonical: `${SITE_URL}/free-tools` },
 };
 
