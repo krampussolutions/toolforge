@@ -46,7 +46,27 @@ export default function Page({ params }: { params: { slug: string } }) {
       <h1 className="page-title">{suite.title}</h1>
       <p className="page-intro">{suite.description}</p>
 
-      <section>
+      <section className="section">
+        <div className="card copy">
+          <h2>Why this landing page exists</h2>
+          <p>
+            {suite.title} groups related browser-based workflows into one place
+            so visitors can compare similar options without opening a dozen tabs
+            or searching again. This is useful when you know the topic, such as
+            finance, health, PDF, or image work, but still want to see which
+            exact tool fits best.
+          </p>
+          <p>
+            Instead of treating every tool as an isolated page, UtilHubX uses
+            suite landing pages like this one to create a clearer path from
+            general intent to specific action. That makes the site easier to use
+            for both first-time visitors and repeat users who want a quick
+            starting point.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
         <h2>Tools in {suite.shortTitle}</h2>
         <div className="grid grid-4">
           {pages.map((item) => (
@@ -61,20 +81,61 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      <section>
-        <h2>How these tools help</h2>
-        <p>
-          Use these {suite.shortTitle.toLowerCase()} on UtilHubX to complete
-          common tasks quickly in your browser without installing software.
-        </p>
+      <section className="section">
+        <div className="card">
+          <h2>How these tools help</h2>
+          <p>
+            Use these {suite.shortTitle.toLowerCase()} on UtilHubX to complete
+            common tasks quickly in your browser without installing software.
+            Whether you are estimating payments, converting files, cleaning up
+            text, or handling quick daily calculations, grouped landing pages
+            make it easier to find the right workflow faster.
+          </p>
+          <p>
+            They also reduce confusion by keeping related tools together. That
+            is helpful when your first choice is close, but not perfect, and you
+            need to compare one more option before starting.
+          </p>
+        </div>
       </section>
 
-      <section>
-        <h2>Popular uses</h2>
-        <p>
-          These tools are useful for everyday work, school, personal planning,
-          document handling, image editing, and quick calculations.
-        </p>
+      <section className="section">
+        <div className="card">
+          <h2>Popular uses</h2>
+          <ul>
+            <li>Compare related tools before choosing the best match.</li>
+            <li>Move from a broad search query to a specific workflow quickly.</li>
+            <li>Keep several nearby options in one place for repeat use.</li>
+            <li>Open browser-based utilities without extra downloads or setup.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="card">
+          <h2>Frequently asked questions</h2>
+          <div style={{ marginBottom: 18 }}>
+            <h3>What is the difference between a suite page and a tool page?</h3>
+            <p>
+              A suite page groups related options together. A tool page is where
+              you complete one specific task.
+            </p>
+          </div>
+          <div style={{ marginBottom: 18 }}>
+            <h3>Should I start here?</h3>
+            <p>
+              Start here if you want to compare options. Go directly to a tool
+              if you already know the exact workflow you need.
+            </p>
+          </div>
+          <div>
+            <h3>Can I use these tools on desktop and mobile?</h3>
+            <p>
+              Yes. UtilHubX is designed around quick browser-based experiences
+              that work across common devices.
+            </p>
+          </div>
+        </div>
       </section>
     </section>
   );
