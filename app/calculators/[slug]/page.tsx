@@ -1,32 +1,81 @@
 import { notFound } from "next/navigation";
-import ToolSidebar from "@/components/ToolSidebar";
-import AdBanner from "@/components/AdBanner";
-import SuiteRenderer from "@/components/SuiteRenderer";
-import { suites, SITE_URL } from "@/lib/site";
+import CalculatorCard from "@/components/CalculatorCard";
+import { suites, toolPages, SITE_URL } from "@/lib/site";
 
 function getSuite(slug: string) {
-  return suites.find((item) => item.slug === slug);
+  return suites.find((s) => s.slug === slug);
 }
-export function generateStaticParams() { return suites.map((item) => ({ slug: item.slug })); }
+
+export function generateStaticParams() {
+  return suites.map((s) => ({ slug: s.slug }));
+}
+
 export function generateMetadata({ params }: { params: { slug: string } }) {
-  const item = getSuite(params.slug);
-  if (!item) return {};
-  return { title: item.title, description: item.description, alternates: { canonical: `/calculators/${item.slug}` }, openGraph: { title: item.title, description: item.description, url: `${SITE_URL}/calculators/${item.slug}` } };
+  const suite = getSuite(params.slug);
+  if (!suite) return {};
+
+  const url = `${SITE_URL}/calculators/${suite.slug}`;
+
+  return {
+    title: `${suite.title} | UtilHubX`,
+    description: suite.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${suite.title} | UtilHubX`,
+      description: suite.description,
+      url,
+      siteName: "UtilHubX",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${suite.title} | UtilHubX`,
+      description: suite.description,
+    },
+  };
 }
+
 export default function Page({ params }: { params: { slug: string } }) {
-  const item = getSuite(params.slug);
-  if (!item) notFound();
+  const suite = getSuite(params.slug);
+  if (!suite) notFound();
+
+  const pages = toolPages.filter((p) => p.parent === suite.slug);
+
   return (
-    <div className="tool-layout">
-      <div>
-        <span className="kicker">{item.category}</span>
-        <h1 className="page-title" style={{ marginTop: 14 }}>{item.title}</h1>
-        <p className="page-intro">{item.description}</p>
-        <AdBanner />
-        <SuiteRenderer slug={item.slug} />
-        <div style={{ marginTop: 22 }}><AdBanner slot="9988776655" /></div>
-      </div>
-      <ToolSidebar category={item.category} currentSlug={item.slug} />
-    </div>
+    <section>
+      <h1 className="page-title">{suite.title}</h1>
+      <p className="page-intro">{suite.description}</p>
+
+      <section>
+        <h2>Tools in {suite.shortTitle}</h2>
+        <div className="grid grid-4">
+          {pages.map((item) => (
+            <CalculatorCard
+              key={item.slug}
+              href={`/tools/${item.slug}`}
+              title={item.title}
+              category={item.category}
+              description={item.description}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2>How these tools help</h2>
+        <p>
+          Use these {suite.shortTitle.toLowerCase()} on UtilHubX to complete
+          common tasks quickly in your browser without installing software.
+        </p>
+      </section>
+
+      <section>
+        <h2>Popular uses</h2>
+        <p>
+          These tools are useful for everyday work, school, personal planning,
+          document handling, image editing, and quick calculations.
+        </p>
+      </section>
+    </section>
   );
 }
