@@ -3,13 +3,13 @@ import { toolPages, SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Popular Tools | Most Used Online Utilities | UtilHubX",
+  title: "Popular Tools",
   description: "Explore the most-used tools on UtilHubX, including popular image tools, PDF utilities, calculators, and everyday browser-based helpers.",
   alternates: {
     canonical: `${SITE_URL}/popular-tools`,
   },
   openGraph: {
-    title: "Popular Tools | Most Used Online Utilities | UtilHubX",
+    title: "Popular Tools",
     description:
       "Explore the most-used tools on UtilHubX, including popular image tools, PDF utilities, calculators, and everyday browser-based helpers.",
     url: `${SITE_URL}/popular-tools`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Popular Tools | Most Used Online Utilities | UtilHubX",
+    title: "Popular Tools",
     description:
       "Explore the most-used tools on UtilHubX, including popular image tools, PDF utilities, calculators, and everyday browser-based helpers.",
   },

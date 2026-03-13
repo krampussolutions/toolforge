@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "UtilHubX - Simple Tools for Everyday Tasks",
+  title: "Simple Tools for Everyday Tasks",
   description:
     "Free online tools for files, images, calculators, converters, and everyday tasks.",
   alternates: {
     canonical: `${SITE_URL}/`,
   },
   openGraph: {
-    title: "UtilHubX - Simple Tools for Everyday Tasks",
+    title: "Simple Tools for Everyday Tasks",
     description:
       "Free online tools for files, images, calculators, converters, and everyday tasks.",
     url: `${SITE_URL}/`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UtilHubX - Simple Tools for Everyday Tasks",
+    title: "Simple Tools for Everyday Tasks",
     description:
       "Free online tools for files, images, calculators, converters, and everyday tasks.",
   },

@@ -64,7 +64,7 @@ export function generateMetadata({
   const item = getPage(params.slug);
   if (!item) return {};
 
-  const title = `${item.title} | Free Online ${item.category} Tool | UtilHubX`;
+  const title = `${item.title} | ${item.category} Tool`;
   const url = `${SITE_URL}/tools/${item.slug}`;
   const description = `${item.title} on UtilHubX helps you ${item.description.charAt(0).toLowerCase()}${item.description.slice(1)} Free, browser-based, fast to use, and designed for desktop or mobile.`;
 
@@ -233,10 +233,22 @@ export default function Page({ params }: { params: { slug: string } }) {
 
         <section className="section">
           <div className="card">
+            <h2>Why people use the {item.title}</h2>
+            <p>
+              People use this tool when they need a quick result without installing
+              extra software, creating an account, or switching devices. It works
+              well for everyday tasks, schoolwork, business use, and simple
+              browser-based workflows that need a fast answer.
+            </p>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="card">
             <h2>More {item.category.toLowerCase()} pages on UtilHubX</h2>
             <div className="popular-links">
               <Link href={`/calculators/${item.parent}`}>Open related section</Link>
-              <Link href={`/categories/${categorySlug}`}>Browse {item.category} tools</Link>
+              <Link href="/tools">Browse all tools</Link>
             </div>
           </div>
         </section>

@@ -18,11 +18,11 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const description = `${suite.title} on UtilHubX brings together free browser-based ${suite.shortTitle.toLowerCase()} workflows, calculators, and related tools for faster everyday use.`;
 
   return {
-    title: `${suite.title} | Free Online ${suite.shortTitle} | UtilHubX`,
+    title: `${suite.title} | ${suite.shortTitle}`,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title: `${suite.title} | Free Online ${suite.shortTitle} | UtilHubX`,
+      title: `${suite.title} | ${suite.shortTitle}`,
       description,
       url,
       siteName: "UtilHubX",
@@ -30,7 +30,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${suite.title} | Free Online ${suite.shortTitle} | UtilHubX`,
+      title: `${suite.title} | ${suite.shortTitle}`,
       description,
     },
   };

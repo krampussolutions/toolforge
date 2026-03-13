@@ -34,14 +34,14 @@ export function generateMetadata({
   const description = `${page.title} on UtilHubX is a guide page that explains the workflow, points you to the matching tool, and helps you complete this ${page.category.toLowerCase()} task faster online.`;
 
   return {
-    title: `${page.title} Guide | UtilHubX`,
+    title: `${page.title} Guide`,
     description,
     robots: { index: false, follow: true },
     alternates: {
       canonical: `${SITE_URL}/guides/${page.slug}`,
     },
     openGraph: {
-      title: `${page.title} Guide | UtilHubX`,
+      title: `${page.title} Guide`,
       description,
       url: `${SITE_URL}/guides/${page.slug}`,
       siteName: "UtilHubX",
@@ -49,7 +49,7 @@ export function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${page.title} Guide | UtilHubX`,
+      title: `${page.title} Guide`,
       description,
     },
   };

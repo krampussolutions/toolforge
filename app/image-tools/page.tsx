@@ -2,11 +2,11 @@ import CalculatorCard from "@/components/CalculatorCard";
 import { toolPages, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "Image Tools | Free Online Image Editors and Converters | UtilHubX",
+  title: "Image Tools",
   description: "Browse free image tools on UtilHubX for compression, conversion, cropping, resizing, and other quick browser-based image tasks.",
   alternates: { canonical: `${SITE_URL}/image-tools` },
   openGraph: {
-    title: "Image Tools | Free Online Image Editors and Converters | UtilHubX",
+    title: "Image Tools",
     description: "Browse free image tools on UtilHubX for compression, conversion, cropping, resizing, and other quick browser-based image tasks.",
     url: `${SITE_URL}/image-tools`,
     siteName: "UtilHubX",
@@ -14,7 +14,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Image Tools | Free Online Image Editors and Converters | UtilHubX",
+    title: "Image Tools",
     description: "Browse free image tools on UtilHubX for compression, conversion, cropping, resizing, and other quick browser-based image tasks.",
   },
 };

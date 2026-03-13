@@ -2,11 +2,11 @@ import CalculatorCard from "@/components/CalculatorCard";
 import { toolPages, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "PDF Tools | Free Online PDF Utilities | UtilHubX",
+  title: "PDF Tools",
   description: "Browse free PDF tools on UtilHubX for merging, splitting, and building PDF files in a fast browser-based workflow.",
   alternates: { canonical: `${SITE_URL}/pdf-tools` },
   openGraph: {
-    title: "PDF Tools | Free Online PDF Utilities | UtilHubX",
+    title: "PDF Tools",
     description: "Browse free PDF tools on UtilHubX for merging, splitting, and building PDF files in a fast browser-based workflow.",
     url: `${SITE_URL}/pdf-tools`,
     siteName: "UtilHubX",
@@ -14,7 +14,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PDF Tools | Free Online PDF Utilities | UtilHubX",
+    title: "PDF Tools",
     description: "Browse free PDF tools on UtilHubX for merging, splitting, and building PDF files in a fast browser-based workflow.",
   },
 };

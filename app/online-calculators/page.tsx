@@ -2,11 +2,11 @@ import CalculatorCard from "@/components/CalculatorCard";
 import { toolPages, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "Online Calculators | Free Everyday Calculators | UtilHubX",
+  title: "Online Calculators",
   description: "Browse free online calculators on UtilHubX for finance, health, date and time, business, and everyday calculations.",
   alternates: { canonical: `${SITE_URL}/online-calculators` },
   openGraph: {
-    title: "Online Calculators | Free Everyday Calculators | UtilHubX",
+    title: "Online Calculators",
     description: "Browse free online calculators on UtilHubX for finance, health, date and time, business, and everyday calculations.",
     url: `${SITE_URL}/online-calculators`,
     siteName: "UtilHubX",
@@ -14,7 +14,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Online Calculators | Free Everyday Calculators | UtilHubX",
+    title: "Online Calculators",
     description: "Browse free online calculators on UtilHubX for finance, health, date and time, business, and everyday calculations.",
   },
 };

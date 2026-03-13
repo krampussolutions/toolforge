@@ -2,7 +2,7 @@ import CalculatorCard from "@/components/CalculatorCard";
 import { toolPages, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "File Converters | Free Online Conversion Tools | UtilHubX",
+  title: "File Converters",
   description: "Browse free file conversion tools on UtilHubX for image and PDF workflows.",
   alternates: { canonical: `${SITE_URL}/file-converters` },
 };

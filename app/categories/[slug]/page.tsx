@@ -36,12 +36,12 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const description = `${category} tool category pages on UtilHubX help visitors compare related browser-based workflows, utilities, and calculators before opening a specific tool.`;
 
   return {
-    title: `${category} Tool Directory | UtilHubX`,
+    title: `${category} Category`,
     description,
     robots: { index: false, follow: true },
     alternates: { canonical: url },
     openGraph: {
-      title: `${category} Tool Directory | UtilHubX`,
+      title: `${category} Category`,
       description,
       url,
       siteName: "UtilHubX",
@@ -49,7 +49,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${category} Tool Directory | UtilHubX`,
+      title: `${category} Category`,
       description,
     },
   };
