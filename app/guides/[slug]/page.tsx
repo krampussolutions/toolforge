@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SITE_URL, toolPages } from "@/lib/site";
 import { programmaticPages } from "@/lib/programmatic-pages";
+import { toJsonLd } from "@/lib/structured-data";
 
 function getPage(slug: string) {
   return programmaticPages.find((item) => item.slug === slug);
@@ -79,7 +80,7 @@ export default function Page({
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
+    "@type": "Article",
     headline: page.title,
     description: page.description,
     url: `${SITE_URL}/guides/${page.slug}`,
@@ -129,11 +130,11 @@ export default function Page({
     <section>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(schema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(faqSchema) }}
       />
 
       <span className="kicker">{page.category}</span>

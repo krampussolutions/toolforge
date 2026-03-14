@@ -8,6 +8,226 @@ export type ToolContent = {
 };
 
 const overrides: Record<string, ToolContent> = {
+  "age-calculator": {
+    intro:
+      "Age Calculator shows exact age in years, months, and days from a birth date or start date. It is useful for forms, age checks, birthdays, school paperwork, insurance questions, and any situation where you need a precise age instead of a rough estimate.",
+    examples: [
+      "Check someone's current age today for a form or enrollment step",
+      "Work out how old a person will be on a future date",
+      "See the full gap in years, months, and days between a birth date and today",
+    ],
+    howItWorks: [
+      "Enter the birth date or start date",
+      "Choose the comparison date if the tool offers one, or use today",
+      "Review the result in years, months, and days",
+      "Use related date tools if you need a simple day count or business-day count instead",
+    ],
+    faq: [
+      { q: "Does the age calculator account for leap years?", a: "Yes. The age result is based on real calendar math, including leap years and different month lengths." },
+      { q: "Can I calculate age on a future date?", a: "Yes. Many people use an age calculator to see how old someone will be on a future deadline, event date, or eligibility date." },
+      { q: "What is the difference between age calculator and days between dates?", a: "Age Calculator is best for a human age result in years, months, and days. Days Between Dates is better when you only need a raw date gap." },
+    ],
+  },
+  "days-between-dates": {
+    intro:
+      "Days Between Dates Calculator counts the calendar-day gap between two dates so you can plan trips, projects, subscriptions, contracts, deadlines, and personal milestones without counting by hand. It is best when you need a straight date difference and want a fast answer.",
+    examples: [
+      "Count the number of days between a start date and a project deadline",
+      "Measure the gap between travel dates, subscription renewals, or billing periods",
+      "Compare an exclusive day count to an inclusive count when the start day should also be included",
+    ],
+    howItWorks: [
+      "Choose a start date and end date",
+      "Review the raw day difference between the two dates",
+      "Use inclusive counting only when your workflow needs the start and end days both counted",
+      "Switch to Business Days Calculator if you need weekdays only or Weeks Between Dates if you want the result grouped into weeks",
+    ],
+    faq: [
+      { q: "Does this count weekends?", a: "Yes. This tool counts calendar days, so weekends are included unless you switch to a business-days workflow." },
+      { q: "What is inclusive counting?", a: "Inclusive counting adds the start day to the total. For example, January 1 through January 31 is 30 days between dates, but 31 days inclusive." },
+      { q: "Should I use this or a business days calculator?", a: "Use Days Between Dates for a full calendar count. Use Business Days Calculator when you want to skip weekends for work schedules and deadlines." },
+    ],
+  },
+  "word-counter": {
+    intro:
+      "Word Counter helps you measure words, characters, reading length, and text size before you submit an essay, publish a post, write a speech, or tighten a draft. It is useful for students, writers, marketers, and anyone who needs a quick text-length check.",
+    examples: [
+      "Check whether an essay, article, or assignment meets a target word count",
+      "Estimate how much spoken time a speech or presentation draft may take",
+      "Compare several rewrites to see which version is shorter or easier to scan",
+    ],
+    howItWorks: [
+      "Paste or type your text into the input area",
+      "Review the word, character, and other text totals instantly",
+      "Edit the draft and watch the counts update as you write",
+      "Use related text tools if you need cleanup, case conversion, or readability checks",
+    ],
+    faq: [
+      { q: "Can I use word counter for essays and blog posts?", a: "Yes. This tool is useful for essays, blog posts, ad copy, emails, product descriptions, and speech drafts." },
+      { q: "Does word counter include spaces and punctuation?", a: "Word counter focuses on words, but many versions also show characters with and without spaces so you can judge total text length more clearly." },
+      { q: "How many words is a five-minute speech?", a: "A rough speaking pace is often around 600 to 750 words for five minutes, depending on the speaker and pauses." },
+    ],
+  },
+  "tip-calculator": {
+    intro:
+      "Tip Calculator helps you work out the tip amount, final total, and per-person share for restaurant bills, delivery orders, takeout, and group dining. It is useful when you want to settle a bill quickly without guessing at percentages in your head.",
+    examples: [
+      "Calculate a 15%, 18%, or 20% tip on a restaurant bill",
+      "Split a dinner total evenly between two, four, or six people",
+      "Check how tax and tip change the final amount before you pay",
+    ],
+    howItWorks: [
+      "Enter the bill amount",
+      "Choose a tip percentage or enter a custom rate",
+      "Review the tip amount and full total",
+      "Split the final amount by group size if more than one person is paying",
+    ],
+    faq: [
+      { q: "How much should I tip at a restaurant?", a: "Common tip ranges are often around 15% to 20%, but local customs and service level can change the final choice." },
+      { q: "Can I split the total between multiple people?", a: "Yes. A tip calculator is especially useful for splitting restaurant bills and making sure everyone pays an even share." },
+      { q: "Should I tip on the pre-tax or post-tax total?", a: "People do both, but many diners prefer to calculate tip from the pre-tax amount for a cleaner comparison." },
+    ],
+  },
+  "password-generator": {
+    intro:
+      "Password Generator creates strong random passwords for email, banking, work accounts, gaming logins, and Wi-Fi setup. It helps you avoid weak, repeated passwords and makes it easier to create something long enough to resist simple guessing or reuse attacks.",
+    examples: [
+      "Generate a strong password for a new email or banking account",
+      "Create a longer password with symbols for work logins",
+      "Compare different password lengths before saving one in a password manager",
+    ],
+    howItWorks: [
+      "Choose the password length and character options",
+      "Generate one or more random passwords instantly",
+      "Copy the result you want to use",
+      "Store the final password in a trusted password manager if possible",
+    ],
+    faq: [
+      { q: "How long should a strong password be?", a: "Longer passwords are usually stronger. A password generator is most useful when it lets you create a random password that is longer than the short, reused passwords people often choose by hand." },
+      { q: "Should I include symbols and numbers?", a: "Yes. Mixing letters, numbers, and symbols usually improves password strength, especially when the password is also long." },
+      { q: "Is a generated password safer than making one myself?", a: "In most cases, yes. Randomly generated passwords are usually harder to guess than familiar words, birthdays, or reused patterns." },
+    ],
+  },
+  "jpg-to-png": {
+    intro:
+      "JPG to PNG converts JPG images into PNG files in your browser. It is useful for screenshots, logos, graphics, editing workflows, and situations where you want a PNG file type for compatibility or easier reuse in design tools.",
+    examples: [
+      "Convert a JPG screenshot to PNG for editing or markup",
+      "Save a graphic in PNG format for a site or design handoff",
+      "Create a PNG version of an image before using it in another workflow",
+    ],
+    howItWorks: [
+      "Upload a JPG image from your device",
+      "Convert the file to PNG in your browser",
+      "Preview or download the result",
+      "Open related image tools if you also need compression, resizing, or cropping",
+    ],
+    faq: [
+      { q: "Does JPG to PNG improve image quality?", a: "It changes the file format, but it does not restore detail already lost in the original JPG compression." },
+      { q: "When should I use PNG instead of JPG?", a: "PNG is often useful for screenshots, graphics, interface elements, and workflows where a PNG file is preferred for compatibility or editing." },
+      { q: "Can I convert JPG to PNG on mobile?", a: "Yes. Browser-based conversion works well on phones, tablets, and desktop browsers." },
+    ],
+  },
+  "image-to-pdf": {
+    intro:
+      "Image to PDF turns photos, screenshots, scans, and other image files into a PDF you can share, upload, or archive more easily. It is useful for receipts, forms, homework pages, scanned IDs, notes, and any situation where separate images need to become one document.",
+    examples: [
+      "Combine phone photos of receipts into one PDF for expense reports",
+      "Turn scanned pages or homework photos into a single file for upload",
+      "Package screenshots into a cleaner document for sharing or printing",
+    ],
+    howItWorks: [
+      "Upload one or more images",
+      "Arrange them in the order you want",
+      "Generate a PDF in your browser",
+      "Download the finished file and review the page order before sending",
+    ],
+    faq: [
+      { q: "What kinds of images work with image to PDF?", a: "This workflow is commonly used for photos, screenshots, scans, and other standard image files that need to be bundled into one document." },
+      { q: "Why convert images into a PDF?", a: "PDF is easier to upload, print, and share when several pages or photos belong together." },
+      { q: "Can I use image to PDF for receipts and forms?", a: "Yes. It is a common way to package receipt photos, signed pages, scanned forms, and similar files." },
+    ],
+  },
+  "merge-pdf": {
+    intro:
+      "Merge PDF combines multiple PDF files into one document so you can send a cleaner final file instead of several attachments. It is useful for invoices, school submissions, contracts, reports, statements, and any document set that should stay together.",
+    examples: [
+      "Combine signed pages, attachments, and backup documents into one PDF",
+      "Merge monthly statements or invoices before sending them to a client",
+      "Create one school or office submission instead of uploading several separate files",
+    ],
+    howItWorks: [
+      "Upload the PDF files you want to combine",
+      "Place them in the order you want the final document to follow",
+      "Run the merge tool in your browser",
+      "Download the finished PDF and review the page order before sharing",
+    ],
+    faq: [
+      { q: "Can I merge more than two PDFs?", a: "Yes. Merge PDF is designed for combining several documents into one finished file." },
+      { q: "Does file order matter?", a: "Yes. The final PDF follows the order you choose before the merge happens." },
+      { q: "Why merge PDF files instead of sending them separately?", a: "One combined document is easier to upload, print, archive, and review than several loose attachments." },
+    ],
+  },
+  "split-pdf": {
+    intro:
+      "Split PDF extracts selected pages from a larger PDF so you can share only the sections that matter. It is useful for contracts, packet cleanups, long reports, school submissions, statements, and any file where the full document is larger than what you actually need.",
+    examples: [
+      "Pull a few relevant pages out of a long contract or packet",
+      "Separate one chapter or section from a larger PDF",
+      "Extract only the pages a client, teacher, or coworker asked for",
+    ],
+    howItWorks: [
+      "Upload the PDF file",
+      "Choose the page or page range you want to extract",
+      "Create a new smaller PDF with only those pages",
+      "Download the extracted file and confirm the page range is correct",
+    ],
+    faq: [
+      { q: "When should I use split PDF?", a: "Use it when you only need part of a document and do not want to send or upload the full file." },
+      { q: "Can I extract multiple pages at once?", a: "Yes. Split PDF is commonly used for single pages, page ranges, or selected groups of pages." },
+      { q: "Is split PDF helpful for forms and packets?", a: "Yes. It is useful for trimming large packets down to only the pages that matter for the current task." },
+    ],
+  },
+  "loan-calculator": {
+    intro:
+      "Loan Calculator estimates monthly payments for personal loans, fixed-rate borrowing, and other common loan scenarios. It is useful when you want a quick payment estimate before applying, comparing offers, or deciding whether a loan fits your budget.",
+    examples: [
+      "Estimate the payment on a $10,000 loan over 36 months",
+      "Compare a shorter term to a longer term before borrowing",
+      "See how rate changes affect the monthly payment on the same principal amount",
+    ],
+    howItWorks: [
+      "Enter the loan amount",
+      "Add the interest rate and term length",
+      "Review the estimated monthly payment",
+      "Adjust the values to compare several borrowing scenarios side by side",
+    ],
+    faq: [
+      { q: "What changes the monthly payment the most?", a: "The principal amount, interest rate, and loan term all matter, but interest rate and term length can change the monthly payment a lot even when the borrowed amount stays the same." },
+      { q: "Does a longer term lower the monthly payment?", a: "Usually yes, but it can also increase the total interest paid over the life of the loan." },
+      { q: "Is this an official lender quote?", a: "No. It is a planning estimate that helps you compare scenarios before you talk to a lender." },
+    ],
+  },
+  "mortgage-calculator": {
+    intro:
+      "Mortgage Calculator estimates monthly home-loan payments based on home price, down payment, interest rate, and term. It is useful for comparing buying scenarios, checking affordability, and seeing how rate or down-payment changes affect the payment.",
+    examples: [
+      "Compare a 15-year mortgage to a 30-year mortgage",
+      "Estimate how a bigger down payment changes the monthly payment",
+      "Check a payment scenario before you apply or shop for homes",
+    ],
+    howItWorks: [
+      "Enter the home price and down payment",
+      "Add the mortgage rate and loan term",
+      "Review the estimated monthly payment",
+      "Change the inputs to compare different buying scenarios",
+    ],
+    faq: [
+      { q: "Does this include taxes and insurance?", a: "Some mortgage tools focus on principal and interest first, so always check what is included in the result when comparing it to a full lender estimate." },
+      { q: "How much does the interest rate matter?", a: "Even a small rate change can make a noticeable difference in a long mortgage payment." },
+      { q: "Why compare 15-year and 30-year loans?", a: "Comparing terms helps you see the tradeoff between a higher monthly payment now and lower long-term interest overall." },
+    ],
+  },
   "webp-to-jpg": {
     intro:
       "WEBP to JPG converts modern WEBP images into widely supported JPG files directly in your browser. It is useful when you need a file format that works with older apps, upload forms, printers, or image editors that do not fully support WEBP.",

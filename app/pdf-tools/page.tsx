@@ -24,7 +24,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="page-title">PDF Tools</h1>
-      <p className="page-intro">Browse free PDF tools on UtilHubX for merging, splitting, and building PDF files in a fast browser-based workflow.</p>
+      <p className="page-intro">Use these PDF tools to merge files, split pages, and turn images into PDFs without installing desktop software. They work well for forms, school documents, receipts, contracts, scanned pages, and quick file cleanup.</p>
 
       <section className="section">
         <div className="card copy">
@@ -45,7 +45,7 @@ export default function Page() {
       </section>
 
       <section className="section">
-        <h2>Popular PDF document tasks</h2>
+        <h2>Common PDF tasks people need online</h2>
         <div className="grid grid-4">
           {pages.map((item) => (
             <CalculatorCard key={item.slug} href={`/tools/${item.slug}`} title={item.title} category={item.category} description={item.description} />
@@ -55,13 +55,14 @@ export default function Page() {
 
       <section className="section">
         <div className="card">
-          <h2>Popular PDF document tasks</h2>
+          <h2>When these PDF tools are useful</h2>
           <ul>
-            <li>Combine multiple documents into one shareable PDF.</li>
-            <li>Extract selected pages from larger files.</li>
-            <li>Turn images, scans, and screenshots into PDF documents.</li>
-            <li>Handle document tasks quickly from a desktop or mobile browser.</li>
+            <li>Combine invoices, statements, or signed pages into one PDF before sending.</li>
+            <li>Split large PDFs so you can share only the pages a client, teacher, or coworker needs.</li>
+            <li>Turn phone photos, screenshots, and scanned pages into one document for uploads or record keeping.</li>
+            <li>Handle quick document jobs from a desktop or mobile browser when you do not want a full PDF editor.</li>
           </ul>
+          <p>Start with Merge PDF when you need one finished file, Split PDF when you only need selected pages, and Image to PDF when your source files are photos or screenshots.</p>
         </div>
       </section>
 
@@ -74,6 +75,16 @@ export default function Page() {
             steps, and helps visitors finish routine document jobs with less
             friction.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="card">
+          <h2>Helpful PDF guides</h2>
+          <div className="popular-links">
+            <a href="/guides/merge-pdf-online">How to merge PDF files online</a>
+            <a href="/guides/split-pdf-online">How to split PDF pages online</a>
+          </div>
         </div>
       </section>
     </section>

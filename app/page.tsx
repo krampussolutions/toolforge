@@ -73,9 +73,9 @@ export default function HomePage() {
         <h1>Simple tools for files, images, calculators, and everyday tasks</h1>
         <p>
           UtilHubX helps people finish common tasks quickly without downloading
-          software or creating an account. Compress images, merge PDFs, run
-          calculations, convert files, and handle everyday text or utility jobs
-          in one browser-based workspace.
+          software or creating an account. Compress an image before email, merge
+          a few PDFs for work or school, calculate a payment or tip, convert
+          files, and clean up text in one browser-based workspace.
         </p>
 
         <div className="hero-actions">
@@ -161,23 +161,30 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <h2>Why people use UtilHubX</h2>
+        <h2>Best tools for common jobs</h2>
         <div className="card">
-          <p>
-            People usually come here for one reason: they need a quick answer or
-            quick file task without extra friction. The site is organized around
-            the kinds of tasks people actually do every day, not around
-            technical jargon.
-          </p>
+          <p>People use UtilHubX when they need to shrink an image for email, combine PDF pages for work or school, estimate loan or mortgage payments, split a restaurant bill, or clean up text before publishing. The site is built around those real jobs instead of software jargon.</p>
         </div>
       </section>
 
       <section className="section">
         <h2>Newest tools</h2>
+        <p className="page-intro">These are the latest additions to the site, including new calculators and writing helpers that expand your options without forcing you to search the full directory first.</p>
         <div className="grid grid-4">
           {toolPages.slice(-12).reverse().map((item) => (
             <CalculatorCard key={item.slug} href={`/tools/${item.slug}`} title={item.title} category={item.category} description={item.description} />
           ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="card">
+          <h2>Helpful guides</h2>
+          <div className="popular-links">
+            <Link href="/guides/merge-pdf-online">How to merge PDF files online</Link>
+            <Link href="/guides/how-to-check-reading-level">How to check reading level</Link>
+            <Link href="/guides/reading-level-checker-for-blog-posts">Reading level checker for blog posts</Link>
+          </div>
         </div>
       </section>
     </>

@@ -9,6 +9,7 @@ import {
   SITE_URL,
   suites,
 } from "@/lib/site";
+import { toJsonLd } from "@/lib/structured-data";
 
 function slugToCategory(slug: string) {
   return categories.find((c) => toSlug(c) === slug);
@@ -85,7 +86,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     <section>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(itemListSchema) }}
       />
       <h1 className="page-title">{category} Tools</h1>
       <p className="page-intro">

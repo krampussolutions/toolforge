@@ -7,6 +7,7 @@ import CoreToolRenderer from "@/components/special/CoreToolRenderer";
 import { SITE_URL, toolPages } from "@/lib/site";
 import { toolContent } from "@/lib/tool-content";
 import { programmaticPages } from "@/lib/programmatic-pages";
+import { toJsonLd } from "@/lib/structured-data";
 
 const specialSlugs = [
   "compress-image",
@@ -110,10 +111,12 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   const appSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "WebApplication",
     name: item.title,
-    applicationCategory: "UtilitiesApplication",
-    operatingSystem: "Web",
+    applicationCategory: item.category,
+    operatingSystem: "Any",
+    browserRequirements: "Requires a modern web browser",
+    isAccessibleForFree: true,
     url: `${SITE_URL}/tools/${item.slug}`,
     description: item.description,
     offers: {
@@ -145,12 +148,12 @@ export default function Page({ params }: { params: { slug: string } }) {
       <div>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(appSchema) }}
         />
         {faqSchema ? (
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            dangerouslySetInnerHTML={{ __html: toJsonLd(faqSchema) }}
           />
         ) : null}
 

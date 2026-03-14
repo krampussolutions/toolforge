@@ -46,7 +46,7 @@ export default function Page() {
     <section>
       <h1 className="page-title">Popular tools</h1>
       <p className="page-intro">
-        These are the tools people use most often for everyday tasks.
+These are the tools people use most often for image conversion, PDF jobs, calculators, and quick browser-based utility work.
       </p>
 
       <section className="section">
@@ -105,6 +105,17 @@ export default function Page() {
             for repeat visitors too, because they surface the workflows people
             tend to come back for again and again.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="card">
+          <h2>Helpful guides</h2>
+          <div className="popular-links">
+            <a href="/guides/merge-pdf-online">Merge PDF online guide</a>
+            <a href="/guides/how-to-check-reading-level">How to check reading level</a>
+            <a href="/guides/headline-title-case-checker">Headline title case checker guide</a>
+          </div>
         </div>
       </section>
     </section>

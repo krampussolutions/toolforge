@@ -24,7 +24,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="page-title">Image Tools</h1>
-      <p className="page-intro">Browse free image tools on UtilHubX for compression, conversion, cropping, resizing, and other quick browser-based image tasks.</p>
+      <p className="page-intro">Use these image tools to compress files, resize photos, crop visuals, and convert between common image formats in your browser. They are useful for websites, email attachments, listings, forms, design handoffs, and quick file cleanup.</p>
 
       <section className="section">
         <div className="card copy">
@@ -46,7 +46,7 @@ export default function Page() {
       </section>
 
       <section className="section">
-        <h2>Popular image editing and conversion tasks</h2>
+        <h2>Common image tasks people handle online</h2>
         <div className="grid grid-4">
           {pages.map((item) => (
             <CalculatorCard key={item.slug} href={`/tools/${item.slug}`} title={item.title} category={item.category} description={item.description} />
@@ -56,13 +56,14 @@ export default function Page() {
 
       <section className="section">
         <div className="card">
-          <h2>Popular image editing and conversion tasks</h2>
+          <h2>When these image tools help most</h2>
           <ul>
-            <li>Prepare images for websites, forms, and email attachments.</li>
-            <li>Convert between common image formats in a few clicks.</li>
-            <li>Resize or crop visuals before publishing or sharing.</li>
-            <li>Reduce file size to speed up uploads and save storage space.</li>
+            <li>Prepare images for websites, product listings, forms, and email attachments.</li>
+            <li>Convert JPG, PNG, WEBP, and related image formats for better compatibility.</li>
+            <li>Resize or crop visuals before publishing, printing, or sharing with a client.</li>
+            <li>Reduce file size to speed up uploads and avoid oversized attachments.</li>
           </ul>
+          <p>Visitors often start with Compress Image for file size, JPG to PNG or PNG to JPG for format changes, and Resize Image when the dimensions need to fit a specific upload requirement.</p>
         </div>
       </section>
 
