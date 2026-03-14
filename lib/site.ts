@@ -709,7 +709,7 @@ export const categories = [
   "Writing"
 ] as const;
 
-const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.utilhubx.com";
+const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://utilhubx.com";
 export const SITE_URL = rawSiteUrl.replace(/\/$/, "");
 export const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-5957528671321920";
 

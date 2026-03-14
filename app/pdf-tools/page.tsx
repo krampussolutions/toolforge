@@ -83,7 +83,6 @@ export default function Page() {
           <h2>Helpful PDF guides</h2>
           <div className="popular-links">
             <a href="/guides/merge-pdf-online">How to merge PDF files online</a>
-            <a href="/guides/remove-pages-from-a-pdf">How to remove pages from a PDF</a>
             <a href="/guides/split-pdf-online">How to split PDF pages online</a>
             <a href="/guides/rotate-pdf-online">How to rotate PDF pages online</a>
             <a href="/guides/delete-pdf-pages-online">How to delete PDF pages online</a>

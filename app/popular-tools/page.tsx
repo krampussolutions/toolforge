@@ -112,11 +112,8 @@ These are the tools people use most often for image conversion, PDF jobs, calcul
         <div className="card">
           <h2>Helpful guides</h2>
           <div className="popular-links">
-            <a href="/guides/how-many-days-between-two-dates">How many days between two dates</a>
             <a href="/guides/merge-pdf-online">Merge PDF online guide</a>
-            <a href="/guides/how-many-words-is-a-5-minute-speech">How many words is a 5 minute speech</a>
             <a href="/guides/how-to-check-reading-level">How to check reading level</a>
-            <a href="/guides/how-to-split-a-bill-with-tip">How to split a bill with tip</a>
             <a href="/guides/headline-title-case-checker">Headline title case checker guide</a>
             <a href="/guides/rotate-pdf-online">Rotate PDF online guide</a>
             <a href="/guides/jpg-to-webp-online">JPG to WEBP online guide</a>

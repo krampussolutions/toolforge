@@ -181,13 +181,9 @@ export default function HomePage() {
         <div className="card">
           <h2>Helpful guides</h2>
           <div className="popular-links">
-            <Link href="/guides/how-many-days-between-two-dates">How many days between two dates</Link>
-            <Link href="/guides/calculate-age-from-date-of-birth">How to calculate age from date of birth</Link>
             <Link href="/guides/merge-pdf-online">How to merge PDF files online</Link>
-            <Link href="/guides/how-many-words-is-a-5-minute-speech">How many words is a 5 minute speech</Link>
             <Link href="/guides/how-to-check-reading-level">How to check reading level</Link>
             <Link href="/guides/reading-level-checker-for-blog-posts">Reading level checker for blog posts</Link>
-            <Link href="/guides/how-to-split-a-bill-with-tip">How to split a bill with tip</Link>
             <Link href="/guides/rotate-pdf-online">How to rotate PDF online</Link>
             <Link href="/guides/resize-image-to-kb">How to resize an image to KB</Link>
           </div>

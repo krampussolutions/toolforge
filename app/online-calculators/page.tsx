@@ -58,18 +58,6 @@ export default function Page() {
           </ul>
         </div>
       </section>
-
-      <section className="section">
-        <div className="card">
-          <h2>Helpful calculator guides</h2>
-          <div className="popular-links">
-            <a href="/guides/how-many-days-between-two-dates">How many days between two dates</a>
-            <a href="/guides/calculate-age-from-date-of-birth">Calculate age from date of birth</a>
-            <a href="/guides/how-many-business-days-between-dates">How many business days between dates</a>
-            <a href="/guides/how-to-pay-off-credit-card-debt-faster">How to pay off credit card debt faster</a>
-          </div>
-        </div>
-      </section>
     </section>
   );
 }
