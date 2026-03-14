@@ -34,14 +34,14 @@ export function generateMetadata({
   const description = `${page.title} on UtilHubX is a guide page that explains the workflow, points you to the matching tool, and helps you complete this ${page.category.toLowerCase()} task faster online.`;
 
   return {
-    title: `${page.title} Guide`,
+    title: page.indexable ? `${page.title} | UtilHubX` : `${page.title} Guide`,
     description,
-    robots: { index: false, follow: true },
+    robots: { index: page.indexable ?? false, follow: true },
     alternates: {
       canonical: `${SITE_URL}/guides/${page.slug}`,
     },
     openGraph: {
-      title: `${page.title} Guide`,
+      title: page.indexable ? `${page.title} | UtilHubX` : `${page.title} Guide`,
       description,
       url: `${SITE_URL}/guides/${page.slug}`,
       siteName: "UtilHubX",
@@ -49,7 +49,7 @@ export function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${page.title} Guide`,
+      title: page.indexable ? `${page.title} | UtilHubX` : `${page.title} Guide`,
       description,
     },
   };
@@ -206,6 +206,18 @@ export default function Page({
           </div>
         </section>
       ) : null}
+
+      <section className="section">
+        <div className="card copy">
+          <h2>How to get better results from {page.title.toLowerCase()}</h2>
+          <p>
+            Start by making sure your dates, values, text, or files are already close to final before opening the main tool. That reduces rework and makes the result easier to trust.
+          </p>
+          <p>
+            If you are comparing two nearby workflows, open the related tools section first and choose the page that best matches your exact task. This works especially well for image conversion, PDF tasks, calculators, and quick text utilities.
+          </p>
+        </div>
+      </section>
 
       <section className="section">
         <div className="card">

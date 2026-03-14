@@ -34,6 +34,12 @@ import HtmlEscape from "@/components/special/HtmlEscape";
 import HtmlUnescape from "@/components/special/HtmlUnescape";
 import ListRandomizer from "@/components/special/ListRandomizer";
 import RomanNumeralConverter from "@/components/special/RomanNumeralConverter";
+import BusinessDaysCalculator from "@/components/special/BusinessDaysCalculator";
+import WeeksBetweenDates from "@/components/special/WeeksBetweenDates";
+import SalesTaxCalculator from "@/components/special/SalesTaxCalculator";
+import CreditCardPayoffCalculator from "@/components/special/CreditCardPayoffCalculator";
+import ReadingLevelChecker from "@/components/special/ReadingLevelChecker";
+import TitleCaseHeadlineAnalyzer from "@/components/special/TitleCaseHeadlineAnalyzer";
 
 export default function SpecialToolRenderer({ slug }: { slug: string }) {
   if (slug === "compress-image") return <ImageCompressor />;
@@ -56,6 +62,7 @@ export default function SpecialToolRenderer({ slug }: { slug: string }) {
   if (slug === "duplicate-line-remover") return <DuplicateLineRemover />;
   if (slug === "png-compressor") return <ImageCompressor />;
   if (slug === "webp-to-png") return <ImageFormatConverter mime="image/png" />;
+  if (slug === "webp-to-jpg") return <ImageFormatConverter mime="image/jpeg" />;
   if (slug === "text-reverser") return <TextReverser />;
   if (slug === "remove-extra-spaces") return <RemoveExtraSpaces />;
   if (slug === "line-counter") return <LineCounter />;
@@ -74,5 +81,11 @@ export default function SpecialToolRenderer({ slug }: { slug: string }) {
   if (slug === "html-unescape") return <HtmlUnescape />;
   if (slug === "list-randomizer") return <ListRandomizer />;
   if (slug === "roman-numeral-converter") return <RomanNumeralConverter />;
+  if (slug === "business-days-calculator") return <BusinessDaysCalculator />;
+  if (slug === "weeks-between-dates") return <WeeksBetweenDates />;
+  if (slug === "sales-tax-calculator") return <SalesTaxCalculator />;
+  if (slug === "credit-card-payoff-calculator") return <CreditCardPayoffCalculator />;
+  if (slug === "reading-level-checker") return <ReadingLevelChecker />;
+  if (slug === "title-case-headline-analyzer") return <TitleCaseHeadlineAnalyzer />;
   return null;
 }

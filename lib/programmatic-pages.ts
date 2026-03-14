@@ -5,6 +5,7 @@ export type ProgrammaticPage = {
   category: string;
   relatedTool: string;
   parentLanding: string;
+  indexable?: boolean;
 };
 
 export const programmaticPages: ProgrammaticPage[] = [
@@ -343,5 +344,95 @@ export const programmaticPages: ProgrammaticPage[] = [
     "category": "Utility",
     "relatedTool": "roman-numeral-converter",
     "parentLanding": "/free-tools"
+  },
+  {
+    "slug": "how-to-use-a-sales-tax-calculator",
+    "title": "How to Use a Sales Tax Calculator",
+    "description": "Learn how to calculate sales tax, subtotal, and final total for quotes and purchases.",
+    "category": "Business",
+    "relatedTool": "sales-tax-calculator",
+    "parentLanding": "/online-calculators",
+    "indexable": true
+  },
+  {
+    "slug": "credit-card-payoff-how-long-will-it-take",
+    "title": "Credit Card Payoff: How Long Will It Take?",
+    "description": "Estimate how many months it may take to pay off a credit card balance with fixed monthly payments.",
+    "category": "Finance",
+    "relatedTool": "credit-card-payoff-calculator",
+    "parentLanding": "/online-calculators",
+    "indexable": true
+  },
+  {
+    "slug": "business-days-between-dates",
+    "title": "Business Days Between Dates",
+    "description": "Count weekdays between two dates for deadlines, shipping windows, and project planning.",
+    "category": "Date and Time",
+    "relatedTool": "business-days-calculator",
+    "parentLanding": "/online-calculators",
+    "indexable": true
+  },
+  {
+    "slug": "weeks-between-two-dates",
+    "title": "Weeks Between Two Dates",
+    "description": "See how many full weeks and extra days fall between two dates.",
+    "category": "Date and Time",
+    "relatedTool": "weeks-between-dates",
+    "parentLanding": "/online-calculators",
+    "indexable": true
+  },
+  {
+    "slug": "reading-level-checker-for-blog-posts",
+    "title": "Reading Level Checker for Blog Posts",
+    "description": "Review readability before you publish blog posts, landing pages, or emails.",
+    "category": "Writing",
+    "relatedTool": "reading-level-checker",
+    "parentLanding": "/free-tools",
+    "indexable": true
+  },
+  {
+    "slug": "headline-title-case-checker",
+    "title": "Headline Title Case Checker",
+    "description": "Convert headlines to title case and review headline length before publishing.",
+    "category": "Writing",
+    "relatedTool": "title-case-headline-analyzer",
+    "parentLanding": "/free-tools",
+    "indexable": true
+  },
+  {
+    "slug": "webp-to-jpg-online",
+    "title": "WEBP to JPG Online",
+    "description": "Convert WEBP images to JPG online for easier sharing, uploads, and editing.",
+    "category": "Image",
+    "relatedTool": "webp-to-jpg",
+    "parentLanding": "/image-tools",
+    "indexable": true
+  },
+  {
+    "slug": "how-to-check-reading-level",
+    "title": "How to Check Reading Level",
+    "description": "See how readability tools estimate grade level and how to simplify text for everyday readers.",
+    "category": "Writing",
+    "relatedTool": "reading-level-checker",
+    "parentLanding": "/free-tools",
+    "indexable": true
+  },
+  {
+    "slug": "sales-tax-before-and-after-price",
+    "title": "Sales Tax Before and After Price",
+    "description": "Work out the tax amount and final total from a pre-tax price in a few seconds.",
+    "category": "Business",
+    "relatedTool": "sales-tax-calculator",
+    "parentLanding": "/online-calculators",
+    "indexable": true
+  },
+  {
+    "slug": "credit-card-interest-vs-payment",
+    "title": "Credit Card Interest vs Payment",
+    "description": "Compare monthly payment size to payoff time and interest cost on a revolving card balance.",
+    "category": "Finance",
+    "relatedTool": "credit-card-payoff-calculator",
+    "parentLanding": "/online-calculators",
+    "indexable": true
   }
 ];

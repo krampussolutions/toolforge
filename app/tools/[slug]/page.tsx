@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import AdBanner from "@/components/AdBanner";
 import ToolSidebar from "@/components/ToolSidebar";
 import SpecialToolRenderer from "@/components/special/SpecialToolRenderer";
+import CoreToolRenderer from "@/components/special/CoreToolRenderer";
 import { SITE_URL, toolPages } from "@/lib/site";
 import { toolContent } from "@/lib/tool-content";
 import { programmaticPages } from "@/lib/programmatic-pages";
@@ -28,6 +29,7 @@ const specialSlugs = [
   "duplicate-line-remover",
   "png-compressor",
   "webp-to-png",
+  "webp-to-jpg",
   "text-reverser",
   "remove-extra-spaces",
   "line-counter",
@@ -45,7 +47,13 @@ const specialSlugs = [
   "html-escape",
   "html-unescape",
   "list-randomizer",
-  "roman-numeral-converter"
+  "roman-numeral-converter",
+  "business-days-calculator",
+  "weeks-between-dates",
+  "sales-tax-calculator",
+  "credit-card-payoff-calculator",
+  "reading-level-checker",
+  "title-case-headline-analyzer"
 ];
 
 function getPage(slug: string) {
@@ -64,7 +72,7 @@ export function generateMetadata({
   const item = getPage(params.slug);
   if (!item) return {};
 
-  const title = `${item.title} | ${item.category} Tool`;
+  const title = `${item.title} | UtilHubX`;
   const url = `${SITE_URL}/tools/${item.slug}`;
   const description = `${item.title} on UtilHubX helps you ${item.description.charAt(0).toLowerCase()}${item.description.slice(1)} Use it free in your browser on desktop or mobile.`;
 
@@ -156,6 +164,8 @@ export default function Page({ params }: { params: { slug: string } }) {
 
         {isSpecial ? (
           <SpecialToolRenderer slug={item.slug} />
+        ) : item.kind === "suite" ? (
+          <CoreToolRenderer slug={item.slug} />
         ) : (
           <div className="card">
             <h2>Use the {item.title} online</h2>

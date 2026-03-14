@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { categories, suites, toolPages, SITE_URL, toSlug } from "@/lib/site";
+import { programmaticPages } from "@/lib/programmatic-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -42,5 +43,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...suitePages, ...categoryPages, ...toolUrls];
+  const guideUrls: MetadataRoute.Sitemap = programmaticPages
+    .filter((item) => item.indexable)
+    .map((item) => ({
+      url: `${SITE_URL}/guides/${item.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    }));
+
+  return [...staticPages, ...suitePages, ...categoryPages, ...toolUrls, ...guideUrls];
 }

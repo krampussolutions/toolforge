@@ -559,6 +559,62 @@ export const toolPages = [
     "description": "Convert numbers to and from Roman numerals.",
     "parent": "everyday-tools",
     "kind": "special"
+  },
+  {
+    "slug": "webp-to-jpg",
+    "title": "WEBP to JPG",
+    "category": "Image",
+    "description": "Convert WEBP images to JPG in your browser.",
+    "parent": "image-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "sales-tax-calculator",
+    "title": "Sales Tax Calculator",
+    "category": "Business",
+    "description": "Calculate sales tax, subtotal, and final price instantly.",
+    "parent": "business-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "credit-card-payoff-calculator",
+    "title": "Credit Card Payoff Calculator",
+    "category": "Finance",
+    "description": "Estimate how long it will take to pay off credit card debt.",
+    "parent": "finance-calculators",
+    "kind": "special"
+  },
+  {
+    "slug": "business-days-calculator",
+    "title": "Business Days Calculator",
+    "category": "Date and Time",
+    "description": "Count weekdays and business days between two dates.",
+    "parent": "date-time-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "weeks-between-dates",
+    "title": "Weeks Between Dates Calculator",
+    "category": "Date and Time",
+    "description": "Calculate the number of weeks and days between two dates.",
+    "parent": "date-time-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "reading-level-checker",
+    "title": "Reading Level Checker",
+    "category": "Writing",
+    "description": "Estimate reading grade level and readability for pasted text.",
+    "parent": "text-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "title-case-headline-analyzer",
+    "title": "Title Case Headline Analyzer",
+    "category": "Writing",
+    "description": "Convert headlines to title case and review headline quality.",
+    "parent": "text-tools",
+    "kind": "special"
   }
 ] as const;
 export const categories = [

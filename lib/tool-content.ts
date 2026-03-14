@@ -1,3 +1,5 @@
+import { toolPages } from "@/lib/site";
+
 export type ToolContent = {
   examples: string[];
   intro: string;
@@ -5,1741 +7,248 @@ export type ToolContent = {
   faq: { q: string; a: string }[];
 };
 
-export const toolContent: Record<string, ToolContent> = {
-  "compress-image": {
-    "intro": "Compress Image Online helps people complete a common image task quickly in the browser without extra software.",
-    "examples": [
-      "Use compress image online for everyday online tasks",
-      "Quickly handle image work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
+const overrides: Record<string, ToolContent> = {
+  "webp-to-jpg": {
+    intro:
+      "WEBP to JPG converts modern WEBP images into widely supported JPG files directly in your browser. It is useful when you need a file format that works with older apps, upload forms, printers, or image editors that do not fully support WEBP.",
+    examples: [
+      "Convert WEBP images before uploading to a site that only accepts JPG",
+      "Turn screenshots or downloaded assets into a more compatible file type",
+      "Create smaller, easy-to-share photos for email or messaging",
     ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
+    howItWorks: [
+      "Upload a WEBP image from your device",
+      "Convert the file to JPG in your browser",
+      "Preview the result and download the converted image",
+      "Repeat the process for any other WEBP files you need to change",
     ],
-    "faq": [
+    faq: [
       {
-        "q": "What does compress image online do?",
-        "a": "Reduce image file size directly in your browser."
+        q: "Why use WEBP to JPG?",
+        a: "Use WEBP to JPG when you need a more universally accepted image format for uploads, email, or older software.",
       },
       {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
+        q: "Can I use WEBP to JPG on mobile?",
+        a: "Yes. You can convert WEBP images on desktop or mobile in a modern browser.",
       },
       {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
+        q: "Will the image stay private?",
+        a: "This converter is designed for browser-based use so you can handle simple conversions without a complex desktop workflow.",
+      },
+    ],
   },
-  "resize-image": {
-    "intro": "Resize Image Online helps people complete a common image task quickly in the browser without extra software.",
-    "examples": [
-      "Use resize image online for everyday online tasks",
-      "Quickly handle image work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
+  "sales-tax-calculator": {
+    intro:
+      "Sales Tax Calculator helps you work out the tax amount, subtotal, and final total before you ring up an order, send an invoice, or check a receipt. It is useful for everyday shopping, contractor estimates, and small-business pricing.",
+    examples: [
+      "Estimate the final price of a retail purchase with local tax added",
+      "Check whether a quote includes the correct tax amount",
+      "See how much sales tax changes the final total on a larger order",
     ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
+    howItWorks: [
+      "Enter the price before tax",
+      "Enter the sales tax rate as a percentage",
+      "View the tax amount and final total instantly",
+      "Adjust the rate or price to compare different scenarios",
     ],
-    "faq": [
+    faq: [
       {
-        "q": "What does resize image online do?",
-        "a": "Resize images in your browser without uploading to a server."
+        q: "What does the sales tax calculator show?",
+        a: "It shows the tax amount and the final total after tax is added to the original price.",
       },
       {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
+        q: "Can I use decimal tax rates?",
+        a: "Yes. You can enter common rates like 7, 7.25, or 8.5 depending on your location.",
       },
       {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
+        q: "Is this useful for business quotes?",
+        a: "Yes. It is useful for checking proposals, invoices, and point-of-sale totals.",
+      },
+    ],
   },
-  "jpg-to-png": {
-    "intro": "JPG to PNG Converter helps people complete a common image task quickly in the browser without extra software.",
-    "examples": [
-      "Use jpg to png converter for everyday online tasks",
-      "Quickly handle image work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
+  "credit-card-payoff-calculator": {
+    intro:
+      "Credit Card Payoff Calculator estimates how long it may take to clear a balance based on your current balance, interest rate, and monthly payment. It helps you compare payoff strategies before you commit to a plan.",
+    examples: [
+      "Estimate payoff time for an existing credit card balance",
+      "Compare a minimum-style payment to a more aggressive monthly payment",
+      "See how much interest can build up when a balance stays open longer",
     ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
+    howItWorks: [
+      "Enter the current card balance",
+      "Add the APR for the card",
+      "Enter the amount you plan to pay each month",
+      "Review the estimated months to payoff and total interest",
     ],
-    "faq": [
+    faq: [
       {
-        "q": "What does jpg to png converter do?",
-        "a": "Convert JPG images to PNG in your browser."
+        q: "Does this replace lender statements?",
+        a: "No. It is an estimate designed to help with planning and comparison, not a lender-issued payoff figure.",
       },
       {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
+        q: "What if my payment is too low?",
+        a: "If the monthly payment does not cover the interest, the calculator will show that payoff is not possible at that rate.",
       },
       {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
+        q: "Why is payoff time important?",
+        a: "Payoff time helps you understand the cost of carrying credit card debt and how faster payments can reduce interest.",
+      },
+    ],
   },
-  "png-to-jpg": {
-    "intro": "PNG to JPG Converter helps people complete a common image task quickly in the browser without extra software.",
-    "examples": [
-      "Use png to jpg converter for everyday online tasks",
-      "Quickly handle image work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
+  "business-days-calculator": {
+    intro:
+      "Business Days Calculator counts weekdays between two dates so you can estimate turnaround time, delivery windows, deadlines, and scheduling gaps without counting weekends by hand.",
+    examples: [
+      "Count working days between a start date and project deadline",
+      "Estimate delivery windows that skip weekends",
+      "Check how many weekdays are left before an invoice due date",
     ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
+    howItWorks: [
+      "Choose a start date and end date",
+      "Let the tool count the calendar days and weekdays",
+      "Review the total business days and weekend days",
+      "Adjust the dates until the schedule fits your needs",
     ],
-    "faq": [
+    faq: [
       {
-        "q": "What does png to jpg converter do?",
-        "a": "Convert PNG images to JPG in your browser."
+        q: "Does it count weekends?",
+        a: "It separates calendar days from weekdays so you can see both numbers clearly.",
       },
       {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
+        q: "Does it handle custom holidays?",
+        a: "This version focuses on weekdays and weekends. For most quick planning needs, that covers the common use case.",
       },
       {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
+        q: "Who uses a business days calculator?",
+        a: "Business owners, freelancers, contractors, office staff, and anyone planning deadlines commonly use it.",
+      },
+    ],
   },
-  "crop-image": {
-    "intro": "Crop Image Online helps people complete a common image task quickly in the browser without extra software.",
-    "examples": [
-      "Use crop image online for everyday online tasks",
-      "Quickly handle image work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
+  "weeks-between-dates": {
+    intro:
+      "Weeks Between Dates Calculator shows how many full weeks and extra days fall between two dates. It is useful for scheduling, project windows, travel planning, and reporting periods.",
+    examples: [
+      "Find the number of weeks between two appointments",
+      "Break a project timeline into weeks and leftover days",
+      "Estimate how long a date range lasts without doing the math manually",
     ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
+    howItWorks: [
+      "Pick a start date and end date",
+      "The tool calculates the total days between them",
+      "It converts that total into full weeks and remaining days",
+      "Use the result for planning or comparison",
     ],
-    "faq": [
+    faq: [
       {
-        "q": "What does crop image online do?",
-        "a": "Crop an image quickly in your browser."
+        q: "Why use weeks instead of days?",
+        a: "Weeks make longer ranges easier to understand at a glance, especially for projects, due dates, and recurring plans.",
       },
       {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
+        q: "Does it also show days?",
+        a: "Yes. The calculator shows total days along with full weeks and remaining days.",
       },
       {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
+        q: "Can I use this for work schedules?",
+        a: "Yes. It is useful for planning schedules, timelines, contracts, and recurring tasks.",
+      },
+    ],
   },
-  "image-to-pdf": {
-    "intro": "Image to PDF helps people complete a common pdf task quickly in the browser without extra software.",
-    "examples": [
-      "Use image to pdf for everyday online tasks",
-      "Quickly handle pdf work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
+  "reading-level-checker": {
+    intro:
+      "Reading Level Checker estimates how difficult a block of text may be to read. It can help with blog posts, landing pages, emails, product descriptions, school writing, and general readability checks.",
+    examples: [
+      "Review a blog post before publishing to make it easier to scan",
+      "Check whether marketing copy feels too dense for general readers",
+      "Compare different rewrites to see which version is simpler",
     ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
+    howItWorks: [
+      "Paste your text into the tool",
+      "The checker counts words, sentences, and syllable patterns",
+      "It estimates a readability score and grade level",
+      "Use the result to simplify or tighten the writing if needed",
     ],
-    "faq": [
+    faq: [
       {
-        "q": "What does image to pdf do?",
-        "a": "Turn one or more images into a PDF."
+        q: "Is the reading level exact?",
+        a: "No. It is an estimate that helps you compare drafts and spot overly dense writing.",
       },
       {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
+        q: "Who uses reading level tools?",
+        a: "Writers, marketers, teachers, students, and business owners commonly use them.",
       },
       {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
+        q: "Can this help SEO content?",
+        a: "Yes. Clearer content is often easier for visitors to read and stay engaged with.",
+      },
+    ],
   },
-  "merge-pdf": {
-    "intro": "Merge PDF helps people complete a common pdf task quickly in the browser without extra software.",
-    "examples": [
-      "Use merge pdf for everyday online tasks",
-      "Quickly handle pdf work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
+  "title-case-headline-analyzer": {
+    intro:
+      "Title Case Headline Analyzer converts text into title case and gives quick feedback on length, word count, and headline shape. It is useful for blog titles, product titles, page headings, email subjects, and social posts.",
+    examples: [
+      "Convert a rough draft headline into title case quickly",
+      "Check whether a headline may be too short or too long",
+      "Review word count before publishing a page title or article heading",
     ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
+    howItWorks: [
+      "Paste or type a headline into the input box",
+      "Convert the headline to title case instantly",
+      "Review length and quick feedback notes",
+      "Edit and compare alternate headline versions",
     ],
-    "faq": [
+    faq: [
       {
-        "q": "What does merge pdf do?",
-        "a": "Combine multiple PDFs into one file."
+        q: "What is title case?",
+        a: "Title case capitalizes major words in a headline while leaving certain short connector words lowercase depending on style.",
       },
       {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
+        q: "Does this replace a full SEO audit?",
+        a: "No. It gives quick headline formatting and length guidance, not a full SEO optimization report.",
       },
       {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
+        q: "What is this useful for?",
+        a: "It is useful for page titles, H1s, blog posts, video titles, and social content drafts.",
+      },
+    ],
   },
-  "split-pdf": {
-    "intro": "Split PDF helps people complete a common pdf task quickly in the browser without extra software.",
-    "examples": [
-      "Use split pdf for everyday online tasks",
-      "Quickly handle pdf work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does split pdf do?",
-        "a": "Extract selected PDF pages into a new file."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "loan-calculator": {
-    "intro": "Loan Calculator helps people complete a common finance task quickly in the browser without extra software.",
-    "examples": [
-      "Use loan calculator for everyday online tasks",
-      "Quickly handle finance work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does loan calculator do?",
-        "a": "Estimate monthly loan payments online."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "mortgage-calculator": {
-    "intro": "Mortgage Calculator helps people complete a common finance task quickly in the browser without extra software.",
-    "examples": [
-      "Use mortgage calculator for everyday online tasks",
-      "Quickly handle finance work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does mortgage calculator do?",
-        "a": "Estimate mortgage payments online."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "car-payment-calculator": {
-    "intro": "Car Payment Calculator helps people complete a common finance task quickly in the browser without extra software.",
-    "examples": [
-      "Use car payment calculator for everyday online tasks",
-      "Quickly handle finance work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does car payment calculator do?",
-        "a": "Estimate monthly car payments online."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "compound-interest-calculator": {
-    "intro": "Compound Interest Calculator helps people complete a common finance task quickly in the browser without extra software.",
-    "examples": [
-      "Use compound interest calculator for everyday online tasks",
-      "Quickly handle finance work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does compound interest calculator do?",
-        "a": "Estimate investment growth over time."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "savings-calculator": {
-    "intro": "Savings Calculator helps people complete a common finance task quickly in the browser without extra software.",
-    "examples": [
-      "Use savings calculator for everyday online tasks",
-      "Quickly handle finance work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does savings calculator do?",
-        "a": "Estimate future savings growth."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "roi-calculator": {
-    "intro": "ROI Calculator helps people complete a common finance task quickly in the browser without extra software.",
-    "examples": [
-      "Use roi calculator for everyday online tasks",
-      "Quickly handle finance work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does roi calculator do?",
-        "a": "Calculate return on investment quickly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "bmi-calculator": {
-    "intro": "BMI Calculator helps people complete a common health task quickly in the browser without extra software.",
-    "examples": [
-      "Use bmi calculator for everyday online tasks",
-      "Quickly handle health work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does bmi calculator do?",
-        "a": "Calculate body mass index instantly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "calorie-calculator": {
-    "intro": "Calorie Calculator helps people complete a common health task quickly in the browser without extra software.",
-    "examples": [
-      "Use calorie calculator for everyday online tasks",
-      "Quickly handle health work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does calorie calculator do?",
-        "a": "Estimate daily calorie needs."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "protein-calculator": {
-    "intro": "Protein Calculator helps people complete a common health task quickly in the browser without extra software.",
-    "examples": [
-      "Use protein calculator for everyday online tasks",
-      "Quickly handle health work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does protein calculator do?",
-        "a": "Estimate daily protein target."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "water-intake-calculator": {
-    "intro": "Water Intake Calculator helps people complete a common health task quickly in the browser without extra software.",
-    "examples": [
-      "Use water intake calculator for everyday online tasks",
-      "Quickly handle health work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does water intake calculator do?",
-        "a": "Estimate daily water intake."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "age-calculator": {
-    "intro": "Age Calculator helps people complete a common date and time task quickly in the browser without extra software.",
-    "examples": [
-      "Use age calculator for everyday online tasks",
-      "Quickly handle date and time work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does age calculator do?",
-        "a": "Calculate your exact age online."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "days-between-dates": {
-    "intro": "Days Between Dates Calculator helps people complete a common date and time task quickly in the browser without extra software.",
-    "examples": [
-      "Use days between dates calculator for everyday online tasks",
-      "Quickly handle date and time work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does days between dates calculator do?",
-        "a": "Find the number of days between two dates."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "countdown-calculator": {
-    "intro": "Countdown Calculator helps people complete a common date and time task quickly in the browser without extra software.",
-    "examples": [
-      "Use countdown calculator for everyday online tasks",
-      "Quickly handle date and time work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does countdown calculator do?",
-        "a": "Count down to a future date."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "hours-worked-calculator": {
-    "intro": "Hours Worked Calculator helps people complete a common date and time task quickly in the browser without extra software.",
-    "examples": [
-      "Use hours worked calculator for everyday online tasks",
-      "Quickly handle date and time work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does hours worked calculator do?",
-        "a": "Calculate total hours worked quickly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "word-counter": {
-    "intro": "Word Counter helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use word counter for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does word counter do?",
-        "a": "Count words and characters online."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "case-converter": {
-    "intro": "Case Converter helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use case converter for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does case converter do?",
-        "a": "Convert uppercase, lowercase, and title case."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "unit-converter": {
-    "intro": "Unit Converter helps people complete a common conversion task quickly in the browser without extra software.",
-    "examples": [
-      "Use unit converter for everyday online tasks",
-      "Quickly handle conversion work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does unit converter do?",
-        "a": "Convert units online."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "feet-to-meters": {
-    "intro": "Feet to Meters Converter helps people complete a common conversion task quickly in the browser without extra software.",
-    "examples": [
-      "Use feet to meters converter for everyday online tasks",
-      "Quickly handle conversion work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does feet to meters converter do?",
-        "a": "Convert feet to meters instantly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "kg-to-lbs": {
-    "intro": "KG to LBS Converter helps people complete a common conversion task quickly in the browser without extra software.",
-    "examples": [
-      "Use kg to lbs converter for everyday online tasks",
-      "Quickly handle conversion work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does kg to lbs converter do?",
-        "a": "Convert kilograms to pounds instantly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "discount-calculator": {
-    "intro": "Discount Calculator helps people complete a common business task quickly in the browser without extra software.",
-    "examples": [
-      "Use discount calculator for everyday online tasks",
-      "Quickly handle business work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does discount calculator do?",
-        "a": "Calculate final price after discount."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "break-even-calculator": {
-    "intro": "Break-Even Calculator helps people complete a common business task quickly in the browser without extra software.",
-    "examples": [
-      "Use break-even calculator for everyday online tasks",
-      "Quickly handle business work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does break-even calculator do?",
-        "a": "Calculate break-even point."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "percentage-calculator": {
-    "intro": "Percentage Calculator helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use percentage calculator for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does percentage calculator do?",
-        "a": "Calculate percentages quickly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "tip-calculator": {
-    "intro": "Tip Calculator helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use tip calculator for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does tip calculator do?",
-        "a": "Calculate tip and total instantly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "password-generator": {
-    "intro": "Password Generator helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use password generator for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does password generator do?",
-        "a": "Generate strong passwords."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "json-formatter": {
-    "intro": "JSON Formatter helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use json formatter for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does json formatter do?",
-        "a": "Format and beautify JSON online."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "base64-encoder": {
-    "intro": "Base64 Encoder helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use base64 encoder for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does base64 encoder do?",
-        "a": "Encode text to Base64 instantly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "base64-decoder": {
-    "intro": "Base64 Decoder helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use base64 decoder for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does base64 decoder do?",
-        "a": "Decode Base64 text instantly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "url-encoder": {
-    "intro": "URL Encoder helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use url encoder for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does url encoder do?",
-        "a": "Encode text for safe use in URLs."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "url-decoder": {
-    "intro": "URL Decoder helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use url decoder for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does url decoder do?",
-        "a": "Decode URL-encoded text instantly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "uuid-generator": {
-    "intro": "UUID Generator helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use uuid generator for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does uuid generator do?",
-        "a": "Generate UUIDs in your browser."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "slug-generator": {
-    "intro": "Slug Generator helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use slug generator for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does slug generator do?",
-        "a": "Turn text into a clean URL slug."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "remove-line-breaks": {
-    "intro": "Remove Line Breaks helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use remove line breaks for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does remove line breaks do?",
-        "a": "Remove line breaks from text quickly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "text-sorter": {
-    "intro": "Text Sorter helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use text sorter for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does text sorter do?",
-        "a": "Sort lines of text alphabetically."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "duplicate-line-remover": {
-    "intro": "Duplicate Line Remover helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use duplicate line remover for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does duplicate line remover do?",
-        "a": "Remove duplicate lines from text."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "png-compressor": {
-    "intro": "PNG Compressor helps people complete a common image task quickly in the browser without extra software.",
-    "examples": [
-      "Use png compressor for everyday online tasks",
-      "Quickly handle image work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does png compressor do?",
-        "a": "Compress PNG images in your browser."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "webp-to-png": {
-    "intro": "WEBP to PNG helps people complete a common image task quickly in the browser without extra software.",
-    "examples": [
-      "Use webp to png for everyday online tasks",
-      "Quickly handle image work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does webp to png do?",
-        "a": "Convert WEBP images to PNG in your browser."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "text-reverser": {
-    "intro": "Text Reverser helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use text reverser for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does text reverser do?",
-        "a": "Reverse text instantly in your browser."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "remove-extra-spaces": {
-    "intro": "Remove Extra Spaces helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use remove extra spaces for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does remove extra spaces do?",
-        "a": "Clean repeated spaces and blank gaps from text."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "line-counter": {
-    "intro": "Line Counter helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use line counter for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does line counter do?",
-        "a": "Count lines in text instantly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "word-frequency-counter": {
-    "intro": "Word Frequency Counter helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use word frequency counter for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does word frequency counter do?",
-        "a": "Count the most common words in text."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "text-repeater": {
-    "intro": "Text Repeater helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use text repeater for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does text repeater do?",
-        "a": "Repeat text multiple times quickly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "text-to-binary": {
-    "intro": "Text to Binary helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use text to binary for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does text to binary do?",
-        "a": "Convert plain text into binary."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "binary-to-text": {
-    "intro": "Binary to Text helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use binary to text for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does binary to text do?",
-        "a": "Convert binary back into readable text."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "rgb-to-hex": {
-    "intro": "RGB to HEX helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use rgb to hex for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does rgb to hex do?",
-        "a": "Convert RGB color values to HEX."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "hex-to-rgb": {
-    "intro": "HEX to RGB helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use hex to rgb for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does hex to rgb do?",
-        "a": "Convert HEX colors to RGB values."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "unix-timestamp-converter": {
-    "intro": "Unix Timestamp Converter helps people complete a common date and time task quickly in the browser without extra software.",
-    "examples": [
-      "Use unix timestamp converter for everyday online tasks",
-      "Quickly handle date and time work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does unix timestamp converter do?",
-        "a": "Convert Unix timestamps and readable dates."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "random-letter-generator": {
-    "intro": "Random Letter Generator helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use random letter generator for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does random letter generator do?",
-        "a": "Generate random letters instantly."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "password-strength-checker": {
-    "intro": "Password Strength Checker helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use password strength checker for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does password strength checker do?",
-        "a": "Check password strength in the browser."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "uuid-bulk-generator": {
-    "intro": "UUID Bulk Generator helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use uuid bulk generator for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does uuid bulk generator do?",
-        "a": "Generate multiple UUIDs at once."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "meta-description-counter": {
-    "intro": "Meta Description Counter helps people complete a common writing task quickly in the browser without extra software.",
-    "examples": [
-      "Use meta description counter for everyday online tasks",
-      "Quickly handle writing work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does meta description counter do?",
-        "a": "Count characters for SEO meta descriptions."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "html-escape": {
-    "intro": "HTML Escape helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use html escape for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does html escape do?",
-        "a": "Escape special HTML characters safely."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "html-unescape": {
-    "intro": "HTML Unescape helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use html unescape for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does html unescape do?",
-        "a": "Convert escaped HTML text back to normal."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "list-randomizer": {
-    "intro": "List Randomizer helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use list randomizer for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does list randomizer do?",
-        "a": "Shuffle list items into a random order."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  },
-  "roman-numeral-converter": {
-    "intro": "Roman Numeral Converter helps people complete a common utility task quickly in the browser without extra software.",
-    "examples": [
-      "Use roman numeral converter for everyday online tasks",
-      "Quickly handle utility work before sharing or publishing",
-      "Save time when you need a fast browser-based result"
-    ],
-    "howItWorks": [
-      "Enter, upload, or paste the required input",
-      "Run the tool in your browser",
-      "Review the result and make adjustments if needed",
-      "Copy, save, or download the output"
-    ],
-    "faq": [
-      {
-        "q": "What does roman numeral converter do?",
-        "a": "Convert numbers to and from Roman numerals."
-      },
-      {
-        "q": "Does this work in the browser?",
-        "a": "Yes. UtilHubX tools are designed to work directly in the browser whenever possible."
-      },
-      {
-        "q": "Can I use this for free?",
-        "a": "Yes. This tool is available as a free browser-based utility on UtilHubX."
-      }
-    ]
-  }
 };
+
+function buildGenericContent(title: string, category: string, description: string): ToolContent {
+  const lowerTitle = title.toLowerCase();
+  const lowerCategory = category.toLowerCase();
+  return {
+    intro: `${title} helps people complete a common ${lowerCategory} task quickly in the browser without extra software. It is useful when you want a focused workflow for a simple job and do not need a heavier desktop app.`,
+    examples: [
+      `Use the ${lowerTitle} for quick everyday ${lowerCategory} work`,
+      `Handle a one-off ${lowerCategory} task before sharing, publishing, or saving the result`,
+      `Get a fast answer in your browser without extra setup`,
+    ],
+    howItWorks: [
+      "Enter, upload, or paste the required input",
+      "Run the tool in your browser",
+      "Review the result and make adjustments if needed",
+      "Copy, save, or download the output",
+    ],
+    faq: [
+      {
+        q: `What does ${lowerTitle} do?`,
+        a: description,
+      },
+      {
+        q: "Does this work in the browser?",
+        a: "Yes. UtilHubX tools are designed to work directly in the browser whenever possible.",
+      },
+      {
+        q: "Can I use this for free?",
+        a: "Yes. This tool is available as a free browser-based utility on UtilHubX.",
+      },
+    ],
+  };
+}
+
+export const toolContent: Record<string, ToolContent> = Object.fromEntries(
+  toolPages.map((item) => [
+    item.slug,
+    overrides[item.slug] ?? buildGenericContent(item.title, item.category, item.description),
+  ])
+);
