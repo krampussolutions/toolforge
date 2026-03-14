@@ -218,7 +218,7 @@ export const toolPages = [
   },
   {
     "slug": "days-between-dates",
-    "title": "Days Between Dates Calculator",
+    "title": "Days Between Dates",
     "category": "Date and Time",
     "description": "Find the number of days between two dates.",
     "parent": "date-time-tools",
