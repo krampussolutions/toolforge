@@ -2,7 +2,7 @@ import CalculatorCard from "@/components/CalculatorCard";
 import { toolPages, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "Online Calculators",
+  title: "Online Calculators | UtilHubX",
   description: "Browse free online calculators on UtilHubX for finance, health, date and time, business, and everyday calculations.",
   alternates: { canonical: `${SITE_URL}/online-calculators` },
   openGraph: {
