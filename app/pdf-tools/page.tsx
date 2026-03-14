@@ -24,7 +24,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="page-title">PDF Tools</h1>
-      <p className="page-intro">Use these PDF tools to merge files, split pages, and turn images into PDFs without installing desktop software. They work well for forms, school documents, receipts, contracts, scanned pages, and quick file cleanup.</p>
+      <p className="page-intro">Use these PDF tools to merge files, split pages, rotate pages, delete pages, reorder documents, count page totals, and turn images into PDFs without installing desktop software. They work well for forms, school documents, receipts, contracts, scanned pages, and quick file cleanup.</p>
 
       <section className="section">
         <div className="card copy">
@@ -84,6 +84,8 @@ export default function Page() {
           <div className="popular-links">
             <a href="/guides/merge-pdf-online">How to merge PDF files online</a>
             <a href="/guides/split-pdf-online">How to split PDF pages online</a>
+            <a href="/guides/rotate-pdf-online">How to rotate PDF pages online</a>
+            <a href="/guides/delete-pdf-pages-online">How to delete PDF pages online</a>
           </div>
         </div>
       </section>

@@ -184,6 +184,8 @@ export default function HomePage() {
             <Link href="/guides/merge-pdf-online">How to merge PDF files online</Link>
             <Link href="/guides/how-to-check-reading-level">How to check reading level</Link>
             <Link href="/guides/reading-level-checker-for-blog-posts">Reading level checker for blog posts</Link>
+            <Link href="/guides/rotate-pdf-online">How to rotate PDF online</Link>
+            <Link href="/guides/resize-image-to-kb">How to resize an image to KB</Link>
           </div>
         </div>
       </section>

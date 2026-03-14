@@ -115,6 +115,8 @@ These are the tools people use most often for image conversion, PDF jobs, calcul
             <a href="/guides/merge-pdf-online">Merge PDF online guide</a>
             <a href="/guides/how-to-check-reading-level">How to check reading level</a>
             <a href="/guides/headline-title-case-checker">Headline title case checker guide</a>
+            <a href="/guides/rotate-pdf-online">Rotate PDF online guide</a>
+            <a href="/guides/jpg-to-webp-online">JPG to WEBP online guide</a>
           </div>
         </div>
       </section>

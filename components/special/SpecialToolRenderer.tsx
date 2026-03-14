@@ -40,6 +40,12 @@ import SalesTaxCalculator from "@/components/special/SalesTaxCalculator";
 import CreditCardPayoffCalculator from "@/components/special/CreditCardPayoffCalculator";
 import ReadingLevelChecker from "@/components/special/ReadingLevelChecker";
 import TitleCaseHeadlineAnalyzer from "@/components/special/TitleCaseHeadlineAnalyzer";
+import RotatePdf from "@/components/special/RotatePdf";
+import DeletePdfPages from "@/components/special/DeletePdfPages";
+import ReorderPdfPages from "@/components/special/ReorderPdfPages";
+import PdfPageCounter from "@/components/special/PdfPageCounter";
+import ImageResizerByKb from "@/components/special/ImageResizerByKb";
+import SvgToPng from "@/components/special/SvgToPng";
 
 export default function SpecialToolRenderer({ slug }: { slug: string }) {
   if (slug === "compress-image") return <ImageCompressor />;
@@ -87,5 +93,15 @@ export default function SpecialToolRenderer({ slug }: { slug: string }) {
   if (slug === "credit-card-payoff-calculator") return <CreditCardPayoffCalculator />;
   if (slug === "reading-level-checker") return <ReadingLevelChecker />;
   if (slug === "title-case-headline-analyzer") return <TitleCaseHeadlineAnalyzer />;
+  if (slug === "rotate-pdf") return <RotatePdf />;
+  if (slug === "delete-pdf-pages") return <DeletePdfPages />;
+  if (slug === "reorder-pdf-pages") return <ReorderPdfPages />;
+  if (slug === "pdf-page-counter") return <PdfPageCounter />;
+  if (slug === "image-resizer-by-kb") return <ImageResizerByKb />;
+  if (slug === "jpg-to-webp") return <ImageFormatConverter mime="image/webp" />;
+  if (slug === "png-to-webp") return <ImageFormatConverter mime="image/webp" />;
+  if (slug === "jpeg-to-jpg") return <ImageFormatConverter mime="image/jpeg" />;
+  if (slug === "gif-to-jpg") return <ImageFormatConverter mime="image/jpeg" />;
+  if (slug === "svg-to-png") return <SvgToPng />;
   return null;
 }

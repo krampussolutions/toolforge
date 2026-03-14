@@ -24,7 +24,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="page-title">Image Tools</h1>
-      <p className="page-intro">Use these image tools to compress files, resize photos, crop visuals, and convert between common image formats in your browser. They are useful for websites, email attachments, listings, forms, design handoffs, and quick file cleanup.</p>
+      <p className="page-intro">Use these image tools to compress files, resize photos, hit target KB sizes, crop visuals, and convert between common image formats in your browser. They are useful for websites, email attachments, listings, forms, design handoffs, and quick file cleanup.</p>
 
       <section className="section">
         <div className="card copy">
@@ -76,6 +76,17 @@ export default function Page() {
             suite. They save time, reduce friction, and help people complete
             common file tasks right where they are already working.
           </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="card">
+          <h2>Helpful image guides</h2>
+          <div className="popular-links">
+            <a href="/guides/resize-image-to-kb">How to resize an image to KB</a>
+            <a href="/guides/jpg-to-webp-online">How to convert JPG to WEBP online</a>
+            <a href="/guides/svg-to-png-online">How to convert SVG to PNG online</a>
+          </div>
         </div>
       </section>
     </section>

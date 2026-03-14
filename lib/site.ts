@@ -615,7 +615,87 @@ export const toolPages = [
     "description": "Convert headlines to title case and review headline quality.",
     "parent": "text-tools",
     "kind": "special"
-  }
+  },
+  {
+    "slug": "rotate-pdf",
+    "title": "Rotate PDF",
+    "category": "PDF",
+    "description": "Rotate PDF pages in your browser and download the updated file.",
+    "parent": "pdf-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "delete-pdf-pages",
+    "title": "Delete PDF Pages",
+    "category": "PDF",
+    "description": "Remove selected pages from a PDF file online.",
+    "parent": "pdf-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "reorder-pdf-pages",
+    "title": "Reorder PDF Pages",
+    "category": "PDF",
+    "description": "Change PDF page order and download a reorganized file.",
+    "parent": "pdf-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "pdf-page-counter",
+    "title": "PDF Page Counter",
+    "category": "PDF",
+    "description": "Count how many pages are in a PDF file instantly.",
+    "parent": "pdf-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "image-resizer-by-kb",
+    "title": "Image Resizer by KB",
+    "category": "Image",
+    "description": "Resize and compress an image toward a target KB size.",
+    "parent": "image-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "jpg-to-webp",
+    "title": "JPG to WEBP",
+    "category": "Image",
+    "description": "Convert JPG images to WEBP in your browser.",
+    "parent": "image-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "png-to-webp",
+    "title": "PNG to WEBP",
+    "category": "Image",
+    "description": "Convert PNG images to WEBP in your browser.",
+    "parent": "image-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "jpeg-to-jpg",
+    "title": "JPEG to JPG",
+    "category": "Image",
+    "description": "Convert JPEG images to JPG format in your browser.",
+    "parent": "image-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "gif-to-jpg",
+    "title": "GIF to JPG",
+    "category": "Image",
+    "description": "Convert a GIF image to JPG for easier sharing and uploads.",
+    "parent": "image-tools",
+    "kind": "special"
+  },
+  {
+    "slug": "svg-to-png",
+    "title": "SVG to PNG",
+    "category": "Image",
+    "description": "Convert SVG graphics to PNG in your browser.",
+    "parent": "image-tools",
+    "kind": "special"
+  },
 ] as const;
 export const categories = [
   "Business",

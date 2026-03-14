@@ -431,6 +431,206 @@ const overrides: Record<string, ToolContent> = {
       },
     ],
   },
+  "rotate-pdf": {
+    intro:
+      "Rotate PDF lets you turn pages 90, 180, or 270 degrees and download the updated file in your browser. It is useful for scanned documents, sideways phone uploads, and PDF pages that need a quick orientation fix before sharing.",
+    examples: [
+      "Rotate a sideways scan before sending it to a client or school portal",
+      "Fix a PDF exported with the wrong page orientation",
+      "Turn all pages the same direction before printing or archiving",
+    ],
+    howItWorks: [
+      "Upload a PDF file from your device",
+      "Choose how much to rotate the pages",
+      "Generate the updated PDF in your browser",
+      "Download the rotated file and check the final layout",
+    ],
+    faq: [
+      { q: "Can I rotate every page at once?", a: "Yes. This workflow is meant for quickly rotating the full document to a cleaner reading orientation." },
+      { q: "Why use a rotate PDF tool?", a: "It is useful when scans, camera captures, or exported pages open sideways or upside down." },
+      { q: "Does it work in the browser?", a: "Yes. UtilHubX handles this rotation workflow in the browser so you can fix orientation without installing extra software." },
+    ],
+  },
+  "delete-pdf-pages": {
+    intro:
+      "Delete PDF Pages removes unwanted pages from a PDF and creates a cleaner finished file. It is useful for trimming long packets, removing blank scans, dropping cover pages, and sending only the pages that matter.",
+    examples: [
+      "Remove blank pages from a scanned document",
+      "Delete a cover page or appendix before sharing a PDF",
+      "Trim a long packet down to the pages a teacher or client actually needs",
+    ],
+    howItWorks: [
+      "Upload your PDF file",
+      "Enter the page numbers or ranges you want to remove",
+      "Generate a cleaned PDF in your browser",
+      "Download the updated file and confirm the remaining pages are correct",
+    ],
+    faq: [
+      { q: "Can I remove more than one page?", a: "Yes. You can remove individual pages or page ranges when cleaning up a larger document." },
+      { q: "When is deleting PDF pages helpful?", a: "It is helpful when the original file includes extras, blank pages, duplicate scans, or sections you do not want to upload." },
+      { q: "Do I need desktop software?", a: "No. This browser-based workflow is designed for quick PDF cleanup without a full editor." },
+    ],
+  },
+  "reorder-pdf-pages": {
+    intro:
+      "Reorder PDF Pages changes page order in a PDF so the final file follows the sequence you want. It is useful for scanned packets, combined documents, reports, and forms where the pages are correct but the order is wrong.",
+    examples: [
+      "Move a signature page to the end of a packet",
+      "Reorder scanned pages that were captured out of sequence",
+      "Clean up a merged PDF before sending it to someone else",
+    ],
+    howItWorks: [
+      "Upload a PDF file",
+      "Enter the new page order as a simple list of page numbers",
+      "Generate the reordered PDF in your browser",
+      "Download the final file and review the sequence before sharing",
+    ],
+    faq: [
+      { q: "What order format should I use?", a: "Use a list of page numbers in the sequence you want, such as 3,1,2,4." },
+      { q: "Why reorder PDF pages?", a: "It is useful when pages were scanned, merged, or exported in the wrong order." },
+      { q: "Can I reorganize a PDF without editing the text?", a: "Yes. This tool focuses on page order, not document text editing." },
+    ],
+  },
+  "pdf-page-counter": {
+    intro:
+      "PDF Page Counter tells you how many pages are in a PDF file before you upload, send, split, or reorganize it. It is useful for document checks, intake forms, portal limits, and any workflow where page count matters.",
+    examples: [
+      "Check page count before uploading a file to a portal",
+      "Confirm how long a report or packet is before sharing it",
+      "Review a document before splitting, rotating, or reorganizing pages",
+    ],
+    howItWorks: [
+      "Upload a PDF file from your device",
+      "Read the page count result instantly",
+      "Use the result to plan the next PDF step if needed",
+      "Open related tools for rotating, splitting, or deleting pages",
+    ],
+    faq: [
+      { q: "Why count PDF pages online?", a: "It saves time when you need a quick document check before upload, printing, or editing." },
+      { q: "Does this change the file?", a: "No. It simply reads the PDF and reports the page count." },
+      { q: "What should I use after counting pages?", a: "If you need edits afterward, related tools like split PDF, rotate PDF, and reorder PDF pages can help." },
+    ],
+  },
+  "image-resizer-by-kb": {
+    intro:
+      "Image Resizer by KB helps you shrink an image toward a target file size in kilobytes. It is useful for forms, job applications, profile uploads, exam portals, and government systems that reject files over a specific size limit.",
+    examples: [
+      "Reduce a photo to fit under a portal upload limit",
+      "Resize an image for job, school, or ID form submissions",
+      "Create a smaller file for email without opening design software",
+    ],
+    howItWorks: [
+      "Choose a target size in KB",
+      "Upload a JPG, PNG, WEBP, or similar image",
+      "Let the tool adjust compression and dimensions toward your target",
+      "Download the reduced image and verify it meets your upload rule",
+    ],
+    faq: [
+      { q: "Will it hit the exact KB target every time?", a: "It aims for the target size as closely as possible, but exact results can vary depending on the image and output format." },
+      { q: "Why resize an image by KB instead of pixels?", a: "Many forms and portals care more about file size than dimensions, so a KB-focused workflow is often the fastest way to pass upload limits." },
+      { q: "When is this most useful?", a: "It is especially useful for official forms, profile uploads, exam portals, and email attachments with strict file limits." },
+    ],
+  },
+  "jpg-to-webp": {
+    intro:
+      "JPG to WEBP converts JPG images into WEBP format for smaller web-ready files. It is useful for websites, page-speed work, blog images, and situations where you want to reduce image size while keeping a modern format.",
+    examples: [
+      "Convert website images to a smaller web-friendly format",
+      "Create lighter blog or landing-page assets for faster loading",
+      "Generate a WEBP version of a JPG before publishing online",
+    ],
+    howItWorks: [
+      "Upload a JPG image",
+      "Convert it to WEBP in your browser",
+      "Preview or download the result",
+      "Use related image tools if you also need resizing or further compression",
+    ],
+    faq: [
+      { q: "Why convert JPG to WEBP?", a: "WEBP is often used for smaller web image files and can help with site speed and bandwidth." },
+      { q: "Is JPG to WEBP useful for websites?", a: "Yes. It is commonly used when optimizing images for blogs, landing pages, and online stores." },
+      { q: "Can I still keep the original JPG?", a: "Yes. Converting to WEBP creates a new version and does not replace your original file unless you choose to overwrite it yourself." },
+    ],
+  },
+  "png-to-webp": {
+    intro:
+      "PNG to WEBP converts PNG images into WEBP format for lighter files and faster web delivery. It is useful for product images, screenshots, UI assets, and graphics that need a modern web format.",
+    examples: [
+      "Convert PNG assets before adding them to a website",
+      "Create lighter versions of screenshots or interface graphics",
+      "Prepare image files for faster web publishing",
+    ],
+    howItWorks: [
+      "Upload a PNG image",
+      "Convert the file to WEBP in your browser",
+      "Review the converted output",
+      "Download the new file and compare size or quality if needed",
+    ],
+    faq: [
+      { q: "Why use PNG to WEBP?", a: "It can help reduce file size for web use while keeping a practical modern image format." },
+      { q: "Is PNG to WEBP good for websites?", a: "Yes. It is useful for publishing lighter images that still look clean on modern sites." },
+      { q: "Should I keep a PNG backup?", a: "Usually yes. Many people keep the original source file and use WEBP as a web delivery version." },
+    ],
+  },
+  "jpeg-to-jpg": {
+    intro:
+      "JPEG to JPG converts JPEG images into JPG format for easier compatibility with forms, upload fields, and image workflows that expect a .jpg file name. It is useful when a system treats JPEG and JPG differently in practice, even though the formats are closely related.",
+    examples: [
+      "Create a .jpg version for a portal or uploader that expects JPG",
+      "Rename and re-export a JPEG image with a JPG extension",
+      "Standardize image files before sending them to a client or platform",
+    ],
+    howItWorks: [
+      "Upload a JPEG image",
+      "Convert it to JPG in your browser",
+      "Preview the output if needed",
+      "Download the new JPG file for upload or sharing",
+    ],
+    faq: [
+      { q: "Are JPEG and JPG basically the same?", a: "Yes. They are closely related, but some systems and workflows still prefer a .jpg file extension." },
+      { q: "Why convert JPEG to JPG?", a: "It can help when a platform, uploader, or naming convention expects JPG specifically." },
+      { q: "Does this work on mobile?", a: "Yes. This kind of browser-based image conversion works well on mobile and desktop browsers." },
+    ],
+  },
+  "gif-to-jpg": {
+    intro:
+      "GIF to JPG converts a GIF image into a JPG file for simpler sharing, uploads, and compatibility. It is useful when you only need a static image version of a GIF instead of the original format.",
+    examples: [
+      "Create a static JPG version of a GIF for an upload form",
+      "Turn a simple graphic or banner into a more common image format",
+      "Make an easier-to-share still image from a GIF file",
+    ],
+    howItWorks: [
+      "Upload a GIF image",
+      "Convert it to JPG in your browser",
+      "Review the still image output",
+      "Download the JPG for sharing or upload",
+    ],
+    faq: [
+      { q: "Will an animated GIF stay animated?", a: "No. Converting GIF to JPG creates a still image rather than keeping animation." },
+      { q: "Why use GIF to JPG?", a: "It is useful when a platform needs a standard still image instead of a GIF." },
+      { q: "When is this helpful?", a: "It is helpful for quick uploads, email attachments, and simple image workflows that do not need animation." },
+    ],
+  },
+  "svg-to-png": {
+    intro:
+      "SVG to PNG converts vector graphics into a PNG image you can upload, share, or hand off more easily. It is useful for logos, icons, simple graphics, website assets, and situations where a platform does not accept SVG directly.",
+    examples: [
+      "Convert an SVG logo to PNG for a website or email signature",
+      "Create a PNG version of an icon for a form or upload field",
+      "Export vector artwork into a simpler image format for sharing",
+    ],
+    howItWorks: [
+      "Upload an SVG file from your device",
+      "Render the SVG into a PNG image in your browser",
+      "Preview the result at the generated size",
+      "Download the PNG for upload, print, or handoff",
+    ],
+    faq: [
+      { q: "Why convert SVG to PNG?", a: "PNG is widely accepted by upload systems and design workflows that do not support SVG directly." },
+      { q: "Is SVG to PNG useful for logos and icons?", a: "Yes. It is a common way to prepare vector graphics for platforms that want standard image files." },
+      { q: "Can I use this on mobile?", a: "Yes. Browser-based SVG conversion works on modern mobile and desktop browsers." },
+    ],
+  },
 };
 
 function buildGenericContent(title: string, category: string, description: string): ToolContent {

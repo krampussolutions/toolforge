@@ -54,7 +54,17 @@ const specialSlugs = [
   "sales-tax-calculator",
   "credit-card-payoff-calculator",
   "reading-level-checker",
-  "title-case-headline-analyzer"
+  "title-case-headline-analyzer",
+  "rotate-pdf",
+  "delete-pdf-pages",
+  "reorder-pdf-pages",
+  "pdf-page-counter",
+  "image-resizer-by-kb",
+  "jpg-to-webp",
+  "png-to-webp",
+  "jpeg-to-jpg",
+  "gif-to-jpg",
+  "svg-to-png"
 ];
 
 function getPage(slug: string) {

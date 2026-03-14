@@ -434,5 +434,95 @@ export const programmaticPages: ProgrammaticPage[] = [
     "relatedTool": "credit-card-payoff-calculator",
     "parentLanding": "/online-calculators",
     "indexable": true
-  }
+  },
+  {
+    "slug": "rotate-pdf-online",
+    "title": "Rotate PDF Online",
+    "description": "Rotate PDF pages online and download the updated document.",
+    "category": "PDF",
+    "relatedTool": "rotate-pdf",
+    "parentLanding": "/pdf-tools",
+    "indexable": true
+  },
+  {
+    "slug": "delete-pdf-pages-online",
+    "title": "Delete PDF Pages Online",
+    "description": "Remove selected pages from a PDF online in your browser.",
+    "category": "PDF",
+    "relatedTool": "delete-pdf-pages",
+    "parentLanding": "/pdf-tools",
+    "indexable": true
+  },
+  {
+    "slug": "reorder-pdf-pages-online",
+    "title": "Reorder PDF Pages Online",
+    "description": "Change the order of pages in a PDF online.",
+    "category": "PDF",
+    "relatedTool": "reorder-pdf-pages",
+    "parentLanding": "/pdf-tools",
+    "indexable": true
+  },
+  {
+    "slug": "pdf-page-counter-online",
+    "title": "PDF Page Counter Online",
+    "description": "Count PDF pages online before you share or upload a file.",
+    "category": "PDF",
+    "relatedTool": "pdf-page-counter",
+    "parentLanding": "/pdf-tools",
+    "indexable": true
+  },
+  {
+    "slug": "resize-image-to-kb",
+    "title": "Resize Image to KB",
+    "description": "Reduce an image toward a target KB size for forms, portals, and uploads.",
+    "category": "Image",
+    "relatedTool": "image-resizer-by-kb",
+    "parentLanding": "/image-tools",
+    "indexable": true
+  },
+  {
+    "slug": "jpg-to-webp-online",
+    "title": "JPG to WEBP Online",
+    "description": "Convert JPG to WEBP online for smaller web-ready image files.",
+    "category": "Image",
+    "relatedTool": "jpg-to-webp",
+    "parentLanding": "/image-tools",
+    "indexable": true
+  },
+  {
+    "slug": "png-to-webp-online",
+    "title": "PNG to WEBP Online",
+    "description": "Convert PNG to WEBP online in your browser.",
+    "category": "Image",
+    "relatedTool": "png-to-webp",
+    "parentLanding": "/image-tools",
+    "indexable": true
+  },
+  {
+    "slug": "jpeg-to-jpg-online",
+    "title": "JPEG to JPG Online",
+    "description": "Convert JPEG to JPG online for easier uploads and compatibility.",
+    "category": "Image",
+    "relatedTool": "jpeg-to-jpg",
+    "parentLanding": "/image-tools",
+    "indexable": true
+  },
+  {
+    "slug": "gif-to-jpg-online",
+    "title": "GIF to JPG Online",
+    "description": "Convert a GIF image to JPG online for simpler sharing.",
+    "category": "Image",
+    "relatedTool": "gif-to-jpg",
+    "parentLanding": "/image-tools",
+    "indexable": true
+  },
+  {
+    "slug": "svg-to-png-online",
+    "title": "SVG to PNG Online",
+    "description": "Convert SVG files to PNG online for uploads and design handoffs.",
+    "category": "Image",
+    "relatedTool": "svg-to-png",
+    "parentLanding": "/image-tools",
+    "indexable": true
+  },
 ];
