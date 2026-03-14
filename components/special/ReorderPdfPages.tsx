@@ -29,7 +29,11 @@ export default function ReorderPdfPages() {
       const copied = await out.copyPages(source, indices);
       copied.forEach((page) => out.addPage(page));
       const bytes = await out.save();
-      const blob = new Blob([bytes], { type: "application/pdf" });
+const arrayBuffer = bytes.buffer.slice(
+  bytes.byteOffset,
+  bytes.byteOffset + bytes.byteLength
+) as ArrayBuffer;
+const blob = new Blob([arrayBuffer], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;

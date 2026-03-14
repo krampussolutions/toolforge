@@ -12,8 +12,12 @@ export default function RotatePdf() {
       const pdf = await PDFDocument.load(await file.arrayBuffer());
       const rotation = degrees(Number(angle) || 90);
       pdf.getPages().forEach((page) => page.setRotation(rotation));
-      const bytes = await pdf.save();
-      const blob = new Blob([bytes], { type: "application/pdf" });
+      const bytes = await out.save();
+const arrayBuffer = bytes.buffer.slice(
+  bytes.byteOffset,
+  bytes.byteOffset + bytes.byteLength
+) as ArrayBuffer;
+const blob = new Blob([arrayBuffer], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
