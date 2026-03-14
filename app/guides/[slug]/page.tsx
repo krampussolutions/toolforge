@@ -12,11 +12,11 @@ function categoryLabel(category: string) {
   return category.toLowerCase();
 }
 
-function getUseCases(pageTitle: string, category: string) {
+function getUseCases(pageTitle: string, category: string, relatedToolTitle?: string) {
   return [
-    `Use ${pageTitle.toLowerCase()} when you want a faster way to handle routine ${categoryLabel(category)} work in the browser.`,
-    `This page is useful when you need a quick starting point before opening the main tool and entering your real values or files.`,
-    `It also helps visitors compare similar tasks, understand what the tool does, and jump to nearby pages in the same topic cluster.`,
+    `Use ${pageTitle.toLowerCase()} when you want a quick explanation of the workflow before opening ${relatedToolTitle ?? "the main tool"}.`,
+    `This guide is useful for people comparing similar ${categoryLabel(category)} tasks and trying to pick the right browser-based tool.`,
+    `It also helps visitors connect a search-style question to the specific UtilHubX tool that finishes the job.`,
   ];
 }
 
@@ -124,7 +124,7 @@ export default function Page({
     ],
   };
 
-  const useCases = getUseCases(page.title, page.category);
+  const useCases = getUseCases(page.title, page.category, relatedTool?.title);
 
   return (
     <section>
@@ -145,10 +145,10 @@ export default function Page({
         <div className="card copy">
           <h2>What the {page.title} guide covers</h2>
           <p>
-            This guide explains the core workflow behind {page.title.toLowerCase()}, when people typically need it, and which UtilHubX tool is the fastest place to complete the task.
+            This guide explains the real workflow behind {page.title.toLowerCase()}, the situations where people usually search for it, and which UtilHubX tool is the fastest place to finish the job.
           </p>
           <p>
-            Use it as a quick orientation page before entering real values, uploading a file, or comparing nearby tools in the same category.
+            Use it when you want a short how-to style landing page before entering real values, uploading a file, or comparing nearby tools in the same category cluster.
           </p>
         </div>
       </section>

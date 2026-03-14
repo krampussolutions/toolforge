@@ -8,6 +8,47 @@ export type ToolContent = {
 };
 
 const overrides: Record<string, ToolContent> = {
+
+  "png-to-jpg": {
+    intro:
+      "PNG to JPG converts PNG images into lighter JPG files for email attachments, website uploads, product listings, and forms that prefer JPG. It is useful when the main goal is broad compatibility and a smaller file instead of a heavier PNG image.",
+    examples: [
+      "Convert a PNG image to JPG before uploading it to a marketplace or website",
+      "Reduce file size for email attachments and everyday sharing",
+      "Prepare product photos or simple graphics for a platform that expects JPG",
+    ],
+    howItWorks: [
+      "Upload a PNG image from your device",
+      "Convert the file to JPG in your browser",
+      "Preview the output and check the background or colors if needed",
+      "Download the converted JPG and use it for upload, email, or publishing",
+    ],
+    faq: [
+      { q: "Why convert PNG to JPG?", a: "PNG to JPG is useful when you want a smaller file or need a format that works more smoothly with common upload systems." },
+      { q: "Will transparency stay the same?", a: "No. JPG does not support transparency, so transparent areas may be flattened into a solid background." },
+      { q: "When should I keep PNG instead?", a: "Keep PNG when transparency or a PNG-based workflow matters more than file size." },
+    ],
+  },
+  "bmi-calculator": {
+    intro:
+      "BMI Calculator estimates body mass index from height and weight so you can get a quick screening-style result without doing the formula by hand. It is useful for adult wellness planning, check-ins, and broad weight-range comparisons when you want a simple starting point.",
+    examples: [
+      "Check BMI after entering current height and weight",
+      "Compare BMI results after a weight change or training period",
+      "Use BMI as a quick planning reference before looking at deeper health metrics",
+    ],
+    howItWorks: [
+      "Enter your height in the available unit",
+      "Add your current weight",
+      "Review the BMI result and category estimate",
+      "Use nearby health calculators if you also want calorie, protein, or water targets",
+    ],
+    faq: [
+      { q: "What is BMI used for?", a: "BMI is often used as a quick screening estimate that compares body weight to height." },
+      { q: "Is BMI a full health diagnosis?", a: "No. BMI is only one broad measure and should not replace advice from a healthcare professional." },
+      { q: "Who uses a BMI calculator?", a: "Adults commonly use BMI calculators for quick check-ins, planning, and general fitness or wellness tracking." },
+    ],
+  },
   "age-calculator": {
     intro:
       "Age Calculator shows exact age in years, months, and days from a birth date or start date. It is useful for forms, age checks, birthdays, school paperwork, insurance questions, and any situation where you need a precise age instead of a rough estimate.",
