@@ -12,7 +12,7 @@ export default function RotatePdf() {
       const pdf = await PDFDocument.load(await file.arrayBuffer());
       const rotation = degrees(Number(angle) || 90);
       pdf.getPages().forEach((page) => page.setRotation(rotation));
-      const bytes = await out.save();
+      const bytes = await pdf.save();
 const arrayBuffer = bytes.buffer.slice(
   bytes.byteOffset,
   bytes.byteOffset + bytes.byteLength
