@@ -2,7 +2,7 @@ import CalculatorCard from "@/components/CalculatorCard";
 import { toolPages, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "Image Tools",
+  title: "Free Image Tools Online | UtilHubX",
   description: "Browse free image tools on UtilHubX for compression, conversion, cropping, resizing, and other quick browser-based image tasks.",
   alternates: { canonical: `${SITE_URL}/image-tools` },
   openGraph: {

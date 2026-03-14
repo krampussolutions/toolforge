@@ -2,7 +2,7 @@ import CalculatorCard from "@/components/CalculatorCard";
 import { toolPages, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "PDF Tools",
+  title: "Free PDF Tools Online | UtilHubX",
   description: "Browse free PDF tools on UtilHubX for merging, splitting, and building PDF files in a fast browser-based workflow.",
   alternates: { canonical: `${SITE_URL}/pdf-tools` },
   openGraph: {

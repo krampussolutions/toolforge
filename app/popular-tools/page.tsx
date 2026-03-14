@@ -3,7 +3,7 @@ import { toolPages, SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Popular Tools",
+  title: "Popular Online Tools | UtilHubX",
   description: "Explore the most-used tools on UtilHubX, including popular image tools, PDF utilities, calculators, and everyday browser-based helpers.",
   alternates: {
     canonical: `${SITE_URL}/popular-tools`,
