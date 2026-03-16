@@ -4,7 +4,7 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Free Online Tools, Calculators, PDF Tools, and Image Tools",
   description:
-    "Free online tools for files, images, calculators, converters, and everyday tasks.",
+    "Free online tools for files, images, calculators, converters, and everyday tasks",
   alternates: {
     canonical: `${SITE_URL}/`,
   },
