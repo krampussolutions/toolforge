@@ -64,8 +64,45 @@ const specialSlugs = [
   "png-to-webp",
   "jpeg-to-jpg",
   "gif-to-jpg",
-  "svg-to-png"
+  "svg-to-png",
 ];
+
+const seoOverrides: Record<
+  string,
+  {
+    title: string;
+    description: string;
+    intro?: string;
+    h1?: string;
+  }
+> = {
+  "word-counter": {
+    title:
+      "Free Word Counter Online – Count Words, Characters & Sentences | UtilHubX",
+    description:
+      "Count words, characters, sentences, and paragraphs instantly with our free online word counter. Fast, accurate, and easy to use for essays, blogs, schoolwork, and documents.",
+    h1: "Free Word Counter Online",
+    intro:
+      "Count words, characters, sentences, and paragraphs instantly with this free online word counter. It is useful for essays, articles, blog posts, school assignments, and any writing that needs a quick and accurate word count.",
+  },
+  "case-converter": {
+    title:
+      "Case Converter Online – Uppercase, Lowercase, Title Case & More | UtilHubX",
+    description:
+      "Convert text to uppercase, lowercase, title case, sentence case, and more with our free online case converter. Fast, simple, and easy to use in any browser.",
+    h1: "Case Converter Online",
+    intro:
+      "Convert text between uppercase, lowercase, title case, sentence case, and other formats with this free online case converter. Great for editing documents, headlines, notes, and content drafts.",
+  },
+  "remove-line-breaks": {
+    title: "Remove Line Breaks Online – Clean Up Text Instantly | UtilHubX",
+    description:
+      "Remove line breaks, hard returns, and unwanted spacing from text instantly with our free online tool. Perfect for cleaning copied text from PDFs, emails, and documents.",
+    h1: "Remove Line Breaks Online",
+    intro:
+      "Remove line breaks and hard returns from text instantly with this free online tool. It is useful for cleaning up copied text from PDFs, email drafts, documents, and web pages.",
+  },
+};
 
 function getPage(slug: string) {
   return toolPages.find((item) => item.slug === slug);
@@ -83,9 +120,13 @@ export function generateMetadata({
   const item = getPage(params.slug);
   if (!item) return {};
 
-  const title = `${item.title} | UtilHubX`;
+  const override = seoOverrides[item.slug];
   const url = `${SITE_URL}/tools/${item.slug}`;
-  const description = `${item.title} on UtilHubX helps you ${item.description.charAt(0).toLowerCase()}${item.description.slice(1)} Use it free in your browser on desktop or mobile.`;
+
+  const title = override?.title ?? `${item.title} | UtilHubX`;
+  const description =
+    override?.description ??
+    `Use the ${item.title.toLowerCase()} online for free with UtilHubX. Fast, simple, browser-based, and easy to use on desktop or mobile.`;
 
   return {
     title,
@@ -114,6 +155,9 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   const isSpecial = specialSlugs.includes(item.slug);
   const content = toolContent[item.slug];
+  const override = seoOverrides[item.slug];
+  const displayTitle = override?.h1 ?? item.title;
+  const displayIntro = override?.intro ?? item.description;
 
   const relatedGuides = programmaticPages
     .filter((p) => p.relatedTool === item.slug)
@@ -128,7 +172,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     browserRequirements: "Requires a modern web browser",
     isAccessibleForFree: true,
     url: `${SITE_URL}/tools/${item.slug}`,
-    description: item.description,
+    description: override?.description ?? item.description,
     offers: {
       "@type": "Offer",
       price: "0",
@@ -152,7 +196,6 @@ export default function Page({ params }: { params: { slug: string } }) {
         }
       : null;
 
-
   return (
     <div className="tool-layout">
       <div>
@@ -169,9 +212,9 @@ export default function Page({ params }: { params: { slug: string } }) {
 
         <span className="kicker">{item.category}</span>
         <h1 className="page-title" style={{ marginTop: 14 }}>
-          {item.title}
+          {displayTitle}
         </h1>
-        <p className="page-intro">{item.description}</p>
+        <p className="page-intro">{displayIntro}</p>
 
         <AdBanner />
 
@@ -183,10 +226,78 @@ export default function Page({ params }: { params: { slug: string } }) {
           <div className="card">
             <h2>Use the {item.title} online</h2>
             <p>
-              Open the {item.title.toLowerCase()} in your browser, enter the values or content you need, and get a result without downloads, account setup, or switching devices.
+              Open the {item.title.toLowerCase()} in your browser, enter the
+              values or content you need, and get a result without downloads,
+              account setup, or switching devices.
             </p>
           </div>
         )}
+
+        {item.slug === "word-counter" ? (
+          <section className="section">
+            <div className="card">
+              <h2>Count words, characters, sentences, and paragraphs online</h2>
+              <p>
+                This free word counter helps you quickly measure word count,
+                character count, sentence count, and paragraph count in one
+                place. It is useful for students writing essays, bloggers
+                editing articles, marketers checking copy length, and anyone
+                working with text in a browser.
+              </p>
+              <p>
+                A word count tool is helpful when you need to stay within
+                writing limits, improve readability, or compare short and long
+                versions of content. You can paste text into the tool and
+                instantly see how long it is without using extra software.
+              </p>
+              <p>
+                Many people use an online word counter for assignments, product
+                descriptions, social posts, email drafts, resumes, and blog
+                posts. Because it works in the browser, it is fast to use on
+                desktop and mobile.
+              </p>
+            </div>
+          </section>
+        ) : null}
+
+        {item.slug === "case-converter" ? (
+          <section className="section">
+            <div className="card">
+              <h2>Convert text case online in seconds</h2>
+              <p>
+                This free case converter makes it easy to switch text to
+                uppercase, lowercase, title case, sentence case, and other
+                common text formats. It is useful for editing headlines, fixing
+                formatting, cleaning up copied text, and preparing content for
+                emails, documents, and blog posts.
+              </p>
+              <p>
+                Instead of manually retyping text, you can paste it into the
+                tool and convert it instantly. That makes it useful for writers,
+                students, marketers, and anyone who works with text regularly.
+              </p>
+            </div>
+          </section>
+        ) : null}
+
+        {item.slug === "remove-line-breaks" ? (
+          <section className="section">
+            <div className="card">
+              <h2>Remove line breaks and hard returns from text</h2>
+              <p>
+                This free remove line breaks tool helps you clean up text copied
+                from PDFs, emails, documents, and websites. It removes unwanted
+                hard returns so your text is easier to paste into editors,
+                forms, articles, and content management systems.
+              </p>
+              <p>
+                It is especially useful when copied text looks broken across
+                multiple lines. Instead of fixing each line manually, you can
+                clean the text instantly in your browser.
+              </p>
+            </div>
+          </section>
+        ) : null}
 
         {content ? (
           <>
@@ -252,7 +363,11 @@ export default function Page({ params }: { params: { slug: string } }) {
           <div className="card">
             <h2>Why people use the {item.title}</h2>
             <p>
-              People usually use the {item.title.toLowerCase()} when they want a fast, focused workflow for a specific {item.category.toLowerCase()} task. It is useful for everyday jobs, schoolwork, business tasks, and quick one-off checks where speed matters more than complex software.
+              People usually use the {item.title.toLowerCase()} when they want a
+              fast, focused workflow for a specific {item.category.toLowerCase()}{" "}
+              task. It is useful for everyday jobs, schoolwork, business tasks,
+              and quick one-off checks where speed matters more than complex
+              software.
             </p>
           </div>
         </section>
@@ -261,12 +376,76 @@ export default function Page({ params }: { params: { slug: string } }) {
           <div className="card">
             <h2>Tips for better results</h2>
             <ul>
-              <li>Double-check the values, file, or text you enter before generating a result.</li>
-              <li>Use the related section link below if you need a nearby tool for the same workflow.</li>
-              <li>On mobile, review the final output before downloading or copying it.</li>
+              <li>
+                Double-check the values, file, or text you enter before
+                generating a result.
+              </li>
+              <li>
+                Use the related section link below if you need a nearby tool for
+                the same workflow.
+              </li>
+              <li>
+                On mobile, review the final output before downloading or copying
+                it.
+              </li>
             </ul>
           </div>
         </section>
+
+        {item.slug === "word-counter" ? (
+          <section className="section">
+            <div className="card">
+              <h2>Related text tools</h2>
+              <div className="popular-links">
+                <Link href="/tools/case-converter">Case Converter</Link>
+                <Link href="/tools/remove-line-breaks">Remove Line Breaks</Link>
+                <Link href="/tools/line-counter">Line Counter</Link>
+                <Link href="/tools/word-frequency-counter">
+                  Word Frequency Counter
+                </Link>
+                <Link href="/tools/remove-extra-spaces">
+                  Remove Extra Spaces
+                </Link>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {item.slug === "case-converter" ? (
+          <section className="section">
+            <div className="card">
+              <h2>Related text tools</h2>
+              <div className="popular-links">
+                <Link href="/tools/word-counter">Word Counter</Link>
+                <Link href="/tools/remove-line-breaks">Remove Line Breaks</Link>
+                <Link href="/tools/text-reverser">Text Reverser</Link>
+                <Link href="/tools/remove-extra-spaces">
+                  Remove Extra Spaces
+                </Link>
+                <Link href="/tools/slug-generator">Slug Generator</Link>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {item.slug === "remove-line-breaks" ? (
+          <section className="section">
+            <div className="card">
+              <h2>Related text tools</h2>
+              <div className="popular-links">
+                <Link href="/tools/word-counter">Word Counter</Link>
+                <Link href="/tools/case-converter">Case Converter</Link>
+                <Link href="/tools/remove-extra-spaces">
+                  Remove Extra Spaces
+                </Link>
+                <Link href="/tools/duplicate-line-remover">
+                  Duplicate Line Remover
+                </Link>
+                <Link href="/tools/text-sorter">Text Sorter</Link>
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="section">
           <div className="card">
