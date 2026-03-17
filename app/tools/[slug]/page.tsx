@@ -67,6 +67,101 @@ const specialSlugs = [
   "svg-to-png",
 ];
 
+
+const whyPeopleUseOverrides: Record<string, string[]> = {
+  "merge-pdf": [
+    "Combine signed pages, statements, forms, and supporting files into one cleaner PDF for upload or sharing.",
+    "Avoid sending several attachments when one document is easier for clients, teachers, or coworkers to review.",
+    "Keep multi-part files in the correct order before archiving, printing, or sending them to another system.",
+  ],
+  "compress-image": [
+    "Reduce image file size before email, web upload, job applications, and form submissions with file limits.",
+    "Speed up page loading on websites and landing pages by shrinking large images before publishing.",
+    "Make phone photos and screenshots easier to share when the original files are too large.",
+  ],
+  "loan-calculator": [
+    "Estimate a monthly payment before you apply for a personal loan, auto loan, or other fixed-rate borrowing.",
+    "Compare how a shorter term or lower rate changes the payment and total borrowing cost.",
+    "Check whether a loan fits your budget before talking to a lender or signing an offer.",
+  ],
+  "bmi-calculator": [
+    "Get a quick body mass index estimate from height and weight without doing the formula by hand.",
+    "Use BMI as a simple screening metric before reviewing more detailed health measurements with a professional.",
+    "Track changes over time when weight goals, nutrition plans, or fitness routines change.",
+  ],
+  "unit-converter": [
+    "Convert common measurements for schoolwork, cooking, shipping, DIY projects, and everyday calculations.",
+    "Switch between metric and imperial units quickly without memorizing formulas.",
+    "Check length, weight, speed, temperature, and volume values in one browser-based tool.",
+  ],
+};
+
+const tipsOverrides: Record<string, string[]> = {
+  "merge-pdf": [
+    "Place files in the final reading order before merging so the finished PDF makes sense immediately.",
+    "Open the merged file once before sending it to confirm page order and completeness.",
+    "Use Split PDF or Delete PDF Pages first if you need to trim large documents before combining them.",
+  ],
+  "compress-image": [
+    "Start with a moderate compression setting so the file gets smaller without obvious visual damage.",
+    "Check the final file size against upload limits for forms, email, or websites before downloading.",
+    "Resize the image first when large dimensions are the real reason the file is heavy.",
+  ],
+  "loan-calculator": [
+    "Compare at least two or three term lengths to see the tradeoff between lower payments and higher total interest.",
+    "Use realistic rates based on your credit and lender type so the estimate stays useful.",
+    "Treat the result as a planning estimate, then confirm fees and exact terms with the lender.",
+  ],
+  "bmi-calculator": [
+    "Use accurate height and current weight values because small input errors can change the BMI result.",
+    "Treat BMI as a screening estimate rather than a full health assessment on its own.",
+    "Review long-term trends over time instead of overreacting to a single reading.",
+  ],
+  "unit-converter": [
+    "Confirm you selected the right unit family before converting, especially for weight versus volume.",
+    "Round only at the end if you need a cleaner number for homework, forms, or quotes.",
+    "Keep related conversions together when comparing supplier specs, recipes, or project measurements.",
+  ],
+};
+
+const relatedToolOverrides: Record<string, { href: string; label: string }[]> = {
+  "merge-pdf": [
+    { href: "/tools/split-pdf", label: "Split PDF" },
+    { href: "/tools/delete-pdf-pages", label: "Delete PDF Pages" },
+    { href: "/tools/reorder-pdf-pages", label: "Reorder PDF Pages" },
+    { href: "/tools/image-to-pdf", label: "Image to PDF" },
+    { href: "/tools/rotate-pdf", label: "Rotate PDF" },
+  ],
+  "compress-image": [
+    { href: "/tools/resize-image", label: "Resize Image Online" },
+    { href: "/tools/image-resizer-by-kb", label: "Image Resizer by KB" },
+    { href: "/tools/crop-image", label: "Crop Image Online" },
+    { href: "/tools/jpg-to-png", label: "JPG to PNG Converter" },
+    { href: "/tools/png-to-jpg", label: "PNG to JPG Converter" },
+  ],
+  "loan-calculator": [
+    { href: "/tools/mortgage-calculator", label: "Mortgage Calculator" },
+    { href: "/tools/car-payment-calculator", label: "Car Payment Calculator" },
+    { href: "/tools/credit-card-payoff-calculator", label: "Credit Card Payoff Calculator" },
+    { href: "/tools/roi-calculator", label: "ROI Calculator" },
+    { href: "/tools/savings-calculator", label: "Savings Calculator" },
+  ],
+  "bmi-calculator": [
+    { href: "/tools/calorie-calculator", label: "Calorie Calculator" },
+    { href: "/tools/protein-calculator", label: "Protein Calculator" },
+    { href: "/tools/water-intake-calculator", label: "Water Intake Calculator" },
+    { href: "/tools/age-calculator", label: "Age Calculator" },
+    { href: "/tools/unit-converter", label: "Unit Converter" },
+  ],
+  "unit-converter": [
+    { href: "/tools/feet-to-meters", label: "Feet to Meters Converter" },
+    { href: "/tools/kg-to-lbs", label: "KG to LBS Converter" },
+    { href: "/tools/business-days-calculator", label: "Business Days Calculator" },
+    { href: "/tools/percentage-calculator", label: "Percentage Calculator" },
+    { href: "/tools/age-calculator", label: "Age Calculator" },
+  ],
+};
+
 const seoOverrides: Record<
   string,
   {
@@ -101,6 +196,46 @@ const seoOverrides: Record<
     h1: "Remove Line Breaks Online",
     intro:
       "Remove line breaks and hard returns from text instantly with this free online tool. It is useful for cleaning up copied text from PDFs, email drafts, documents, and web pages.",
+  },
+  "merge-pdf": {
+    title: "Merge PDF Online – Combine PDF Files Free | UtilHubX",
+    description:
+      "Merge PDF files online for free. Combine statements, forms, reports, school files, and signed pages into one PDF in your browser.",
+    h1: "Merge PDF Online",
+    intro:
+      "Merge PDF files online to combine contracts, forms, statements, reports, and supporting documents into one cleaner file. This browser-based PDF merger is useful when you need one organized upload instead of several separate attachments.",
+  },
+  "compress-image": {
+    title: "Compress Image Online – Reduce Image File Size Free | UtilHubX",
+    description:
+      "Compress images online to reduce file size for websites, forms, email, and faster uploads. Free browser-based image compression tool.",
+    h1: "Compress Image Online",
+    intro:
+      "Compress images online to reduce file size for email, website uploads, online forms, resumes, and mobile sharing. It is a fast way to shrink large photos and screenshots without installing extra software.",
+  },
+  "loan-calculator": {
+    title: "Loan Calculator Online – Estimate Monthly Payments | UtilHubX",
+    description:
+      "Estimate monthly loan payments online using loan amount, interest rate, and term. Free loan calculator for personal loans, auto loans, and more.",
+    h1: "Loan Calculator Online",
+    intro:
+      "Estimate monthly loan payments online using the loan amount, interest rate, and repayment term. This free loan calculator helps compare borrowing scenarios before you apply or accept an offer.",
+  },
+  "bmi-calculator": {
+    title: "BMI Calculator Online – Body Mass Index Calculator | UtilHubX",
+    description:
+      "Calculate body mass index online using height and weight. Free BMI calculator for a quick body mass index estimate in your browser.",
+    h1: "BMI Calculator Online",
+    intro:
+      "Calculate body mass index online using height and weight for a quick BMI estimate. This free BMI calculator is useful for basic health tracking, fitness planning, and everyday check-ins.",
+  },
+  "unit-converter": {
+    title: "Unit Converter Online – Length, Weight, Temperature & More | UtilHubX",
+    description:
+      "Convert units online for length, weight, temperature, speed, volume, and more. Free browser-based unit converter for everyday use.",
+    h1: "Unit Converter Online",
+    intro:
+      "Convert units online for length, weight, temperature, speed, volume, and other common measurements. This free unit converter is useful for schoolwork, recipes, shipping, DIY projects, and everyday comparisons.",
   },
 };
 
@@ -362,13 +497,21 @@ export default function Page({ params }: { params: { slug: string } }) {
         <section className="section">
           <div className="card">
             <h2>Why people use the {item.title}</h2>
-            <p>
-              People usually use the {item.title.toLowerCase()} when they want a
-              fast, focused workflow for a specific {item.category.toLowerCase()}{" "}
-              task. It is useful for everyday jobs, schoolwork, business tasks,
-              and quick one-off checks where speed matters more than complex
-              software.
-            </p>
+            {whyPeopleUseOverrides[item.slug] ? (
+              <ul>
+                {whyPeopleUseOverrides[item.slug].map((reason) => (
+                  <li key={reason}>{reason}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>
+                People usually use the {item.title.toLowerCase()} when they want a
+                fast, focused workflow for a specific {item.category.toLowerCase()}{" "}
+                task. It is useful for everyday jobs, schoolwork, business tasks,
+                and quick one-off checks where speed matters more than complex
+                software.
+              </p>
+            )}
           </div>
         </section>
 
@@ -376,18 +519,13 @@ export default function Page({ params }: { params: { slug: string } }) {
           <div className="card">
             <h2>Tips for better results</h2>
             <ul>
-              <li>
-                Double-check the values, file, or text you enter before
-                generating a result.
-              </li>
-              <li>
-                Use the related section link below if you need a nearby tool for
-                the same workflow.
-              </li>
-              <li>
-                On mobile, review the final output before downloading or copying
-                it.
-              </li>
+              {(tipsOverrides[item.slug] ?? [
+                "Double-check the values, file, or text you enter before generating a result.",
+                "Use the related section link below if you need a nearby tool for the same workflow.",
+                "On mobile, review the final output before downloading or copying it.",
+              ]).map((tip) => (
+                <li key={tip}>{tip}</li>
+              ))}
             </ul>
           </div>
         </section>
@@ -442,6 +580,21 @@ export default function Page({ params }: { params: { slug: string } }) {
                   Duplicate Line Remover
                 </Link>
                 <Link href="/tools/text-sorter">Text Sorter</Link>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {relatedToolOverrides[item.slug] ? (
+          <section className="section">
+            <div className="card">
+              <h2>Related tools</h2>
+              <div className="popular-links">
+                {relatedToolOverrides[item.slug].map((link) => (
+                  <Link key={link.href} href={link.href}>
+                    {link.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </section>

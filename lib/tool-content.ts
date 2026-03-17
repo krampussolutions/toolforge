@@ -8,6 +8,37 @@ export type ToolContent = {
 };
 
 const overrides: Record<string, ToolContent> = {
+
+  "compress-image": {
+    intro:
+      "Compress Image Online reduces image file size in your browser so photos, screenshots, and graphics are easier to upload, email, and publish. It is useful for job applications, website images, contact forms with file limits, and everyday sharing when the original file is too large.",
+    examples: [
+      "Shrink a phone photo before attaching it to an email",
+      "Reduce image size for website uploads and faster page speed",
+      "Get under a form or portal file-size limit without using editing software",
+    ],
+    howItWorks: [
+      "Upload the image you want to compress",
+      "Choose or test a compression level if the tool gives you options",
+      "Review the new file size and visual quality",
+      "Download the smaller image once the balance between size and quality looks right",
+    ],
+    faq: [
+      {
+        q: "What is the best time to compress an image?",
+        a: "Compress an image before email, web upload, form submission, or any workflow where file-size limits and load speed matter.",
+      },
+      {
+        q: "Does image compression reduce quality?",
+        a: "Some compression settings can reduce visible quality, so it is best to check the result and use the lightest compression that gets the file under your target size.",
+      },
+      {
+        q: "Should I resize before compressing?",
+        a: "If the image dimensions are much larger than needed, resizing first often gives you better results than compression alone.",
+      },
+    ],
+  },
+
   "age-calculator": {
     intro:
       "Age Calculator shows exact age in years, months, and days from a birth date or start date. It is useful for forms, age checks, birthdays, school paperwork, insurance questions, and any situation where you need a precise age instead of a rough estimate.",
@@ -364,6 +395,66 @@ const overrides: Record<string, ToolContent> = {
       {
         q: "Is this an official lender quote?",
         a: "No. It is a planning estimate that helps you compare scenarios before you talk to a lender.",
+      },
+    ],
+  },
+
+  "bmi-calculator": {
+    intro:
+      "BMI Calculator gives you a quick body mass index estimate from height and weight. It is useful for basic health screening, fitness tracking, and everyday check-ins when you want a fast BMI result without doing the formula yourself.",
+    examples: [
+      "Check your current BMI from height and weight in seconds",
+      "Compare BMI results after a change in weight or fitness goals",
+      "Use a quick estimate before discussing broader health questions with a professional",
+    ],
+    howItWorks: [
+      "Enter your height and weight in the units the tool accepts",
+      "Generate the BMI result instantly",
+      "Review the category or range if the tool provides one",
+      "Use the result as a quick screening number rather than a full health assessment on its own",
+    ],
+    faq: [
+      {
+        q: "What does BMI measure?",
+        a: "BMI estimates body mass index from height and weight. It is often used as a simple screening metric, not a full measurement of health or body composition.",
+      },
+      {
+        q: "Is BMI enough by itself?",
+        a: "No. BMI is a basic estimate and should be considered alongside other health information, especially for athletic builds, age-related changes, and individual medical context.",
+      },
+      {
+        q: "Why use a BMI calculator online?",
+        a: "A browser-based BMI calculator gives you a quick estimate without manual math and makes it easy to compare changes over time.",
+      },
+    ],
+  },
+
+  "unit-converter": {
+    intro:
+      "Unit Converter changes common measurements between metric and imperial units for length, weight, temperature, speed, volume, and more. It is useful for schoolwork, recipes, shipping, travel, product specs, and DIY projects when you need a fast accurate conversion.",
+    examples: [
+      "Convert feet to meters or kilograms to pounds for forms and specs",
+      "Switch temperatures when reading recipes or weather values from different regions",
+      "Convert common measurements for homework, shipping, or project planning",
+    ],
+    howItWorks: [
+      "Choose the measurement type you want to convert",
+      "Enter the value in the starting unit",
+      "Select the output unit you need",
+      "Review the converted result and round it only if your workflow needs a cleaner number",
+    ],
+    faq: [
+      {
+        q: "What can a unit converter handle?",
+        a: "A unit converter is useful for common measurement families like length, weight, speed, temperature, data, and volume depending on the tool's supported options.",
+      },
+      {
+        q: "Why use an online unit converter instead of doing the math manually?",
+        a: "It is faster, reduces formula mistakes, and makes it easier to compare several conversions in one place.",
+      },
+      {
+        q: "Is it useful for school and DIY work?",
+        a: "Yes. Unit converters are commonly used for assignments, recipes, shipping labels, travel planning, and home projects where measurement systems differ.",
       },
     ],
   },
